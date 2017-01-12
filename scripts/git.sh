@@ -2,11 +2,8 @@
 
 source util.sh
 
-which git 2> /dev/null
-if [ $? -ne 0 ]; then
-    #Install git
-    Install_Packages git
-fi
+#Install git
+Install_Package_If_Necessary git
 
 which git &> /dev/null
 if [ $? -eq 0 ]; then

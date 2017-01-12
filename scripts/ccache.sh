@@ -2,11 +2,8 @@
 
 source util.sh
 
-which ccache 2> /dev/null
-if [ $? -ne 0 ]; then
-    #Install ccache
-    Install_Packages ccache
-fi
+#Install ccache
+Install_Package_If_Necessary ccache
 
 which ccache &> /dev/null
 if [ $? -eq 0 ]; then
