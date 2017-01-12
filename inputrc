@@ -1,0 +1,4 @@
+# Mappings for "up" and "down" to search the history incrementally
+# Note: Old behavior still available with Ctrl+P and Ctrl+N
+"\e[A": history-search-backward
+"\e[B": history-search-forward
