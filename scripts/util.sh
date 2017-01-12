@@ -21,3 +21,10 @@ Install_Packages() {
     fi
     return $?
 }
+
+Install_Package_If_Necessary() {
+    which "$1" 2> /dev/null
+    if [ $? -ne 0 ]; then
+        Install_Packages "$1"
+    fi
+}
