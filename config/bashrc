@@ -36,7 +36,7 @@ HISTFILESIZE=15000
 #       5d f8 1a 2d 68 16 00
 type to_hex 2> /dev/null
 if [ $? -eq 0 ]; then
-    echo "Function name already taken: to_hex()"
+    echo "ERROR: function name already taken: to_hex()" 1>&2
 else
     to_hex() {
         echo -ne $(echo $1 | sed -E 's/\\([0-9]{3})/\\0\1/g') | od -A n -t x1
@@ -61,7 +61,7 @@ fi
 #       Thu Jan 12 01:46:10 UTC 2017
 type to_utc 2> /dev/null
 if [ $? -eq 0 ]; then
-    echo "Function name already taken: to_utc()"
+    echo "ERROR: function name already taken: to_utc()" 1>&2
 else
     to_utc() {
         if [ $# -eq 1 ]; then
@@ -70,4 +70,12 @@ else
             date --utc "$@"
         fi
     }
+fi
+
+# alias
+alias grep 2> /dev/null
+if [ $? -eq 0 ]; then
+    echo "ERROR: alias name already taken: grep" 1>&2
+else
+    alias grep='grep --line-number --color=auto'
 fi
