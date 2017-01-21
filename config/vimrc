@@ -12,6 +12,9 @@ set incsearch
 " Highlighting search matches
 set hlsearch
 
+" Improve syntax highlighting for a dark background
+"set background=dark
+
 " Copy filename to clipboard
 if has('win32')
     " Convert slashes to backslashes for Windows.
