@@ -16,11 +16,15 @@ test -n "$VIMRUNTIME" && PS1="$PS1_PREFIX\e[30m(vim)\e[0m$ "
 export EDITOR=vim
 
 # Enable ccache
-export CC="ccache gcc"
-export CXX="ccache g++"
+if [ which ccache 2> /dev/null ]; then
+    export CC="ccache gcc"
+    export CXX="ccache g++"
+fi
 
 # Enable distcc
-#export CCACHE_PREFIX="distcc"
+if [ which distcc 2> /dev/null ]; then
+    export CCACHE_PREFIX="distcc"
+fi
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
