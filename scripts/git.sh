@@ -7,8 +7,7 @@ Install_Package_If_Necessary git
 Install_Package_If_Necessary gitk
 Install_Package_If_Necessary meld
 
-which git &> /dev/null
-if [ $? -eq 0 ]; then
+if [ which git &> /dev/null ]; then
     echo "Previous git settings:"
     git config --list
 
