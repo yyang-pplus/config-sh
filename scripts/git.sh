@@ -5,6 +5,7 @@ source util.sh
 #Install git
 Install_Package_If_Necessary git
 Install_Package_If_Necessary gitk
+Install_Package_If_Necessary meld
 
 which git &> /dev/null
 if [ $? -eq 0 ]; then
@@ -18,6 +19,9 @@ if [ $? -eq 0 ]; then
     git config --global core.autocrlf input
     git config --global core.editor vim
     git config --global grep.lineNumber true
+    git config --global diff.tool meld
+    git config --global diff.guitool meld
+    git config --global difftool.prompt false
 
     pushd $HOME
         temp_dir=$(date +%s)
