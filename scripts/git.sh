@@ -7,8 +7,7 @@ Install_Package_If_Necessary git
 Install_Package_If_Necessary gitk
 Install_Package_If_Necessary meld
 
-which git &> /dev/null
-if [ $? -eq 0 ]; then
+if which git &> /dev/null; then
     echo "Previous git settings:"
     git config --list
 
@@ -27,14 +26,12 @@ if [ $? -eq 0 ]; then
 
     pushd $HOME
         temp_dir=$(date +%s)
-        mkdir $temp_dir
-        if [ $? -ne 0 ]; then
+        if ! mkdir $temp_dir; then
             Echo_Error "Error: Failed to create temporary directory: " $temp_dir
             exit 1
         fi
         pushd $temp_dir
-            git clone git://git.kernel.org/pub/scm/git/git.git
-            if [ $? -ne 0 ]; then
+            if ! git clone git://git.kernel.org/pub/scm/git/git.git; then
                 Echo_Error "Error: Failed to clone git source."
                 exit 1
             fi

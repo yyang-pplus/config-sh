@@ -22,15 +22,13 @@ export VISUAL=vim
 export PAGER=less
 
 # Enable ccache
-which ccache &> /dev/null
-if [ $? -eq 0 ]; then
+if which ccache &> /dev/null; then
     export CC="ccache gcc"
     export CXX="ccache g++"
 fi
 
 # Enable distcc
-which distcc &> /dev/null
-if [ $? -eq 0 ]; then
+if which distcc &> /dev/null; then
     export CCACHE_PREFIX="distcc"
 fi
 
@@ -46,8 +44,7 @@ HISTFILESIZE=15000
 #   Example:
 #       $ to_hex ']\370\032-h\026\000'
 #       5d f8 1a 2d 68 16 00
-type to_hex &> /dev/null
-if [ $? -eq 0 ]; then
+if type to_hex &> /dev/null; then
     echo "ERROR: function name already taken: to_hex()" 1>&2
 else
     to_hex() {
@@ -71,8 +68,7 @@ fi
 #       Wed Jan 11 17:46:10 PST 2017
 #       $ to_utc "Wed Jan 11 17:46:10 PST 2017"
 #       Thu Jan 12 01:46:10 UTC 2017
-type to_utc &> /dev/null
-if [ $? -eq 0 ]; then
+if type to_utc &> /dev/null; then
     echo "ERROR: function name already taken: to_utc()" 1>&2
 else
     to_utc() {
@@ -85,8 +81,7 @@ else
 fi
 
 # alias
-alias grep &> /dev/null
-if [ $? -eq 0 ]; then
+if alias grep &> /dev/null; then
     echo "ERROR: alias name already taken: grep" 1>&2
 else
     alias grep='grep --line-number --color=auto'

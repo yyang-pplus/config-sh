@@ -23,8 +23,7 @@ Install_Packages() {
 }
 
 Install_Package_If_Necessary() {
-    which "$1" 2> /dev/null
-    if [ $? -ne 0 ]; then
+    if ! which "$1" 2> /dev/null; then
         Install_Packages "$1"
     fi
 }
