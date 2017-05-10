@@ -33,10 +33,10 @@ set spell spelllang=en_us
 
 " Auto-compile and run
 autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
-autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g -std=c++11 && ./'.shellescape('%:r')<CR>
-autocmd filetype c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g -pthread && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g -std=c++11 -pthread && ./'.shellescape('%:r')<CR>
+autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c11 && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++11 && ./'.shellescape('%:r')<CR>
+autocmd filetype c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c11 -pthread && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++11 -pthread && ./'.shellescape('%:r')<CR>
 
 " Tabs
 " tabfind: look in the directory containing the current file (.), then the current directory (empty text between two commas), then each directory under the current directory ('**').
