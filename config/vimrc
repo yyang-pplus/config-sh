@@ -77,3 +77,11 @@ set showtabline=2
 
 " Make: Simple project build
 set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
+
+
+" Command line abbreviation
+"
+" Make %% expands to the full path of the directory that contains the current file.
+"   reference: http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
+"
+cabbrev <expr> %% expand('%:p:h')
