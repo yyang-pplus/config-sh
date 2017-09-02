@@ -74,3 +74,6 @@ autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '
 set path=.,,**
 " Always show tab line
 set showtabline=2
+
+" Make: Simple project build
+set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
