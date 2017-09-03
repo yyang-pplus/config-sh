@@ -2,8 +2,24 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+
 " Turn on plug-in
 filetype plugin on
+"
+" cscope
+"   reference: http://cscope.sourceforge.net/cscope_maps.vim
+"
+" This tests to see if vim was configured with the '--enable-cscope' option
+if has("cscope")
+    " add any cscope database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out  
+    " else add the database pointed to by environment variable 
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+endif
+
 
 " Indentation
 set smartindent
@@ -12,10 +28,12 @@ set shiftwidth=4
 set expandtab
 set nosmarttab
 
+
 " Show the next match while entering a search
 set incsearch
 " Highlighting search matches
 set hlsearch
+
 
 if has("gui_running")
     set background=light
@@ -24,10 +42,15 @@ else
     set background=dark
 endif
 
+
+" Status Bar
 " Show line number, cursor position.
 set ruler
 " Display incomplete commands.
 set showcmd
+" Show editing mode
+set showmode
+
 
 "
 "   reference: http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
@@ -37,6 +60,7 @@ set wildmenu
 set wildmode=longest:full,full
 " Enable full mouse support in the console.
 set mouse=a
+
 
 " Auto-completion
 " Spell check
@@ -50,9 +74,9 @@ set dictionary+=/usr/share/dict/words
 "   https://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
 "
 set complete-=i
+" Only insert the longest common text of the matches.
+set completeopt=menu,preview,longest
 
-" Show editing mode
-set showmode
 
 " Copy filename to clipboard
 if has('win32')
@@ -67,12 +91,17 @@ else
     nmap ,cl :let @+=expand("%:p")<CR>
 endif
 
+
+" Easy Compile
 " Auto-compile and run
 autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
 autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c11 && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++11 && ./'.shellescape('%:r')<CR>
 autocmd filetype c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c11 -pthread && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++11 -pthread && ./'.shellescape('%:r')<CR>
+" Make: Simple project build
+set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
+
 
 " Tabs
 " tabfind: look in the directory containing the current file (.),
@@ -84,11 +113,3 @@ autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '
 set path=.,,**
 " Always show tab line
 set showtabline=2
-
-" Make: Simple project build
-set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
-
-
-" Auto-completion
-" Only insert the longest common text of the matches.
-set completeopt=menu,preview,longest
