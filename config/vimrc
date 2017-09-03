@@ -77,3 +77,8 @@ set showtabline=2
 
 " Make: Simple project build
 set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
+
+
+" Auto-completion
+" Only insert the longest common text of the matches.
+set completeopt=menu,preview,longest
