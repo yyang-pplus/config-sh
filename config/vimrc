@@ -38,12 +38,18 @@ set wildmode=longest:full,full
 " Enable full mouse support in the console.
 set mouse=a
 
+" Auto-completion
 " Spell check
 set spell spelllang=en_us
 " Enable Dictionary Completion
 "   reference: http://vim.wikia.com/wiki/Dictionary_completions
 "
 set dictionary+=/usr/share/dict/words
+" Remove included files from completion
+"   reference:
+"   https://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
+"
+set complete-=i
 
 " Show editing mode
 set showmode
