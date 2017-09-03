@@ -40,6 +40,10 @@ set mouse=a
 
 " Spell check
 set spell spelllang=en_us
+" Enable Dictionary Completion
+"   reference: http://vim.wikia.com/wiki/Dictionary_completions
+"
+set dictionary+=/usr/share/dict/words
 
 " Show editing mode
 set showmode
