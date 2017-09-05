@@ -3,22 +3,8 @@
 set nocompatible
 
 
-" Turn on plug-in
+" Enable file type detection
 filetype plugin on
-"
-" cscope
-"   reference: http://cscope.sourceforge.net/cscope_maps.vim
-"
-" This tests to see if vim was configured with the '--enable-cscope' option
-if has("cscope")
-    " add any cscope database in current directory
-    if filereadable("cscope.out")
-        cs add cscope.out
-    " else add the database pointed to by environment variable
-    elseif $CSCOPE_DB != ""
-        cs add $CSCOPE_DB
-    endif
-endif
 
 
 " Indentation
@@ -113,3 +99,20 @@ set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
 set path=.,,**
 " Always show tab line
 set showtabline=2
+
+
+" Plug-ins
+"
+" cscope
+"   reference: http://cscope.sourceforge.net/cscope_maps.vim
+"
+" This tests to see if vim was configured with the '--enable-cscope' option
+if has("cscope")
+    " add any cscope database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add the database pointed to by environment variable
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+endif
