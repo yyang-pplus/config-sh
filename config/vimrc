@@ -21,12 +21,8 @@ set incsearch
 set hlsearch
 
 
-if has("gui_running")
-    set background=light
-else
-    " Improve syntax highlighting for a dark background
-    set background=dark
-endif
+" Improve syntax highlighting for a dark background(Vim)
+set background=dark
 
 
 " Status Bar
