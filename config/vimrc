@@ -15,6 +15,12 @@ set expandtab
 set nosmarttab
 
 
+" Comments
+" Disable automatic comment insertion for C/C++ single-line comments
+"   reference: http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
+au FileType c,cpp setlocal comments-=:// comments+=f://
+
+
 " Show the next match while entering a search
 set incsearch
 " Highlighting search matches
