@@ -40,6 +40,14 @@ set showcmd
 set showmode
 
 
+" Display line number
+"   reference: http://vim.wikia.com/wiki/Display_line_numbers
+"
+set number
+" Disable relative number at startup
+set norelativenumber
+
+
 "
 "   reference: http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
 "
