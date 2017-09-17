@@ -21,6 +21,9 @@ set nosmarttab
 au FileType c,cpp setlocal comments-=:// comments+=f://
 
 
+" Search
+" Explicit set magic to recognize special characters when pattern matching.
+set magic
 " Show the next match while entering a search
 set incsearch
 " Highlighting search matches
