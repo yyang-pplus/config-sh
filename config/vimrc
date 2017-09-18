@@ -53,6 +53,10 @@ set number
 set norelativenumber
 
 
+" Explicit nolist, no show space characters, at startup.
+set nolist
+
+
 "
 "   reference: http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
 "
