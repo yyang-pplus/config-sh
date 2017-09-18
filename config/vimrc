@@ -28,6 +28,8 @@ set magic
 set incsearch
 " Highlighting search matches
 set hlsearch
+" When a bracket is inserted, briefly jump to the matching one.
+set showmatch
 
 
 " Improve syntax highlighting for a dark background(Vim)
