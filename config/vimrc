@@ -124,15 +124,19 @@ set showtabline=2
 "
 " cscope
 "
-" Disable cscope error message for adding a database
-"   reference:
-"   http://thoughtsolo.blogspot.com/2014/02/cscope-issue-duplicate-cscope-database.html
-"
-set nocscopeverbose
 " This tests to see if vim was configured with the '--enable-cscope' option
 "   reference: http://cscope.sourceforge.net/cscope_maps.vim
 "
 if has("cscope")
+    " Disable cscope error message for adding a database
+    "   reference:
+    "   http://thoughtsolo.blogspot.com/2014/02/cscope-issue-duplicate-cscope-database.html
+    "
+    set nocscopeverbose
+
+    " Use only ctag for 'ctrl-]', ':tag', and 'vim -t'
+    set nocscopetag
+
     " add any cscope database in current directory
     if filereadable("cscope.out")
         cs add cscope.out
