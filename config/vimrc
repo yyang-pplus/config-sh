@@ -8,11 +8,17 @@ filetype plugin on
 
 
 " Indentation
-set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set nosmarttab
+" File-type based indentation
+"   reference: http://vim.wikia.com/wiki/Indenting_source_code
+"
+set nosmartindent
+set nocindent
+set autoindent
+filetype plugin indent on
 
 
 " Comments
