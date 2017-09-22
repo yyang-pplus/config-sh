@@ -85,8 +85,8 @@ set dictionary+=/usr/share/dict/words
 "   https://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
 "
 set complete-=i
-" Only insert the longest common text of the matches.
-set completeopt=menu,preview,longest
+" Explicit default completeopt without longest
+set completeopt=menu,preview
 
 
 " Copy filename to clipboard
