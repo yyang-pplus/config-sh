@@ -63,6 +63,10 @@ set norelativenumber
 set nolist
 
 
+" Set history
+set history=10000
+
+
 "
 "   reference: http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
 "
