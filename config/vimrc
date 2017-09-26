@@ -21,6 +21,15 @@ set autoindent
 filetype plugin indent on
 
 
+" Auto-format
+" Where it makes sense, remove a comment leader when joining lines.
+set formatoptions+=j
+" When formatting text, recognize numbered lists.
+" Note that 'autoindent' must be set for this to work.
+set formatoptions+=n
+set formatoptions-=2
+
+
 " Comments
 " Disable automatic comment insertion for C/C++ single-line comments
 "   reference: http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
