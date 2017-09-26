@@ -127,6 +127,11 @@ autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '
 set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
 
 
+" Map the <space> key to insert a space after the cursor in normal mode
+"   reference: http://vim.wikia.com/wiki/Insert_in_normal_mode
+nnoremap <space> a<space><ESC>
+
+
 " Tabs
 " tabfind: look in the directory containing the current file (.),
 "   then the current directory (empty text between two commas),
