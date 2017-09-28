@@ -114,6 +114,7 @@ set completeopt=menu,preview
 
 
 " Copy filename to clipboard
+" Note: this requires Vim is compiled with +xterm_clipboard to support + or * register
 if has('win32')
     " Convert slashes to backslashes for Windows.
     nmap <leader>cs :let @+=substitute(expand("%"), "/", "\\", "g")<CR>
