@@ -35,6 +35,10 @@ set formatoptions+=n
 set formatoptions-=2
 
 
+" Explicit set backspace for Insert mode
+set backspace=indent,eol,start
+
+
 " Comments
 " Disable automatic comment insertion for C/C++ single-line comments
 "   reference: http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
@@ -173,4 +177,6 @@ if has("cscope")
     elseif $CSCOPE_DB != ""
         cs add $CSCOPE_DB
     endif
+
+    set nocscopeverbose
 endif
