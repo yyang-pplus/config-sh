@@ -3,6 +3,11 @@
 set nocompatible
 
 
+" Disable modeline for security
+"   reference: http://vim.wikia.com/wiki/Modeline_magic
+set nomodeline
+
+
 " Enable file type detection
 filetype plugin on
 
