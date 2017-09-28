@@ -54,7 +54,8 @@ set incsearch
 set hlsearch
 " When a bracket is inserted, briefly jump to the matching one.
 set showmatch
-
+" Explicit nogdefault: do not apply substitutions globally.
+set nogdefault
 
 " Improve syntax highlighting for a dark background(Vim)
 set background=dark
