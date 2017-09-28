@@ -67,6 +67,8 @@ set ruler
 set showcmd
 " Show editing mode
 set showmode
+" Explicit laststatus to show status line only if there are at least two windows
+set laststatus=1
 
 
 " Display line number
