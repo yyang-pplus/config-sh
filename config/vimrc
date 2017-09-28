@@ -177,4 +177,6 @@ if has("cscope")
     elseif $CSCOPE_DB != ""
         cs add $CSCOPE_DB
     endif
+
+    set cscopeverbose
 endif
