@@ -57,6 +57,13 @@ set showmatch
 " Explicit nogdefault: do not apply substitutions globally.
 set nogdefault
 
+
+" Explicit no colorcolumn by default
+set colorcolumn=
+" Explicit nocursorline
+set nocursorline
+
+
 " Improve syntax highlighting for a dark background(Vim)
 set background=dark
 
