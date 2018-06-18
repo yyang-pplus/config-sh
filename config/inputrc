@@ -2,3 +2,6 @@
 # Note: Old behavior still available with Ctrl+P and Ctrl+N
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+
+# Hit A single <Tab> to produce a list of all possible completions.
+set show-all-if-ambiguous on
