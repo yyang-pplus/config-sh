@@ -2,4 +2,4 @@
 
 source util.sh
 
-Install_Package_If_Necessary terminator
+redhat_packages_list="epel-release" Install_Package_If_Necessary terminator
