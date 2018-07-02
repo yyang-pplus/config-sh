@@ -2,4 +2,4 @@
 
 source util.sh
 
-Install_Package_If_Necessary astyle
+debian_packages_list="astyle" Install_Packages
