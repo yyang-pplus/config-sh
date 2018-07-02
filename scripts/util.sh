@@ -2,14 +2,16 @@ Echo_Error() {
     cat <<< "$@" 1>&2;
 }
 
-# Install the package base on OS
+# Install the given packages base on OS
+#   @param  $@  Common packages list
+#   See vim.sh for a complete example
 Install_Packages() {
     operating_system=$(uname)
     if [ $operating_system == "Linux" ]; then
         if [ -f /etc/redhat-release ]; then
-            sudo yum --assumeyes install "$@"
+            sudo yum --assumeyes install $redhat_packages_list $@
         elif [ -f /etc/debian_version ]; then
-            sudo apt-get --yes install "$@"
+            sudo apt-get --yes install $debian_packages_list $@
         else
             Echo_Error "Error: Unsupported distribution"
             cat /etc/*-release

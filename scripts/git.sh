@@ -43,3 +43,6 @@ if which git &> /dev/null; then
         rm -rf "$temp_dir"
     popd
 fi
+
+# To push to gerrit hub
+#git push origin HEAD:refs/for/master
