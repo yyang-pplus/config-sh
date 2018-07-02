@@ -2,7 +2,8 @@
 
 source util.sh
 
-Install_Package_If_Necessary vim
-Install_Package_If_Necessary vim-gnome
-Install_Package_If_Necessary exuberant-ctags
-Install_Package_If_Necessary cscope
+REDHAT_PACKAGES_LIST="vim-X11 ctags"
+DEBIAN_PACKAGES_LIST="vim-gnome exuberant-ctags"
+COMMON_PACKAGES_LIST="cscope"
+
+redhat_packages_list=$REDHAT_PACKAGES_LIST debian_packages_list=$DEBIAN_PACKAGES_LIST Install_Packages $COMMON_PACKAGES_LIST
