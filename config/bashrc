@@ -28,9 +28,9 @@ if which ccache &> /dev/null; then
 fi
 
 # Enable distcc
-if which distcc &> /dev/null; then
-    export CCACHE_PREFIX="distcc"
-fi
+#if which distcc &> /dev/null; then
+#    export CCACHE_PREFIX="distcc"
+#fi
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
