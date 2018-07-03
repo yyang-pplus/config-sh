@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Don't run this script as sudo
 #
 # This is the main interface. It does following works in order:
 #   1) Run selected scripts, which start with "_"
@@ -8,11 +7,20 @@
 #   3) Append common configuration files to the existing ones
 #
 
+
+# Don't run this script as sudo; as required by git.sh
+if [ "$EUID" -eq 0 ]; then
+    echo "Error: Cannot run as root."
+    exit
+fi
+
+
 MAIN_DIR=$(dirname "$0")
 CONFIG_DIR=$MAIN_DIR/config
 SCRIPT_DIR=$MAIN_DIR/scripts
 BACKUP_DIR=$HOME/$(date +%s)
 SUPPORT_CONFIGS=( $(ls "$CONFIG_DIR") )
+
 
 # Run selected scripts
 pushd $SCRIPT_DIR
