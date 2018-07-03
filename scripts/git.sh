@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Don't run this script as sudo
+
 source util.sh
 
 #Install git
