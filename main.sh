@@ -1,8 +1,11 @@
 #!/bin/bash
+
+# Don't run this script as sudo
 #
 # This is the main interface. It does following works in order:
-#   1) Backup existing configuration files
-#   2) Append common configuration files to the existing ones
+#   1) Run selected scripts, which start with "_"
+#   2) Backup existing configuration files
+#   3) Append common configuration files to the existing ones
 #
 
 MAIN_DIR=$(dirname "$0")
@@ -11,8 +14,18 @@ SCRIPT_DIR=$MAIN_DIR/scripts
 BACKUP_DIR=$HOME/$(date +%s)
 SUPPORT_CONFIGS=( $(ls "$CONFIG_DIR") )
 
-mkdir -p "$BACKUP_DIR"
+# Run selected scripts
+pushd $SCRIPT_DIR
+    SELECTED_SCRIPTS=( $(ls _*) )
 
+    for script in "${SELECTED_SCRIPTS[@]}"; do
+        echo "Running script: $script"
+        ./$script
+    done
+popd
+
+
+mkdir -p "$BACKUP_DIR"
 for config_name in "${SUPPORT_CONFIGS[@]}"; do
     home_config=$HOME/.$config_name
     backup=$BACKUP_DIR/.$config_name
