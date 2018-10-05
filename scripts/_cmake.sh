@@ -2,4 +2,4 @@
 
 source util.sh
 
-Install_Packages cmake cmake-gui
+Install_Packages cmake cmake-gui cmake-curses-gui
