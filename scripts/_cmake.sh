@@ -2,4 +2,4 @@
 
 source util.sh
 
-Install_Packages cmake cmake-gui
+debian_packages_list="cmake-curses-gui" Install_Packages cmake cmake-gui
