@@ -2,6 +2,11 @@ Echo_Error() {
     cat <<< "$@" 1>&2;
 }
 
+Log_Run() {
+    echo "$@"
+    "$@"
+}
+
 # Install the given packages base on OS
 #   @param  $@  Common packages list
 #   See vim.sh for a complete example
