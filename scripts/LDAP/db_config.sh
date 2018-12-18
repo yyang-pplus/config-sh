@@ -20,10 +20,10 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# echo the suffix before change
+# echo the config before change
 sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" olcSuffix olcRootDN olcRootPW -LLL -Q
 
-sudo ldapmodify -Y EXTERNAL  -H ldapi:// -Q <<EOF
+sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q <<EOF
 $DB_DN
 changetype: modify
 replace: olcSuffix
@@ -40,5 +40,5 @@ replace: olcRootPW
 olcRootPW: $PASSWORD
 EOF
 
-# echo the suffix after change
+# echo the config after change
 sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" olcSuffix olcRootDN olcRootPW -LLL -Q
