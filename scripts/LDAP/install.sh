@@ -5,7 +5,9 @@
 #   and also enable it to be automatically started at boot time.
 
 
-source scripts/util.sh
+THIS_DIR=$(dirname "$0")
+source $THIS_DIR/../util.sh
+echo "Running:" $(basename "$0")
 
 
 sudo yum -y install openldap-servers openldap-clients

@@ -2,18 +2,12 @@
 
 # This script config olcSuffix and olcRootDN to the desired value. It also prompt to set olcRootPW.
 #   It determines the DN of the database automatically if there is only one DB.
+# This script also enable module config, if it is not already enabled.
 
-SUFFIX="dc=yyangtech,dc=wordpress,dc=com"
-DB_DN=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" dn -LLL -Q)
-NUMBER_DB=$(wc -l <<< "$DB_DN")
-
+THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/global_defines.sh"
 echo "Running:" $(basename "$0")
 
-if [ "$NUMBER_DB" -ne 1 ]; then
-    echo "Error: Multiple DB:"
-    echo $DB_DN
-    exit 1
-fi
 
 PASSWORD=$(slappasswd -h {SSHA})
 if [ $? -ne 0 ]; then
@@ -32,7 +26,7 @@ olcSuffix: $SUFFIX
 $DB_DN
 changetype: modify
 replace: olcRootDN
-olcRootDN: cn=admin,$SUFFIX
+olcRootDN: $ROOT_DN
 
 $DB_DN
 changetype: modify
@@ -42,3 +36,12 @@ EOF
 
 # echo the config after change
 sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" olcSuffix olcRootDN olcRootPW -LLL -Q
+
+
+# Only enable module config, if it is not already enabled
+if [ "$NUMBER_MODULE_CONFIG" -eq 0 ]; then
+    sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q -a -f $THIS_DIR/enable_module_config.ldif
+fi
+
+# List existing module list
+sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcModuleList" dn olcmoduleload
