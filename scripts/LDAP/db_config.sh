@@ -6,6 +6,7 @@
 SUFFIX="dc=yyangtech,dc=wordpress,dc=com"
 DB_DN=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" dn -LLL -Q)
 NUMBER_DB=$(wc -l <<< "$DB_DN")
+THIS_DIR=$(dirname "$0")
 
 echo "Running:" $(basename "$0")
 
@@ -42,3 +43,8 @@ EOF
 
 # echo the config after change
 sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" olcSuffix olcRootDN olcRootPW -LLL -Q
+
+
+if ! sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcModuleList" dn &> /dev/null; then
+    sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q -a -f $THIS_DIR/enable_module_config.ldif
+fi
