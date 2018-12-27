@@ -7,7 +7,7 @@ source "$THIS_DIR/global_defines.sh"
 echo "Running:" $(basename "$0")
 
 OVERLAY_REFINT_DN=$(DN_Insert_Front "olcOverlay=refint" "$DB_DN")
-NUMBER_REFINT_CONFIG=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcRefintConfig" dn | wc -l)
+NUMBER_REFINT_CONFIG=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcRefintConfig" dn | grep --count "^dn:")
 
 
 # Only enable refint, if it is not already enabled
