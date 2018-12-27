@@ -1,2 +1,13 @@
+# Some of the entries have a numeric index "{X}" in their names. While most
+#   configuration settings have an inherent ordering dependency (i.e., one
+#   setting must take effect before a subsequent one may be set), LDAP
+#   databases are inherently unordered. The numeric index is used to enforce
+#   a consistent ordering in the configuration database, so that all ordering
+#   dependencies are preserved. In most cases the index does not have to be
+#   provided; it will be automatically generated based on the order in which
+#   entries are created.
+# @reference    OpenLDAP Administrator's Guide: Configuring slapd
+#               https://www.openldap.org/doc/admin24/slapdconf2.html
+#
 dn: cn=module,cn=config
 objectClass: olcModuleList
