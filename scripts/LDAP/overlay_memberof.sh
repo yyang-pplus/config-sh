@@ -18,7 +18,7 @@ source "$THIS_DIR/global_defines.sh"
 echo "Running:" $(basename "$0")
 
 OVERLAY_MEMBEROF_DN=$(DN_Insert_Front "olcOverlay=memberof" "$DB_DN")
-NUMBER_MEMBEROF_CONFIG=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcMemberOf" dn | wc -l)
+NUMBER_MEMBEROF_CONFIG=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcMemberOf" dn | grep --count "^dn:")
 
 
 # Only enable memberof, if it is not already enabled
