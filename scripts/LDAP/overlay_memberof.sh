@@ -5,11 +5,13 @@
 #   remade in order for these changes to take effect.
 # @reference    How to enable MemberOf using OpenLDAP
 #               https://adimian.com/blog/2014/10/how-to-enable-memberof-using-openldap/
+#
 # Note that the memberOf attribute is an operational attribute, so it must be
 #   requested explicitly.
 # @reference    OpenLDAP Administrator's Guide: Overlays
 #               https://www.openldap.org/doc/admin24/overlays.html
-
+#
+# man slapo-memberof
 
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/global_defines.sh"
