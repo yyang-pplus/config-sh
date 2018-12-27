@@ -3,6 +3,10 @@
 # This script only works for CentOS
 
 THIS_DIR=$(dirname "$0")
+
+# The rest of the script requires openldap packages
+./$THIS_DIR/install.sh
+
 source "$THIS_DIR/global_defines.sh"
 
 # This script only works for single normal DIT configuration
@@ -12,7 +16,6 @@ if [ "$NUMBER_DB" -ne 1 ]; then
     exit 1
 fi
 
-./$THIS_DIR/install.sh
 ./$THIS_DIR/schema.sh
 ./$THIS_DIR/db_config.sh
 
