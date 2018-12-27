@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# This script only works for CentOS
 
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/global_defines.sh"
