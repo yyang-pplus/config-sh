@@ -37,7 +37,6 @@ EOF
 # echo the config after change
 sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" olcSuffix olcRootDN olcRootPW -LLL -Q
 
-
 # Only enable module config, if it is not already enabled
 if [ "$NUMBER_MODULE_CONFIG" -eq 0 ]; then
     sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q -a -f $THIS_DIR/enable_module_config.ldif

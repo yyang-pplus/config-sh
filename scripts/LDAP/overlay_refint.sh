@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# man slapo-refint
 
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/global_defines.sh"
