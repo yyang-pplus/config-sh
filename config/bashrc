@@ -6,6 +6,10 @@ fi
 # Git show git branch on command promt
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
+    # Show git state symbols
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWCOLORHINTS=true
 fi
 
 PS1_PREFIX='\[\e[0;92m\][\[\e[0;95m\]\t \[\e[0;92m\]\u@\h\[\e[0;93m\] \w\[\e[0;92m\]]\[\e[0;94m\]$(__git_ps1 "(%s)")\[\e[0m\]'
