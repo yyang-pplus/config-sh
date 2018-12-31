@@ -11,7 +11,7 @@ if ldapsearch -H ldap:// -x -b "$SUFFIX" -LLL &> /dev/null; then
     ldapdelete -H ldap:// -x -D "$ROOT_DN" -W -r "$SUFFIX"
 fi
 
-ldapadd -H ldap:// -x -D "$ROOT_DN" -W -f $THIS_DIR/sample_dit.ldif
+ldapadd -H ldap:// -x -D "$ROOT_DN" -W -c -f $THIS_DIR/sample_dit.ldif
 
 ldapsearch -H ldap:// -x -b "$SUFFIX" -LLL
 
