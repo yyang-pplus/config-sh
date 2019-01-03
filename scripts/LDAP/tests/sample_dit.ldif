@@ -17,6 +17,8 @@ dn: uid=yyang,ou=People,dc=yyangtech,dc=wordpress,dc=com
 objectClass: inetOrgPerson
 cn: Yang Yang
 sn: Yang
+# userPassword: 123456
+userPassword: {SSHA}4+17HsV7y1Rykx6qnhZI3//2THgc4Lp8
 
 # Define engineer group
 dn: cn=engineer,ou=Groups,dc=yyangtech,dc=wordpress,dc=com
