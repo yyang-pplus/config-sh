@@ -82,9 +82,9 @@ set laststatus=1
 " Display line number
 "   reference: http://vim.wikia.com/wiki/Display_line_numbers
 "
+" Show the absolute number on the cursor line and relative numbers everywhere else
 set number
-" Disable relative number at startup
-set norelativenumber
+set relativenumber
 
 
 " Explicit nolist, no show space characters, at startup.
