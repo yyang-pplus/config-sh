@@ -143,8 +143,6 @@ autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.s
 autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 && ./'.shellescape('%:r')<CR>
 autocmd filetype c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
-" Make: Simple project build
-set makeprg=cd\ build\ &&\ {\ make;\ cd\ -;\ }
 
 
 " Map the <space> key to insert a space after the cursor in normal mode
@@ -191,3 +189,15 @@ if has("cscope")
 
     set cscopeverbose
 endif
+
+
+" Project Specific .vimrc Files
+"   reference: https://andrew.stwrt.ca/posts/project-specific-vimrc/
+"
+" To enable per-project configuration files.
+set exrc
+" To disable unsafe commands in your project-specific .vimrc files
+" This will prevent :autocmd, shell and write commands from being run inside
+" project-specific .vimrc files unless they’re owned by you.
+" NOTE: This line should be kept at the end
+set secure
