@@ -1,10 +1,12 @@
 " Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" Note: This must be first, because it changes other options as a side effect.
 set nocompatible
 
 
+" @reference    Modeline magic
+"               https://vim.fandom.com/wiki/Modeline_magic
+"
 " Disable modeline for security
-"   reference: http://vim.wikia.com/wiki/Modeline_magic
 set nomodeline
 
 
@@ -17,9 +19,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set nosmarttab
-" File-type based indentation
-"   reference: http://vim.wikia.com/wiki/Indenting_source_code
+" @reference    Indenting source code
+"               https://vim.fandom.com/wiki/Indenting_source_code
 "
+" File-type based indentation
 set nosmartindent
 set nocindent
 set autoindent
@@ -27,10 +30,11 @@ filetype plugin indent on
 
 
 " Auto-format
+"
 " Where it makes sense, remove a comment leader when joining lines.
 set formatoptions+=j
 " When formatting text, recognize numbered lists.
-" Note that 'autoindent' must be set for this to work.
+" Note: that 'autoindent' must be set for this to work.
 set formatoptions+=n
 set formatoptions-=2
 
@@ -40,12 +44,16 @@ set backspace=indent,eol,start
 
 
 " Comments
+"
+" @reference    Disable automatic comment insertion
+"               https://vim.fandom.com/wiki/Disable_automatic_comment_insertion
+"
 " Disable automatic comment insertion for C/C++ single-line comments
-"   reference: http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
 au FileType c,cpp setlocal comments-=:// comments+=f://
 
 
 " Search
+"
 " Explicit set magic to recognize special characters when pattern matching.
 set magic
 " Show the next match while entering a search
@@ -69,6 +77,7 @@ set background=dark
 
 
 " Status Bar
+"
 " Show line number, cursor position.
 set ruler
 " Display incomplete commands.
@@ -79,8 +88,8 @@ set showmode
 set laststatus=1
 
 
-" Display line number
-"   reference: http://vim.wikia.com/wiki/Display_line_numbers
+" @reference    Display line number
+"               https://vim.fandom.com/wiki/Display_line_numbers
 "
 " Show the absolute number on the cursor line and relative numbers everywhere else
 set number
@@ -95,8 +104,8 @@ set nolist
 set history=10000
 
 
-"
-"   reference: http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
+" @reference    Great wildmode/wildmenu and console mouse
+"               https://vim.fandom.com/wiki/Great_wildmode/wildmenu_and_console_mouse
 "
 " Show auto-complete menus in the command line via tab.
 set wildmenu
@@ -106,16 +115,18 @@ set mouse=a
 
 
 " Auto-completion
+"
 " Spell check
 set spell spelllang=en_us
+" @reference    Dictionary completions
+"               https://vim.fandom.com/wiki/Dictionary_completions
+"
 " Enable Dictionary Completion
-"   reference: http://vim.wikia.com/wiki/Dictionary_completions
-"
 set dictionary+=/usr/share/dict/words
-" Remove included files from completion
-"   reference:
-"   https://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
+" @reference    Vim's autocomplete is excruciatingly slow
+"               https://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
 "
+" Remove included files from completion
 set complete-=i
 " Explicit default completeopt without longest.
 set completeopt=menu,preview
@@ -137,6 +148,7 @@ endif
 
 
 " Easy Compile
+"
 " Auto-compile and run
 autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
 autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 && ./'.shellescape('%:r')<CR>
@@ -145,18 +157,21 @@ autocmd filetype c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.s
 autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
 
 
+" @reference    Insert in normal mode
+"               https://vim.fandom.com/wiki/Insert_in_normal_mode
+"
 " Map the <space> key to insert a space after the cursor in normal mode
-"   reference: http://vim.wikia.com/wiki/Insert_in_normal_mode
 nnoremap <space> a<space><ESC>
 
 
 " Tabs
+"
+" @reference    Using tab pages
+"               https://vim.fandom.com/wiki/Using_tab_pages
+"
 " tabfind: look in the directory containing the current file (.),
 "   then the current directory (empty text between two commas),
 "   then each directory under the current directory ('**').
-"
-"   reference: http://vim.wikia.com/wiki/Using_tab_pages
-"
 set path=.,,**
 " Always show tab line
 set showtabline=2
@@ -166,14 +181,15 @@ set showtabline=2
 "
 " cscope
 "
-" This tests to see if vim was configured with the '--enable-cscope' option
-"   reference: http://cscope.sourceforge.net/cscope_maps.vim
+" @reference    CSCOPE settings for vim
+"               http://cscope.sourceforge.net/cscope_maps.vim
 "
+" This tests to see if vim was configured with the '--enable-cscope' option
 if has("cscope")
-    " Disable cscope error message for adding a database
-    "   reference:
-    "   http://thoughtsolo.blogspot.com/2014/02/cscope-issue-duplicate-cscope-database.html
+    " @reference    Cscope Issue: duplicate cscope database not added
+    "               http://thoughtsolo.blogspot.com/2014/02/cscope-issue-duplicate-cscope-database.html
     "
+    " Disable cscope error message for adding a database
     set nocscopeverbose
 
     " Use only ctag for 'ctrl-]', ':tag', and 'vim -t'
@@ -191,13 +207,24 @@ if has("cscope")
 endif
 
 
-" Project Specific .vimrc Files
-"   reference: https://andrew.stwrt.ca/posts/project-specific-vimrc/
+" netrw
+"
+" @reference    Vim: you don't need NERDtree or (maybe) netrw
+"               https://shapeshed.com/vim-netrw/
+"
+" Tree style view
+let g:netrw_liststyle = 3
+" To remove directory banner
+let g:netrw_banner = 0
+
+
+" @reference    Project Specific .vimrc Files
+"               https://andrew.stwrt.ca/posts/project-specific-vimrc/
 "
 " To enable per-project configuration files.
 set exrc
 " To disable unsafe commands in your project-specific .vimrc files
 " This will prevent :autocmd, shell and write commands from being run inside
 " project-specific .vimrc files unless they’re owned by you.
-" NOTE: This line should be kept at the end
+" Note: This line should be kept at the end
 set secure

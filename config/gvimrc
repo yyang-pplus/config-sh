@@ -2,14 +2,14 @@
 set background=light
 
 "
-" reference: http://vim.wikia.com/wiki/Hide_toolbar_or_menus_to_see_more_text
-"
+" @reference    Hide toolbar or menus to see more text
+"               https://vim.fandom.com/wiki/Hide_toolbar_or_menus_to_see_more_text
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 
-"
-" Show tab number in your tab line
-"   reference: http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line
+
+" @reference    Show tab number in your tab line
+"               https://vim.fandom.com/wiki/Show_tab_number_in_your_tab_line
 "
 " set up tab labels with tab number, buffer name, number of windows
 function! GuiTabLabel()
@@ -43,6 +43,7 @@ function! GuiTabLabel()
     return label . '  [' . wincount . ']'
 endfunction
 set guitablabel=%{GuiTabLabel()}
+
 
 " set up tab tooltips with every buffer name
 function! GuiTabToolTip()
