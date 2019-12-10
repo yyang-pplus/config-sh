@@ -96,6 +96,13 @@ set number
 set relativenumber
 
 
+" @reference    Soft wrapping text
+"               http://vimcasts.org/episodes/soft-wrapping-text/
+"
+" Wrap long lines to fit in the window
+set wrap
+" Preserve words
+set linebreak
 " Explicit nolist, no show space characters, at startup.
 set nolist
 
