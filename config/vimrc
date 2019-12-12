@@ -240,3 +240,10 @@ set exrc
 " project-specific .vimrc files unless they’re owned by you.
 " Note: This line should be kept at the end
 set secure
+
+
+" @reference    Local .vimrc files
+"               https://sanctum.geek.nz/arabesque/local-vimrc-files/
+if filereadable(glob("~/.vimrc.local")) 
+    source ~/.vimrc.local
+endif
