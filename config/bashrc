@@ -1,3 +1,8 @@
+# Load local bashrc if there is any
+if [ -f ~/.bashrc.local ]; then
+    source ~/.bashrc.local
+fi
+
 # Git autocomplete
 if [ -f ~/.git-completion.sh ]; then
     source ~/.git-completion.sh
