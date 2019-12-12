@@ -3,6 +3,11 @@
 set nocompatible
 
 
+" @reference    Special characters in Vim
+"               https://sanctum.geek.nz/arabesque/special-characters-in-vim/
+set encoding=utf-8
+
+
 " @reference    Modeline magic
 "               https://vim.fandom.com/wiki/Modeline_magic
 "
