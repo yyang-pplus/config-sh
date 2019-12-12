@@ -45,6 +45,6 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
         cp "$home_config" "$backup"
     fi
 
-    #Append common configuration files to the existing ones
-    cat "$new_config" >> "$home_config"
+    rm -r "$home_config"
+    ln -s "$(pwd)/$new_config" "$home_config"
 done
