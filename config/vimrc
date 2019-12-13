@@ -135,11 +135,22 @@ set spell spelllang=en_us
 "
 " Enable Dictionary Completion
 set dictionary+=/usr/share/dict/words
+
 " @reference    Vim's autocomplete is excruciatingly slow
 "               https://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
 "
 " Remove included files from completion
 set complete-=i
+
+" @reference    Omni completion
+"               https://vim.fandom.com/wiki/Omni_completion
+" Set default Omni Completion to use the C completion
+set omnifunc=syntaxcomplete#Complete
+" @reference    C++ code completion
+"               https://vim.fandom.com/wiki/C%2B%2B_code_completion
+" Automatically open and close the popup menu / preview window
+autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
 " Explicit default completeopt without longest.
 set completeopt=menu,preview
 
