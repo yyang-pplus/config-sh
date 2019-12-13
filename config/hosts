@@ -1,0 +1,4 @@
+$include /etc/hosts
+
+# A way to add local extensions to the common configuration
+$include /etc/hosts.local
