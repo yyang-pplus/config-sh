@@ -3,6 +3,16 @@ if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
 fi
 
+
+# @reference    Bash hostname completion
+#               https://sanctum.geek.nz/arabesque/bash-hostname-completion/
+# Use a private mock hosts(5) file for completion
+HOSTFILE=$HOME/.hosts
+# Set hostname completion as the default method for all sorts of network-poking tools,
+# falling back on the usual filename completion if nothing matches with -o default
+complete -A hostname -o default curl dig host netcat ping telnet
+
+
 # Git autocomplete
 if [ -f ~/.git-completion.sh ]; then
     source ~/.git-completion.sh
@@ -27,8 +37,10 @@ test -n "$VIMRUNTIME" && PS1="$PS1_PREFIX\e[30m(vim)\e[0m$ "
 export EDITOR=vim
 export VISUAL=vim
 
+
 # The default text file viewer for programs such as man.
 export PAGER=less
+
 
 # Enable ccache
 if which ccache &> /dev/null; then
@@ -36,10 +48,12 @@ if which ccache &> /dev/null; then
     export CXX="ccache g++"
 fi
 
+
 # Enable distcc
 #if which distcc &> /dev/null; then
 #    export CCACHE_PREFIX="distcc"
 #fi
+
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
@@ -49,8 +63,10 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=15000
 
+
 # This will correct minor spelling errors in a cd command
 shopt -s cdspell
+
 
 # Covert the debug print of a protobuf string field to hex
 #   Example:
@@ -63,6 +79,7 @@ else
         echo -ne $(echo $1 | sed -E 's/\\([0-9]{3})/\\0\1/g') | od -A n -t x1
     }
 fi
+
 
 # Convert date to UTC
 # Example:
@@ -91,6 +108,7 @@ else
         fi
     }
 fi
+
 
 # alias
 if alias grep &> /dev/null; then
