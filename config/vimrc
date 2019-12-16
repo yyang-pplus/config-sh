@@ -119,9 +119,22 @@ set history=10000
 " @reference    Great wildmode/wildmenu and console mouse
 "               https://vim.fandom.com/wiki/Great_wildmode/wildmenu_and_console_mouse
 "
-" Show auto-complete menus in the command line via tab.
-set wildmenu
-set wildmode=longest:full,full
+if has("wildmenu")
+    " Show auto-complete menus in the command line via tab.
+    set wildmenu
+    set wildmode=longest:full,full
+    " @reference    Vim filename completion
+    "               https://sanctum.geek.nz/arabesque/vim-filename-completion/
+    " Ignore certain filetypes
+    " C/C++ binary files
+    set wildignore+=*.a,*.o
+    " Python binary files
+    set wildignore+=*.pyc
+    " Image files
+    set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+    " Temp files
+    set wildignore+=*~,*.swp,*.tmp
+endif
 " Enable full mouse support in the console.
 set mouse=a
 
