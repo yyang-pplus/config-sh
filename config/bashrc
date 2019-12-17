@@ -42,6 +42,12 @@ export VISUAL=vim
 export PAGER=less
 
 
+# @reference    Terminal annoyances
+#               https://sanctum.geek.nz/arabesque/terminal-annoyances/
+# Turn flow control off completely
+stty -ixon
+
+
 # Enable ccache
 if which ccache &> /dev/null; then
     export CC="ccache gcc"
