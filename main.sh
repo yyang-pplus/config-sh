@@ -43,8 +43,8 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
     if [ -f "$home_config" ]; then
         echo "Backup existing configuration file to: $backup"
         cp "$home_config" "$backup"
+        rm -r "$home_config"
     fi
 
-    rm -r "$home_config"
     ln -s "$(pwd)/$new_config" "$home_config"
 done
