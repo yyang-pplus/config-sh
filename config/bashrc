@@ -117,8 +117,4 @@ fi
 
 
 # alias
-if alias grep &> /dev/null; then
-    echo "ERROR: alias name already taken: grep" 1>&2
-else
-    alias grep='grep --line-number --color=auto'
-fi
+alias grep='grep --line-number --color=auto'
