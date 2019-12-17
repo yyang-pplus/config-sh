@@ -35,6 +35,11 @@ popd
 
 
 mkdir -p "$BACKUP_DIR"
+
+alias_backup=$BACKUP_DIR/.alias
+echo "Backup existing alias to: $alias_backup"
+alias &> "$alias_backup"
+
 for config_name in "${SUPPORT_CONFIGS[@]}"; do
     home_config=$HOME/.$config_name
     backup=$BACKUP_DIR/.$config_name
