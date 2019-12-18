@@ -54,7 +54,7 @@ set backspace=indent,eol,start
 "               https://vim.fandom.com/wiki/Disable_automatic_comment_insertion
 "
 " Disable automatic comment insertion for C/C++ single-line comments
-au FileType c,cpp setlocal comments-=:// comments+=f://
+autocmd FileType c,cpp setlocal comments-=:// comments+=f://
 
 
 " Search
@@ -186,11 +186,11 @@ endif
 " Easy Compile
 "
 " Auto-compile and run
-autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
-autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 && ./'.shellescape('%:r')<CR>
-autocmd filetype c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
+autocmd FileType python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
+autocmd FileType c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 && ./'.shellescape('%:r')<CR>
+autocmd FileType cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 && ./'.shellescape('%:r')<CR>
+autocmd FileType c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
+autocmd FileType cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
 
 
 " @reference    Insert in normal mode
