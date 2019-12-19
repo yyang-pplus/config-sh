@@ -44,8 +44,10 @@ export PAGER=less
 
 # @reference    Terminal annoyances
 #               https://sanctum.geek.nz/arabesque/terminal-annoyances/
+# @reference    Getting stty: standard input: Inappropriate ioctl for device when using scp through an ssh tunnel
+#               https://stackoverflow.com/questions/24623021/getting-stty-standard-input-inappropriate-ioctl-for-device-when-using-scp-thro
 # Turn flow control off completely
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
 
 
 # Enable ccache
