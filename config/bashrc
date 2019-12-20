@@ -13,6 +13,12 @@ HOSTFILE=$HOME/.hosts
 complete -A hostname -o default curl dig host netcat ping telnet
 
 
+# @reference    bash 4.2 $variable expansion bug
+#               https://nelsonslog.wordpress.com/2012/01/29/bash-4-2-variable-expansion-bug/
+# To make Bash replaces directory names with the results of word expansion when performing filename completion.
+shopt -s direxpand
+
+
 # Git autocomplete
 if [ -f ~/.git-completion.sh ]; then
     source ~/.git-completion.sh
