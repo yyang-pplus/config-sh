@@ -80,6 +80,8 @@ HISTFILESIZE=15000
 
 # This will correct minor spelling errors in a cd command
 shopt -s cdspell
+# If set, Bash attempts spelling correction on directory names during word completion if the directory name initially supplied does not exist.
+shopt -s dirspell
 
 
 # Covert the debug print of a protobuf string field to hex
