@@ -91,6 +91,10 @@ shopt -s dirspell
 #               https://pipenv-fork.readthedocs.io/en/latest/install.html
 # To create the virtualenv inside your project’s directory
 export PIPENV_VENV_IN_PROJECT=1
+# @reference    Advanced Usage of Pipenv
+#               https://pipenv-fork.readthedocs.io/en/latest/advanced.html
+# Shell Completion
+eval "$(pipenv --completion)"
 
 
 # Covert the debug print of a protobuf string field to hex
