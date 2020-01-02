@@ -84,6 +84,15 @@ shopt -s cdspell
 shopt -s dirspell
 
 
+# Python
+#
+# pipenv
+# @reference    Pipenv & Virtual Environments
+#               https://pipenv-fork.readthedocs.io/en/latest/install.html
+# To create the virtualenv inside your project’s directory
+export PIPENV_VENV_IN_PROJECT=1
+
+
 # Covert the debug print of a protobuf string field to hex
 #   Example:
 #       $ to_hex ']\370\032-h\026\000'
