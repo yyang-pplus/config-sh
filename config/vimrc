@@ -57,6 +57,22 @@ set backspace=indent,eol,start
 autocmd FileType c,cpp setlocal comments-=:// comments+=f://
 
 
+" Highlight Groups
+" @reference    Highlight unwanted spaces
+"               https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+" Note: Future colorscheme commands may clear all user-defined highlight groups.
+highlight ExtraWhitespace ctermbg=red guibg=red
+
+
+" @reference    Highlight unwanted spaces
+"               https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+" Show trailing whitespace
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+
 " Search
 "
 " Explicit set magic to recognize special characters when pattern matching.
