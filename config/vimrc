@@ -274,7 +274,9 @@ let g:netrw_banner = 0
 "
 " @reference    Debugging in Vim
 "               https://www.dannyadam.com/blog/2019/05/debugging-in-vim/
-packadd termdebug
+if has("terminal")
+    packadd termdebug
+endif
 
 
 " @reference    Project Specific .vimrc Files
