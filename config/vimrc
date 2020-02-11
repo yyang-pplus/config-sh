@@ -270,11 +270,13 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
 
-" GDB
-"
-" @reference    Debugging in Vim
-"               https://www.dannyadam.com/blog/2019/05/debugging-in-vim/
 if has("terminal")
+    highlight Terminal ctermbg=DarkGray ctermfg=blue guibg=DarkGray guifg=blue
+
+    " GDB
+    "
+    " @reference    Debugging in Vim
+    "               https://www.dannyadam.com/blog/2019/05/debugging-in-vim/
     packadd termdebug
 endif
 
