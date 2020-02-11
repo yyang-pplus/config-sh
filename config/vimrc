@@ -17,6 +17,7 @@ set nomodeline
 
 " Enable file type detection
 filetype plugin on
+syntax on
 
 
 " Indentation
