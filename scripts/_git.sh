@@ -13,8 +13,8 @@ if which git &> /dev/null; then
     echo "Previous git settings:"
     git config --list
 
-    #git config --global user.name "YOUR NAME"
-    #git config --global user.email "YOUR EMAIL ADDRESS"
+    git config --global user.name "Yang Yang"
+    git config --global user.email "yyang.even@gmail.com"
 
     git config --global color.ui true
     git config --global core.autocrlf input
