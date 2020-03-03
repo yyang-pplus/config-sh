@@ -1,18 +1,13 @@
 #!/bin/bash
 
-#
-# This is the main interface. It does following works in order:
-#   1) Run selected scripts, which start with "_"
-#   2) Backup existing configuration files
-#   3) Append common configuration files to the existing ones
-#
+THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/scripts/util.sh"
 
-source scripts/util.sh
 
 # Don't run this script as sudo, as required by git.sh
 if [ "$EUID" -eq 0 ]; then
     Echo_Error "Error: Cannot run as root."
-    exit
+    exit 1
 fi
 
 
@@ -28,7 +23,7 @@ pushd $SCRIPT_DIR
     SELECTED_SCRIPTS=( $(ls _*) )
 
     for script in "${SELECTED_SCRIPTS[@]}"; do
-        echo "Running script: $script"
+        echo "\n\nRunning script: $script"
         ./$script
     done
 popd
@@ -37,7 +32,7 @@ popd
 mkdir -p "$BACKUP_DIR"
 
 alias_backup=$BACKUP_DIR/.alias
-echo "Backup existing alias to: $alias_backup"
+echo "\nBackup existing alias to: $alias_backup"
 alias &> "$alias_backup"
 
 for config_name in "${SUPPORT_CONFIGS[@]}"; do
@@ -46,7 +41,7 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
     new_config=$CONFIG_DIR/$config_name
 
     if [ -f "$home_config" ]; then
-        echo "Backup existing configuration file to: $backup"
+        echo "\nBackup existing configuration file to: $backup"
         cp "$home_config" "$backup"
         rm -r "$home_config"
     fi
