@@ -2,7 +2,9 @@
 
 # Don't run this script as sudo
 
-source util.sh
+THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/util.sh"
+
 
 #Install git
 Install_Package_If_Necessary git
@@ -28,10 +30,7 @@ if which git &> /dev/null; then
 
     pushd $HOME
         temp_dir=$(date +%s)
-        if ! mkdir $temp_dir; then
-            Echo_Error "Error: Failed to create temporary directory: " $temp_dir
-            exit 1
-        fi
+        mkdir $temp_dir
         pushd $temp_dir
             if ! git clone git://git.kernel.org/pub/scm/git/git.git; then
                 Echo_Error "Error: Failed to clone git source."

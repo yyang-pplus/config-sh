@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source util.sh
+THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/util.sh"
+
 
 REDHAT_PACKAGES_LIST="vim-X11 ctags"
 DEBIAN_PACKAGES_LIST="vim-gnome exuberant-ctags"
