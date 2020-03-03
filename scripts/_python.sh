@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source util.sh
+THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/util.sh"
+
 
 Install_Packages python3-pip
 
