@@ -16,7 +16,7 @@ Install_Packages() {
         if [ -f /etc/redhat-release ]; then
             sudo yum --assumeyes install $redhat_packages_list $@
         elif [ -f /etc/debian_version ]; then
-            sudo apt-get --yes install $debian_packages_list $@
+            sudo apt --yes install $debian_packages_list $@
         else
             Echo_Error "Error: Unsupported distribution"
             cat /etc/*-release
