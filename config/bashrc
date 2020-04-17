@@ -94,7 +94,9 @@ export PIPENV_VENV_IN_PROJECT=1
 # @reference    Advanced Usage of Pipenv
 #               https://pipenv-fork.readthedocs.io/en/latest/advanced.html
 # Shell Completion
-eval "$(pipenv --completion)"
+if which pipenv &> /dev/null; then
+    eval "$(pipenv --completion)"
+fi
 
 
 # Covert the debug print of a protobuf string field to hex
