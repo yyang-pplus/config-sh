@@ -10,7 +10,7 @@ SUPPORT_CONFIGS=( $(ls "$CONFIG_DIR") )
 mkdir -p "$BACKUP_DIR"
 
 alias_backup=$BACKUP_DIR/.alias
-echo "\nBackup existing alias to: $alias_backup"
+echo "Backup existing alias to: $alias_backup"
 alias &> "$alias_backup"
 
 for config_name in "${SUPPORT_CONFIGS[@]}"; do
@@ -20,7 +20,7 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
 
     if [ -f "$home_config" ]; then
         if [ ! -L "$home_config" ]; then
-            echo "\nBackup existing configuration file to: $backup"
+            echo "Backup existing configuration file to: $backup"
             cp "$home_config" "$backup"
         fi
 

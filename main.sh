@@ -20,9 +20,10 @@ pushd $SCRIPT_DIR
     SELECTED_SCRIPTS=( $(ls _*) )
 
     for script in "${SELECTED_SCRIPTS[@]}"; do
-        echo "\n\nRunning script: $script"
+        printf "\n\nRunning script: $script\n"
         ./$script
     done
 
+    printf "\n\n"
     ./config.sh
 popd
