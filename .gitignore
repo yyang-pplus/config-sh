@@ -27,9 +27,6 @@
 *.out
 *.app
 
-# Temp Files
-*.swp
-
 # Build Directory
 build/
 debug/

@@ -19,13 +19,19 @@ if which git &> /dev/null; then
     git config --global user.email "yyang.even@gmail.com"
 
     git config --global color.ui true
+
     git config --global core.autocrlf input
     git config --global core.editor vim
+    git config --global core.excludesfile ~/.gitignore
+
     git config --global diff.tool meld
     git config --global diff.guitool meld
     git config --global difftool.prompt false
+
     git config --global fetch.prune true
+
     git config --global grep.lineNumber true
+
     git config --global push.default current    #Other options are not available for versions below 2.0
 
     pushd $HOME
