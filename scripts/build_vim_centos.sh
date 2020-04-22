@@ -1,9 +1,8 @@
 #!/bin/bash
 
-echo "Usage: $(basename $0) [vim_root_dir]"
+echo "Usage: $(basename $0) [<vim_root_dir>]"
 
-WORKING_DIR=$(pwd)
-VIM_ROOT_DIR=$WORKING_DIR
+VIM_ROOT_DIR=$(pwd)
 
 # Use the first command argument if possible,
 # Use current working directory otherwise
