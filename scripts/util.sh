@@ -1,6 +1,5 @@
-Echo_Error() {
-    cat <<< "$@" 1>&2;
-}
+source ~/.bash_util.sh
+
 
 # Install the given packages base on OS
 #   @param  $@  Common packages list
@@ -23,6 +22,7 @@ Install_Packages() {
     fi
     return $?
 }
+
 
 Install_Package_If_Necessary() {
     if ! which "$1" 2> /dev/null; then

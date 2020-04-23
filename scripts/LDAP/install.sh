@@ -5,8 +5,7 @@
 #   and also enable it to be automatically started at boot time.
 
 
-THIS_DIR=$(dirname "$0")
-source $THIS_DIR/../util.sh
+source ~/.bash_util.sh
 echo "Running:" $(basename "$0")
 
 
