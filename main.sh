@@ -1,7 +1,6 @@
 #!/bin/bash
 
-THIS_DIR=$(dirname "$0")
-source "$THIS_DIR/scripts/util.sh"
+source ~/.bash_util.sh
 
 
 # Don't run this script as sudo, as required by git.sh
@@ -11,6 +10,7 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 
+THIS_DIR=$(dirname "$0")
 MAIN_DIR=$THIS_DIR
 SCRIPT_DIR=$MAIN_DIR/scripts
 
