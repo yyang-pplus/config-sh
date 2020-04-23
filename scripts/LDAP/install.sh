@@ -26,11 +26,11 @@ sudo yum -y install openldap-servers openldap-clients
 #               https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-managing_services_with_systemd-services
 #
 if which systemctl &> /dev/null; then
-    Log_Run sudo systemctl enable slapd
-    Log_Run sudo systemctl start slapd
+    LogAndRun sudo systemctl enable slapd
+    LogAndRun sudo systemctl start slapd
     sudo systemctl status slapd
 else
-    Log_Run sudo chkconfig slapd on
+    LogAndRun sudo chkconfig slapd on
     sudo chkconfig --list slapd
 
     sudo service slapd start
