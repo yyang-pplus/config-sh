@@ -10,8 +10,8 @@ Assert() {
 }
 
 
-Echo_Error() {
-    cat <<< "$@" 1>&2;
+Error() {
+    cat <<< "Error: $@" 1>&2;
 }
 
 

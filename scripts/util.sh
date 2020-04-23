@@ -12,12 +12,12 @@ Install_Packages() {
         elif [ -f /etc/debian_version ]; then
             sudo apt --yes install $debian_packages_list $@
         else
-            Echo_Error "Error: Unsupported distribution"
+            Error "Unsupported distribution"
             cat /etc/*-release
             return 1
         fi
     else
-        Echo_Error "Error: Unsupported OS: " $operating_system
+        Error "Unsupported OS: " $operating_system
         return 1
     fi
     return $?
