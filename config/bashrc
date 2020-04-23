@@ -4,12 +4,6 @@ if [ -f ~/.bashrc.local ]; then
 fi
 
 
-# Global utilities
-if [ -f ~/.bash_util.sh ]; then
-    source ~/.bash_util.sh
-fi
-
-
 # @reference    Bash hostname completion
 #               https://sanctum.geek.nz/arabesque/bash-hostname-completion/
 # Use a private mock hosts(5) file for completion
