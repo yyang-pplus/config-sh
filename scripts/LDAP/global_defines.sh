@@ -10,5 +10,7 @@ NUMBER_MODULE_CONFIG=$(grep --count "^dn:" <<< "$MODULE_CONFIG_DN")
 
 
 DN_Insert_Front() {
-    sed -e "s/dn: /dn: $1,/" <<< $2
+    local COMPONENT="$1"
+    local DN="$2"
+    sed -e "s/dn: /dn: $COMPONENT,/" <<< $DN
 }
