@@ -5,8 +5,7 @@ source ~/.bash_util.sh
 
 # Don't run this script as sudo, as required by git.sh
 if [ "$EUID" -eq 0 ]; then
-    Error "Cannot run as root."
-    exit 1
+    Fatal "Cannot run as root."
 fi
 
 

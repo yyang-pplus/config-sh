@@ -22,7 +22,7 @@ if [ $(wc -l <<< "$installer_path") -eq 1 ]; then
     echo "Running installer '$installer_path'"
     sudo sh "$installer_path"
 else
-    Error "Installer not found."
+    Fatal "Installer not found."
 fi
 
 #sudo shutdown -r now
