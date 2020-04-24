@@ -5,8 +5,8 @@ source ~/.bash_util.sh
 #   @param  $@  Common packages list
 #   See vim.sh for a complete example
 Install_Packages() {
-    operating_system=$(uname)
-    if [ $operating_system == "Linux" ]; then
+    local OPERATING_SYSTEM=$(uname)
+    if [ $OPERATING_SYSTEM == "Linux" ]; then
         if [ -f /etc/redhat-release ]; then
             sudo yum --assumeyes install $redhat_packages_list $@
         elif [ -f /etc/debian_version ]; then
@@ -17,7 +17,7 @@ Install_Packages() {
             return 1
         fi
     else
-        Error "Unsupported OS: " $operating_system
+        Error "Unsupported OS: " $OPERATING_SYSTEM
         return 1
     fi
     return $?
@@ -25,7 +25,8 @@ Install_Packages() {
 
 
 Install_Package_If_Necessary() {
-    if ! which "$1" 2> /dev/null; then
-        Install_Packages "$1"
+    local PACKAGE="$1"
+    if ! which "$PACKAGE" 2> /dev/null; then
+        Install_Packages "$PACKAGE"
     fi
 }
