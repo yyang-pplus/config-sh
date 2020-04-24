@@ -4,7 +4,7 @@
 
 
 Assert() {
-    if [ ! $@ ]; then
+    if ! "$@" ; then
         exit 1
     fi
 }
@@ -12,6 +12,12 @@ Assert() {
 
 Error() {
     cat <<< "Error: $@" 1>&2;
+}
+
+
+Fatal() {
+    Error "$@"
+    exit 1
 }
 
 

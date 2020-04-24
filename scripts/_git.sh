@@ -44,8 +44,7 @@ if which git &> /dev/null; then
         mkdir $temp_dir
         pushd $temp_dir
             if ! git clone git://git.kernel.org/pub/scm/git/git.git; then
-                Error "Failed to clone git source."
-                exit 1
+                Fatal "Failed to clone git source."
             fi
         popd
         # Copy git auto completion script
