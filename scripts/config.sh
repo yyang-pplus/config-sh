@@ -2,7 +2,7 @@
 
 THIS_DIR=$(dirname "$0")
 
-CONFIG_DIR=$THIS_DIR/../config
+CONFIG_DIR=$(readlink --canonicalize "$THIS_DIR/../config")
 BACKUP_DIR=$HOME/$(date +%s)
 SUPPORT_CONFIGS=( $(ls "$CONFIG_DIR") )
 
@@ -23,9 +23,7 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
             echo "Backup existing configuration file to: $backup"
             cp "$home_config" "$backup"
         fi
-
-        rm -r "$home_config"
     fi
 
-    ln -s "$(pwd)/$new_config" "$home_config"
+    ln --symbolic --force "$new_config" "$home_config"
 done
