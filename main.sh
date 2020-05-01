@@ -14,7 +14,7 @@ SCRIPT_DIR=$MAIN_DIR/scripts
 
 
 # Run selected scripts
-pushd $SCRIPT_DIR
+QuietRun pushd $SCRIPT_DIR
     SELECTED_SCRIPTS=( $(ls _*) )
 
     for script in "${SELECTED_SCRIPTS[@]}"; do
@@ -24,4 +24,4 @@ pushd $SCRIPT_DIR
 
     printf "\n\n"
     ./config.sh
-popd
+QuietRun popd

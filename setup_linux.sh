@@ -40,7 +40,7 @@ mkdir "$PROJECTS_DIR"
 
 
 pushd "$PROJECTS_DIR"
-    ACTIVE_PROJECTS=(yyLinuxConfig algorithms yyangtech_wordpress_com)
+    ACTIVE_PROJECTS=(yyLinuxConfig yyLinuxScripts algorithms yyangtech_wordpress_com)
     for a_project in ${ACTIVE_PROJECTS[@]}; do
         printf "\nDownloading project $a_project\n"
         git clone "ssh://yyang-even@review.gerrithub.io:29418/yyang-even/$a_project" && scp -p -P 29418 yyang-even@review.gerrithub.io:hooks/commit-msg "$a_project/.git/hooks/"
