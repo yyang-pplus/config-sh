@@ -3,20 +3,6 @@
 ##
 
 
-Assert() {
-    if ! "$@" ; then
-        exit 1
-    fi
-}
-
-
-AssertNot() {
-    if "$@" ; then
-        exit 1
-    fi
-}
-
-
 Error() {
     cat <<< "Error: $@" 1>&2;
 }
