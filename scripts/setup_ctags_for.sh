@@ -1,7 +1,9 @@
 #!/bin/bash
 
-WORKING_DIR=$(pwd)
-PROJECT_ROOT_DIR=$WORKING_DIR
+source ~/.bash_util.sh
+
+
+PROJECT_ROOT_DIR=$(pwd)
 
 # Use the first command argument if possible,
 # Use current working directory otherwise
@@ -15,6 +17,6 @@ echo "Building ctags database for \""$PROJECT_ROOT_DIR"\"."
 
 #Build ctags database
 #   reference: https://www.topbug.net/blog/2012/03/17/generate-ctags-files-for-c-slash-c-plus-plus-source-files-and-all-of-their-included-header-files/
-pushd "$PROJECT_ROOT_DIR"
-ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .
-popd
+QuietRun pushd "$PROJECT_ROOT_DIR"
+    ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .
+QuietRun popd
