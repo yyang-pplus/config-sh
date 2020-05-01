@@ -9,8 +9,7 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 
-THIS_DIR=$(dirname "$0")
-MAIN_DIR=$THIS_DIR
+MAIN_DIR=$(dirname "$0")
 SCRIPT_DIR=$MAIN_DIR/scripts
 
 
