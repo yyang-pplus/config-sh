@@ -9,6 +9,8 @@ source ~/.bash_util.sh
 echo "Running:" $(basename "$0")
 
 
+set -ex
+
 sudo yum -y install openldap-servers openldap-clients
 
 # Previous versions of Red Hat Enterprise Linux, which were distributed with
@@ -25,11 +27,11 @@ sudo yum -y install openldap-servers openldap-clients
 #               https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-managing_services_with_systemd-services
 #
 if which systemctl &> /dev/null; then
-    LogAndRun sudo systemctl enable slapd
-    LogAndRun sudo systemctl start slapd
+    sudo systemctl enable slapd
+    sudo systemctl start slapd
     sudo systemctl status slapd
 else
-    LogAndRun sudo chkconfig slapd on
+    sudo chkconfig slapd on
     sudo chkconfig --list slapd
 
     sudo service slapd start
