@@ -99,6 +99,10 @@ if which pipenv &> /dev/null; then
 fi
 
 
+# .NET
+PATH=$PATH:$HOME/.dotnet
+
+
 # Covert the debug print of a protobuf string field to hex
 #   Example:
 #       $ to_hex ']\370\032-h\026\000'
