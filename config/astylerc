@@ -6,7 +6,7 @@
 #   $ sudo apt-get install astyle
 #
 # To run:
-#   $ astyle --options="scripts/astyle.rc" "*.cpp, *.h, *.cs"
+#   $ astyle "*.c, *.cpp, *.h, *.hpp, *.cs"
 ##
 
 # Bracket Style
