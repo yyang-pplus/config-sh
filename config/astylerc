@@ -1,0 +1,65 @@
+##
+# @reference    Artistic Style
+#               http://astyle.sourceforge.net/astyle.html for more details
+#
+# To install:
+#   $ sudo apt-get install astyle
+#
+# To run:
+#   $ astyle --options="scripts/astyle.rc" "*.cpp, *.h, *.cs"
+##
+
+# Bracket Style
+--style=java
+
+# Tab Options(Also this is the default)
+--indent=spaces=4
+
+# Brace Modify Options
+--attach-namespaces
+--attach-classes
+--attach-inlines
+--attach-extern-c
+--attach-closing-while
+
+# Indentation Options
+--indent-switches
+--indent-labels
+#--indent-preproc-define
+--indent-col1-comments
+--min-conditional-indent=0
+--max-continuation-indent=60
+
+# Padding Options
+--pad-oper
+--pad-header
+--pad-comma
+--pad-header
+--unpad-paren
+--align-pointer=name
+--align-reference=name
+
+# Formatting Options
+--break-one-line-headers
+--add-brackets
+#--attach-return-type
+#--attach-return-type-decl
+--convert-tabs
+--close-templates
+--max-code-length=100
+--break-after-logical
+
+# Do not retain a backup of the original file. The original file is purged after it is formatted.
+--suffix=none
+
+--recursive
+
+--ignore-exclude-errors-x
+
+# Display only the files that have been formatted.
+--formatted
+
+--lineend=linux
+
+--exclude=build
+--exclude=3rdParty
