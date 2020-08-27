@@ -1,0 +1,3 @@
+[submodule "config/vim/pack/plugins/start/omnisharp-vim"]
+	path = config/vim/pack/plugins/start/omnisharp-vim
+	url = git://github.com/OmniSharp/omnisharp-vim
