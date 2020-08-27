@@ -18,10 +18,10 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
     backup=$BACKUP_DIR/.$config_name
     new_config=$CONFIG_DIR/$config_name
 
-    if [ -f "$home_config" ]; then
+    if [ -e "$home_config" ]; then
         if [ ! -L "$home_config" ]; then
             echo "Backup existing configuration file to: $backup"
-            cp "$home_config" "$backup"
+            cp -r "$home_config" "$backup"
         fi
     fi
 
