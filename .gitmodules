@@ -1,3 +1,6 @@
 [submodule "config/vim/pack/plugins/start/omnisharp-vim"]
 	path = config/vim/pack/plugins/start/omnisharp-vim
 	url = git://github.com/OmniSharp/omnisharp-vim
+[submodule "config/vim/pack/plugins/start/vim-compiler-plugin-for-dotnet"]
+	path = config/vim/pack/plugins/start/vim-compiler-plugin-for-dotnet
+	url = https://github.com/tmadsen/vim-compiler-plugin-for-dotnet.git
