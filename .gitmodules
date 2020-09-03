@@ -4,3 +4,6 @@
 [submodule "config/vim/pack/plugins/start/vim-compiler-plugin-for-dotnet"]
 	path = config/vim/pack/plugins/start/vim-compiler-plugin-for-dotnet
 	url = https://github.com/tmadsen/vim-compiler-plugin-for-dotnet.git
+[submodule "config/vim/pack/plugins/start/vim-dispatch"]
+	path = config/vim/pack/plugins/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
