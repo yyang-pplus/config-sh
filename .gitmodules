@@ -7,3 +7,6 @@
 [submodule "config/vim/pack/plugins/start/vim-dispatch"]
 	path = config/vim/pack/plugins/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
+[submodule "config/vim/pack/plugins/start/jedi-vim"]
+	path = config/vim/pack/plugins/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim
