@@ -21,9 +21,9 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
     if [ -e "$home_config" ]; then
         if [ ! -L "$home_config" ]; then
             echo "Backup existing configuration file to: $backup"
-            cp -r "$home_config" "$backup"
+            mv "$home_config" "$backup"
         fi
     fi
 
-    ln --symbolic --force "$new_config" "$home_config"
+    ln --symbolic --force --no-target-directory "$new_config" "$home_config"
 done
