@@ -6,7 +6,7 @@
 #   $ sudo apt-get install astyle
 #
 # To run:
-#   $ astyle "*.c, *.cpp, *.h, *.hpp, *.cs"
+#   $ astyle --recursive "*.c, *.cpp, *.h, *.hpp, *.cs"
 ##
 
 # Bracket Style
@@ -52,7 +52,8 @@
 # Do not retain a backup of the original file. The original file is purged after it is formatted.
 --suffix=none
 
---recursive
+# Do not set --recursive in the global config file.
+#--recursive
 
 --ignore-exclude-errors-x
 
