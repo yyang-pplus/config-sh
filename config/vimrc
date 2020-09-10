@@ -271,6 +271,11 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
 
+" vim-test
+" make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
+
+
 if has("terminal")
     highlight Terminal ctermbg=DarkGray ctermfg=blue guibg=DarkGray guifg=blue
 
