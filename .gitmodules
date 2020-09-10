@@ -10,3 +10,6 @@
 [submodule "config/vim/pack/plugins/start/jedi-vim"]
 	path = config/vim/pack/plugins/start/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
+[submodule "config/vim/pack/plugins/start/vim-test"]
+	path = config/vim/pack/plugins/start/vim-test
+	url = https://github.com/vim-test/vim-test
