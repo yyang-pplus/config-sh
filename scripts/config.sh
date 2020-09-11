@@ -4,8 +4,7 @@ THIS_DIR=$(dirname "$0")
 
 CONFIG_DIR=$(readlink --canonicalize "$THIS_DIR/../config")
 BACKUP_DIR=$HOME/$(date +%s)
-SUPPORT_CONFIGS=( $(ls "$CONFIG_DIR") )
-
+SUPPORT_CONFIGS=($(ls "$CONFIG_DIR"))
 
 mkdir -p "$BACKUP_DIR"
 

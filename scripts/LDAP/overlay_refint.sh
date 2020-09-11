@@ -9,11 +9,10 @@ echo "Running:" $(basename "$0")
 OVERLAY_REFINT_DN=$(DN_Insert_Front "olcOverlay=refint" "$DB_DN")
 NUMBER_REFINT_CONFIG=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcRefintConfig" dn | grep --count "^dn:")
 
-
 # Only enable refint, if it is not already enabled
 if [ "$NUMBER_REFINT_CONFIG" -eq 0 ]; then
 
-sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q -c <<EOF
+    sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q -c << EOF
 $MODULE_CONFIG_DN
 changetype: modify
 add: olcmoduleload

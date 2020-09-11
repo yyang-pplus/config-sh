@@ -4,10 +4,8 @@
 # This script installs the OpenLDAP packages, starts the OpenLDAP Server Daemon
 #   and also enable it to be automatically started at boot time.
 
-
 source ~/.bash_util.sh
 echo "Running:" $(basename "$0")
-
 
 set -ex
 

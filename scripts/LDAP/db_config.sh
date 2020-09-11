@@ -8,7 +8,6 @@ THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/global_defines.sh"
 echo "Running:" $(basename "$0")
 
-
 PASSWORD=$(slappasswd -h {SSHA})
 if [ $? -ne 0 ]; then
     exit 1
@@ -17,7 +16,7 @@ fi
 # echo the config before change
 sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" olcSuffix olcRootDN olcRootPW -LLL -Q
 
-sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q <<EOF
+sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q << EOF
 $DB_DN
 changetype: modify
 replace: olcSuffix
@@ -36,7 +35,6 @@ EOF
 
 # echo the config after change
 sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" olcSuffix olcRootDN olcRootPW -LLL -Q
-
 
 # Only enable module config, if it is not already enabled
 if [ "$NUMBER_MODULE_CONFIG" -eq 0 ]; then

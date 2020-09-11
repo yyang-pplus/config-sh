@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Note: Every group created before this module is enabled has to be deleted and
 #   remade in order for these changes to take effect.
 # @reference    How to enable MemberOf using OpenLDAP
@@ -20,11 +19,10 @@ echo "Running:" $(basename "$0")
 OVERLAY_MEMBEROF_DN=$(DN_Insert_Front "olcOverlay=memberof" "$DB_DN")
 NUMBER_MEMBEROF_CONFIG=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -LLL -Q "objectClass=olcMemberOf" dn | grep --count "^dn:")
 
-
 # Only enable memberof, if it is not already enabled
 if [ "$NUMBER_MEMBEROF_CONFIG" -eq 0 ]; then
 
-sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q -c <<EOF
+    sudo ldapmodify -Y EXTERNAL -H ldapi:// -Q -c << EOF
 $MODULE_CONFIG_DN
 changetype: modify
 add: olcmoduleload
