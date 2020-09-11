@@ -5,11 +5,6 @@
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
-# Install git
-Install_Package_If_Necessary git
-Install_Package_If_Necessary gitk
-Install_Package_If_Necessary meld
-
 if which git &> /dev/null; then
     echo "Previous git settings:"
     git config --list
