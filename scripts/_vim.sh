@@ -3,7 +3,6 @@
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
-
 REDHAT_PACKAGES_LIST="vim-X11 ctags"
 DEBIAN_PACKAGES_LIST="vim-gtk3 exuberant-ctags"
 COMMON_PACKAGES_LIST="cscope"

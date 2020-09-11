@@ -1,14 +1,11 @@
 #!/bin/bash
 
-
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
-
 
 echo "Fixing VM shared folder permission issue."
 sudo usermod -aG vboxsf $(whoami)
 sudo grep "vboxsf" /etc/group
-
 
 ##
 # @reference    How to Install VirtualBox Guest Additions on Ubuntu 18.04

@@ -6,7 +6,6 @@ source ~/.bash_util.sh
 
 THIS_DIR=$(dirname "$0")
 
-
 sudo apt install slapd ldap-utils libldap2-dev
 # Config DB
 sudo dpkg-reconfigure slapd

@@ -1,6 +1,5 @@
 source ~/.bash_util.sh
 
-
 # Install the given packages base on OS
 #   @param  $@  Common packages list
 #   See vim.sh for a complete example
@@ -22,7 +21,6 @@ Install_Packages() {
     fi
     return $?
 }
-
 
 Install_Package_If_Necessary() {
     local PACKAGE="$1"

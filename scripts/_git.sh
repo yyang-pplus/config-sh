@@ -5,7 +5,6 @@
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
-
 # Install git
 Install_Package_If_Necessary git
 Install_Package_If_Necessary gitk
@@ -40,18 +39,18 @@ if which git &> /dev/null; then
     git config --global push.default current
 
     pushd $HOME
-        temp_dir=$(date +%s)
-        mkdir $temp_dir
-        pushd $temp_dir
-            if ! git clone git://git.kernel.org/pub/scm/git/git.git; then
-                Fatal "Failed to clone git source."
-            fi
-        popd
-        # Copy git auto completion script
-        cp $temp_dir/git/contrib/completion/git-completion.bash $HOME/.git-completion.sh
-        # Copy git prompt script
-        cp $temp_dir/git/contrib/completion/git-prompt.sh $HOME/.git-prompt.sh
-        rm -rf "$temp_dir"
+    temp_dir=$(date +%s)
+    mkdir $temp_dir
+    pushd $temp_dir
+    if ! git clone git://git.kernel.org/pub/scm/git/git.git; then
+        Fatal "Failed to clone git source."
+    fi
+    popd
+    # Copy git auto completion script
+    cp $temp_dir/git/contrib/completion/git-completion.bash $HOME/.git-completion.sh
+    # Copy git prompt script
+    cp $temp_dir/git/contrib/completion/git-prompt.sh $HOME/.git-prompt.sh
+    rm -rf "$temp_dir"
     popd
 fi
 
