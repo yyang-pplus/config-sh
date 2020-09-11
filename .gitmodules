@@ -13,3 +13,6 @@
 [submodule "config/vim/pack/plugins/start/vim-test"]
 	path = config/vim/pack/plugins/start/vim-test
 	url = https://github.com/vim-test/vim-test
+[submodule "config/vim/pack/plugins/start/tcomment_vim"]
+	path = config/vim/pack/plugins/start/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
