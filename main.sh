@@ -9,6 +9,8 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
+set -e
+
 MAIN_DIR=$(dirname "$0")
 SCRIPT_DIR=$MAIN_DIR/scripts
 

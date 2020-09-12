@@ -7,7 +7,6 @@ distcc
 cmake
 cmake-gui
 
-git
 gitk
 meld
 

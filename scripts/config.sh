@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 THIS_DIR=$(dirname "$0")
 
 CONFIG_DIR=$(readlink --canonicalize "$THIS_DIR/../config")
