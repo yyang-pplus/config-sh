@@ -1,6 +1,6 @@
 language: minimal
 dist: focal
 os: linux
-install: .main.sh
+install: ./main.sh
 git:
     submodules: true
