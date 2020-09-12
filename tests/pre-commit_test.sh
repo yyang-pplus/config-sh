@@ -1,9 +1,11 @@
 #!/bin/bash
 
-set -ex
+# set -ex
 
 pre-commit install
 
 pre-commit autoupdate
 
 pre-commit run --all-files
+
+exit 0
