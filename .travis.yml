@@ -1,10 +1,11 @@
 language: minimal
 dist: focal
+os: linux
 addons:
   apt:
     sources:
       - sourceline: 'ppa:git-core/ppa'
-os: linux
-install: ./main.sh
 git:
     submodules: true
+install: ./main.sh
+script: ./tests/pre-commit_test.sh
