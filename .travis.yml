@@ -8,4 +8,4 @@ addons:
 git:
     submodules: true
 install: ./main.sh
-script: ./tests/pre-commit_test.sh
+script: ./tests/tests_runner.sh
