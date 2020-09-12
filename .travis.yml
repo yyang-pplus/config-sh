@@ -1,5 +1,9 @@
 language: minimal
 dist: focal
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:git-core/ppa'
 os: linux
 install: ./main.sh
 git:
