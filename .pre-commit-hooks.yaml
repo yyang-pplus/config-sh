@@ -1,0 +1,32 @@
+- id: astyle-c
+  name: astyle-c
+  description: Run astyle for C files.
+  language: system
+  entry: astyle
+  types: [c]
+  additional_dependencies: [astyle]
+
+- id: astyle-cpp
+  name: astyle-c++
+  description: Run astyle for C++ files.
+  language: system
+  entry: astyle
+  types: [c++]
+  additional_dependencies: [astyle]
+
+- id: astyle-cs
+  name: astyle-c#
+  description: Run astyle for C# files.
+  language: system
+  entry: astyle
+  types: [c#]
+  additional_dependencies: [astyle]
+
+- id: shfmt
+  name: shfmt
+  description: Run shfmt for shell scripts.
+  language: system
+  entry: shfmt
+  args: [-l, -w, -i, '4', -ci, -sr]
+  types: [shell]
+  additional_dependencies: [shfmt]
