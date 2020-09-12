@@ -3,6 +3,8 @@
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
+set -e
+
 ##
 # @reference    How to Install Google Chrome Web Browser on Ubuntu 18.04
 #               https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/
