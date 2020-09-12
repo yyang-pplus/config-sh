@@ -31,3 +31,6 @@
 build/
 debug/
 release/
+
+# Vim
+.netrwhist
