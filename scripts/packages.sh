@@ -41,7 +41,11 @@ shfmt
 "
 
 PIP_PACKAGES="
+virtualenv
+
 pipenv
+
 black
+
 pre-commit
 "
