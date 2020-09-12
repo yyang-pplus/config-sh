@@ -22,6 +22,8 @@ elif isDebian; then
     sudo apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
 
     sudo snap install $SNAP_PACKAGES
+
+    sudo apt autoremove
 else
     Fatal "Unsupported Linux distribution."
 fi
