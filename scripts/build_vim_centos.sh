@@ -2,16 +2,18 @@
 
 source ~/.bash_util.sh
 
+set -e
+
 echo "Usage: $(basename $0) [<vim_root_dir>]"
 
-VIM_ROOT_DIR=$(pwd)
+VIM_ROOT_DIR=${1:-$(pwd)}
 
-# Use the first command argument if possible,
-# Use current working directory otherwise
-if [ $# -eq 1 ]; then
-    if [ -d "$1" ]; then
-        VIM_ROOT_DIR="$1"
+if [ ! -d "$VIM_ROOT_DIR/.git" ]; then
+    if [ ! -d "$VIM_ROOT_DIR" ]; then
+        mkdir --parents "VIM_ROOT_DIR"
     fi
+
+    git clone https://github.com/vim/vim "$VIM_ROOT_DIR"
 fi
 
 QuietRun pushd "$VIM_ROOT_DIR"
