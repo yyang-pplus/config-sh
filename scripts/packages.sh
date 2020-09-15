@@ -41,11 +41,11 @@ shfmt
 "
 
 PIP_PACKAGES="
-virtualenv
+black
+
+cmakelang
 
 pipenv
-
-black
 
 pre-commit
 "
