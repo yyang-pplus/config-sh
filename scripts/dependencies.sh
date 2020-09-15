@@ -28,7 +28,7 @@ else
     Fatal "Unsupported Linux distribution."
 fi
 
-sudo pip3 install $PIP_PACKAGES
+pip3 install --user $PIP_PACKAGES
 
 # Run selected scripts
 pushd $THIS_DIR
