@@ -106,7 +106,7 @@ with section("format"):
 
     # If true, the parsers may infer whether or not an argument list is sortable
     # (without annotation).
-    autosort = False
+    autosort = True
 
     # By default, if cmake-format cannot successfully fit everything into the
     # desired linewidth it will apply the last, most agressive attempt that it
@@ -132,7 +132,7 @@ with section("markup"):
     # If comment markup is enabled, don't reflow the first comment block in each
     # listfile. Use this to preserve formatting of your copyright/license
     # statements.
-    first_comment_is_literal = False
+    first_comment_is_literal = True
 
     # If comment markup is enabled, don't reflow any comment block which matches
     # this (regex) pattern. Default is `None` (disabled).
