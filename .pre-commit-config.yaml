@@ -28,3 +28,9 @@ repos:
 
       # Python only
       - id: debug-statements
+
+  - repo: https://github.com/cheshirekow/cmake-format-precommit
+    rev: v0.6.13
+    hooks:
+      - id: cmake-format
+      - id: cmake-lint
