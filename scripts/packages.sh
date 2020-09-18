@@ -11,8 +11,6 @@ git
 gitk
 meld
 
-python3-pip
-
 openssh-server
 
 terminator
@@ -31,6 +29,7 @@ astyle
 cmake-curses-gui
 
 python-is-python3
+python3-pip
 
 vim-gtk3
 exuberant-ctags
