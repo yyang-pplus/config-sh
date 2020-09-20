@@ -49,6 +49,8 @@ done
 
 pushd yyLinuxConfig
 ./main.sh | tee "$TMP_DIR/config.txt"
+
+./scripts/install_all_pre-commit.sh "$PROJECTS_DIR"
 popd
 
 pushd algorithms
