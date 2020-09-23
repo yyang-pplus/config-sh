@@ -16,6 +16,8 @@ if isRedHat; then
     sudo yum --assumeyes install epel-release
 
     sudo yum --assumeyes install $COMMON_PACKAGES $REDHAT_PACKAGES
+
+    $THIS_DIR/build_vim_centos.sh "$HOME/3rdParty/vim"
 elif isDebian; then
     sudo apt-get update
 
