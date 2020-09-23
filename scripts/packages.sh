@@ -1,6 +1,4 @@
 COMMON_PACKAGES="
-shunit2
-
 ccache
 distcc
 
@@ -19,7 +17,6 @@ cscope
 "
 
 REDHAT_PACKAGES="
-vim-X11
 ctags
 "
 
@@ -30,6 +27,8 @@ cmake-curses-gui
 
 python-is-python3
 python3-pip
+
+shunit2
 
 vim-gtk3
 exuberant-ctags
