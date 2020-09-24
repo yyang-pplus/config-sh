@@ -4,7 +4,7 @@ set -e
 
 echo "Usage: $(basename $0) [<projects_dir>]"
 
-PROJECTS_DIR=${1:-$(pwd)}
+PROJECTS_DIR=${1:-$HOME/projects}
 
 pushd $PROJECTS_DIR
 ALL_PROJECTS=($(ls))
@@ -14,6 +14,7 @@ for one_project in "${ALL_PROJECTS[@]}"; do
 
         pushd "$one_project"
         pre-commit install
+        pre-commit install --hook-type pre-push
         popd
     fi
 done
