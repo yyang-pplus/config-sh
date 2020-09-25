@@ -4,7 +4,7 @@ oneTimeSetUp() {
     git checkout --quiet master
 
     PROJECT_ROOT_DIR=$(git rev-parse --show-toplevel)
-    PRE_PUSH_SCRIPT_FILE="$PROJECT_ROOT_DIR/git/hooks/pre-push"
+    PRE_PUSH_SCRIPT_FILE="$PROJECT_ROOT_DIR/git_hooks/push-guard.sh"
     REMOVE_REMOTE_PREFIX_CMD=$(grep --no-filename "DEFAULT_UPSTREAM_BRANCH_NAME=" "$PRE_PUSH_SCRIPT_FILE")
 
     PATTERN_CMD=$(grep --no-filename "PATTERN=" "$PRE_PUSH_SCRIPT_FILE")
@@ -80,4 +80,5 @@ testExtraProtectedPatternPrefix() {
     assertTrue "Case 3" "[[ 'example-1.6.0' =~ $PATTERN ]]"
 }
 
+# The test requires at least one new commit to parse, I haven't figured out a good way of doing that.
 # source /usr/bin/shunit2
