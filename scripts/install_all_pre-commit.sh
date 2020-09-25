@@ -14,7 +14,8 @@ for one_project in "${ALL_PROJECTS[@]}"; do
 
         pushd "$one_project"
         pre-commit install
-        pre-commit install --hook-type pre-push
+
+        ln --symbolic --force --no-target-directory "$HOME/projects/yyLinuxConfig/git_hooks/push-guard.sh" ".git/hooks/pre-push"
         popd
     fi
 done

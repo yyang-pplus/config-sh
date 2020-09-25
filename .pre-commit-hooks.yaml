@@ -30,11 +30,3 @@
   args: [-l, -w, -i, '4', -ci, -sr]
   types: [shell]
   additional_dependencies: [shfmt]
-
-- id: push-guard
-  name: push-guard
-  description: Block push to certain remote branches.
-  language: script
-  entry: git_hooks/push-guard.sh
-  stages: [push]
-  always_run: true
