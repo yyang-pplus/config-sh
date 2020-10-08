@@ -1,4 +1,11 @@
-
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
+
+
+# pip --user
+PATH=$PATH:$HOME/.local/bin
+
+
+# .NET
+PATH=$PATH:$HOME/.dotnet
