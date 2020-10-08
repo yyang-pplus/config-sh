@@ -98,13 +98,6 @@ if which pipenv &> /dev/null; then
     eval "$(pipenv --completion)"
 fi
 
-# pip --user
-PATH=$PATH:$HOME/.local/bin
-
-
-# .NET
-PATH=$PATH:$HOME/.dotnet
-
 
 # Covert the debug print of a protobuf string field to hex
 #   Example:
