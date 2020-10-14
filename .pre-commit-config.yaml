@@ -34,3 +34,8 @@ repos:
     hooks:
       - id: cmake-format
       - id: cmake-lint
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: master
+    hooks:
+      - id: mypy
