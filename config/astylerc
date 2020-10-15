@@ -46,7 +46,10 @@
 #--attach-return-type-decl
 --convert-tabs
 --close-templates
---max-code-length=100
+# To be consist with Black
+# @reference    The Black code style
+#               https://black.readthedocs.io/en/stable/the_black_code_style.html
+--max-code-length=88
 --break-after-logical
 
 # Do not retain a backup of the original file. The original file is purged after it is formatted.

@@ -1,3 +1,4 @@
+# type: ignore
 # ----------------------------------
 # Options affecting listfile parsing
 # ----------------------------------
@@ -29,7 +30,7 @@ with section("format"):
     disable = False
 
     # How wide to allow formatted cmake files
-    line_width = 100
+    line_width = 88
 
     # How many spaces to tab for indent
     tab_size = 4
