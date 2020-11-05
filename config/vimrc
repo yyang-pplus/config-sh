@@ -55,7 +55,10 @@ set backspace=indent,eol,start
 "               https://vim.fandom.com/wiki/Disable_automatic_comment_insertion
 "
 " Disable automatic comment insertion for C/C++ single-line comments
-autocmd FileType c,cpp setlocal comments-=:// comments+=f://
+augroup auto_comment
+    autocmd!
+    autocmd FileType c,cpp setlocal comments-=:// comments+=f://
+augroup END
 
 
 " Highlight Groups
@@ -68,10 +71,13 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 " @reference    Highlight unwanted spaces
 "               https://vim.fandom.com/wiki/Highlight_unwanted_spaces
 " Show trailing whitespace
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+augroup show_trailing_whitespaces
+    autocmd!
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    autocmd BufWinLeave * call clearmatches()
+augroup END
 
 
 " Search
@@ -179,7 +185,10 @@ set omnifunc=syntaxcomplete#Complete
 " @reference    C++ code completion
 "               https://vim.fandom.com/wiki/C%2B%2B_code_completion
 " Automatically open and close the popup menu / preview window
-autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+augroup auto_close_popup_window
+    autocmd!
+    autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+augroup END
 
 " Explicit default completeopt without longest.
 set completeopt=menu,preview
@@ -200,11 +209,14 @@ endif
 " Easy Compile
 "
 " Auto-compile and run
-autocmd FileType python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
-autocmd FileType c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 && ./'.shellescape('%:r')<CR>
-autocmd FileType cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 && ./'.shellescape('%:r')<CR>
-autocmd FileType c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
-autocmd FileType cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
+augroup auto_make
+    autocmd!
+    autocmd FileType python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
+    autocmd FileType c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 && ./'.shellescape('%:r')<CR>
+    autocmd FileType cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 && ./'.shellescape('%:r')<CR>
+    autocmd FileType c nnoremap <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
+    autocmd FileType cpp nnoremap <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
+augroup END
 
 
 " @reference    Insert in normal mode
