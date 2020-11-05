@@ -189,14 +189,11 @@ set completeopt=menu,preview
 " Note: this requires Vim is compiled with +xterm_clipboard to support + or * register
 if has('win32')
     " Convert slashes to backslashes for Windows.
-    nmap <leader>cs :let @+=substitute(expand("%"), "/", "\\", "g")<CR>
-    nmap <leader>cl :let @+=substitute(expand("%:p"), "/", "\\", "g")<CR>
-
-    " This will copy the path in 8.3 short format, for DOS and Windows 9x
-    nmap <leader>c8 :let @+=substitute(expand("%:p:8"), "/", "\\", "g")<CR>
+    nnoremap <leader>cs :let @+=substitute(expand("%"), "/", "\\", "g")<CR>
+    nnoremap <leader>cl :let @+=substitute(expand("%:p"), "/", "\\", "g")<CR>
 else
-    nmap <leader>cs :let @+=expand("%")<CR>
-    nmap <leader>cl :let @+=expand("%:p")<CR>
+    nnoremap <leader>cs :let @+=expand("%")<CR>
+    nnoremap <leader>cl :let @+=expand("%:p")<CR>
 endif
 
 
