@@ -239,6 +239,14 @@ set path=.,,**
 set showtabline=2
 
 
+" Abbreviations
+"
+augroup abbreviations
+    autocmd!
+    autocmd FileType python inoreabbrev sb! #!/usr/bin/env python3
+augroup END
+
+
 " Plug-ins
 "
 " cscope
