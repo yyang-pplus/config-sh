@@ -16,3 +16,6 @@
 [submodule "config/vim/pack/plugins/start/tcomment_vim"]
 	path = config/vim/pack/plugins/start/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim
+[submodule "config/vim/pack/plugins/start/vim-surround"]
+	path = config/vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
