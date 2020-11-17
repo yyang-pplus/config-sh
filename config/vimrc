@@ -49,6 +49,9 @@ set formatoptions-=2
 set backspace=indent,eol,start
 
 
+set autowrite
+
+
 " Comments
 "
 " @reference    Disable automatic comment insertion
@@ -216,6 +219,11 @@ augroup auto_make
     autocmd FileType cpp nnoremap <buffer> <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 && ./'.shellescape('%:r')<CR>
     autocmd FileType c nnoremap <buffer> <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
     autocmd FileType cpp nnoremap <buffer> <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
+
+    autocmd FileType c setlocal makeprg=make\ --directory\ build\ --no-print-directory
+    autocmd FileType cpp setlocal makeprg=make\ --directory\ build\ --no-print-directory
+
+    autocmd FileType python setlocal makeprg=pipenv\ run\ python3\ %
 augroup END
 
 
