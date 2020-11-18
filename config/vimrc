@@ -222,6 +222,7 @@ augroup auto_make
 
     autocmd FileType c setlocal makeprg=make\ --directory\ build\ --no-print-directory
     autocmd FileType cpp setlocal makeprg=make\ --directory\ build\ --no-print-directory
+    autocmd FileType cmake setlocal makeprg=make\ --directory\ build\ --no-print-directory
 
     autocmd FileType python setlocal makeprg=pipenv\ run\ python3\ %
 augroup END

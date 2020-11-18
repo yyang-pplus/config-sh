@@ -19,3 +19,6 @@
 [submodule "config/vim/pack/plugins/start/vim-surround"]
 	path = config/vim/pack/plugins/start/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "config/vim/pack/plugins/start/vim-Verdin"]
+	path = config/vim/pack/plugins/start/vim-Verdin
+	url = https://github.com/machakann/vim-Verdin
