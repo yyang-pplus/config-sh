@@ -22,3 +22,6 @@
 [submodule "config/vim/pack/plugins/start/vim-Verdin"]
 	path = config/vim/pack/plugins/start/vim-Verdin
 	url = https://github.com/machakann/vim-Verdin
+[submodule "config/vim/pack/plugins/start/shell-omni-completion"]
+	path = config/vim/pack/plugins/start/shell-omni-completion
+	url = https://github.com/vim-add-ons/shell-omni-completion
