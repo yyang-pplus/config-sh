@@ -28,3 +28,6 @@
 [submodule "config/vim/pack/plugins/start/syntastic"]
 	path = config/vim/pack/plugins/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic
+[submodule "config/vim/pack/plugins/start/dotnet_core-vim"]
+	path = config/vim/pack/plugins/start/dotnet_core-vim
+	url = https://github.com/yyang-even/dotnet_core-vim
