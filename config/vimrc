@@ -211,10 +211,9 @@ endif
 
 " Easy Compile
 "
-" Auto-compile and run
-augroup auto_make
+augroup quick_compile
     autocmd!
-    autocmd FileType python nnoremap <buffer> <F5> :w <bar> exec '!python '.shellescape('%')<CR>
+    autocmd FileType python nnoremap <buffer> <F5> :w <bar> exec '!python3 '.shellescape('%')<CR>
     autocmd FileType c nnoremap <buffer> <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 && ./'.shellescape('%:r')<CR>
     autocmd FileType cpp nnoremap <buffer> <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 && ./'.shellescape('%:r')<CR>
     autocmd FileType c nnoremap <buffer> <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
