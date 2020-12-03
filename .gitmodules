@@ -1,9 +1,6 @@
 [submodule "config/vim/pack/plugins/start/omnisharp-vim"]
 	path = config/vim/pack/plugins/start/omnisharp-vim
 	url = git://github.com/OmniSharp/omnisharp-vim
-[submodule "config/vim/pack/plugins/start/vim-compiler-plugin-for-dotnet"]
-	path = config/vim/pack/plugins/start/vim-compiler-plugin-for-dotnet
-	url = https://github.com/tmadsen/vim-compiler-plugin-for-dotnet.git
 [submodule "config/vim/pack/plugins/start/vim-dispatch"]
 	path = config/vim/pack/plugins/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
@@ -31,3 +28,6 @@
 [submodule "config/vim/pack/plugins/start/dotnet_core-vim"]
 	path = config/vim/pack/plugins/start/dotnet_core-vim
 	url = https://github.com/yyang-even/dotnet_core-vim
+[submodule "config/vim/pack/plugins/start/dotnet_test-vim"]
+	path = config/vim/pack/plugins/start/dotnet_test-vim
+	url = https://github.com/yyang-even/dotnet_test-vim
