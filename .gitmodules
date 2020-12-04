@@ -31,3 +31,6 @@
 [submodule "config/vim/pack/plugins/start/dotnet_test-vim"]
 	path = config/vim/pack/plugins/start/dotnet_test-vim
 	url = https://github.com/yyang-even/dotnet_test-vim
+[submodule "config/vim/pack/plugins/start/vim-fugitive"]
+	path = config/vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
