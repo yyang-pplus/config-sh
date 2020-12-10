@@ -98,5 +98,4 @@ testExtraProtectedPatternPrefix() {
     assertTrue "Case 3" "[[ 'example-1.6.0' =~ $PATTERN ]]"
 }
 
-# The test requires at least one new commit to parse, I haven't figured out a good way of doing that.
-# source /usr/bin/shunit2
+source /usr/bin/shunit2
