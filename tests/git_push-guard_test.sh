@@ -52,6 +52,24 @@ testRemoveRemotePrefixWithRefsFor() {
     assertEquals "$DEFAULT_FULL_UPSTREAM" "$DEFAULT_UPSTREAM_BRANCH_NAME"
 }
 
+testProtectedPatternMatchesMain() {
+    eval "$PATTERN_CMD"
+
+    assertTrue "[[ 'main' =~ $PATTERN ]]"
+}
+
+testProtectedPatternMatchesAheadMain() {
+    eval "$PATTERN_CMD"
+
+    assertTrue "[[ 'refs/heads/main' =~ $PATTERN ]]"
+}
+
+testProtectedPatternNotMatchRefsFor() {
+    eval "$PATTERN_CMD"
+
+    assertFalse "[[ 'refs/for/main' =~ $PATTERN ]]"
+}
+
 testProtectedPatternMatchesMaster() {
     eval "$PATTERN_CMD"
 

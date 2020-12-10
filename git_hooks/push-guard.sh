@@ -21,7 +21,7 @@ IsProtected() {
     # @reference    Regular expression syntax for “match nothing”?
     #               https://stackoverflow.com/questions/940822/regular-expression-syntax-for-match-nothing
     ##
-    local PATTERN="^(refs/heads/)?(master$)|(${GIT_EXTRA_PROTECTED_BRANCH_PATTERN:-'a^'})"
+    local PATTERN="^(refs/heads/)?((main$)|(master$)|(${GIT_EXTRA_PROTECTED_BRANCH_PATTERN:-'a^'}))"
 
     ##
     # @reference    Bash test: what does “=~” do?
