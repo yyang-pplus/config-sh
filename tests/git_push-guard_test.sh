@@ -18,11 +18,6 @@ oneTimeTearDown() {
     git checkout --quiet -
 }
 
-testPreHookScriptExistAndRunable() {
-    DOT_GIT_DIR=$(git rev-parse --git-dir)
-    assertTrue "[ -x \"$DOT_GIT_DIR/hooks/pre-push\" ]"
-}
-
 testDefaultPushToMasterWouldFail() {
     # git push --dry-run
     $PRE_PUSH_SCRIPT_FILE origin < /dev/null
