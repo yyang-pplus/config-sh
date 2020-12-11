@@ -16,3 +16,4 @@ SCRIPT_DIR=$MAIN_DIR/scripts
 
 ./$SCRIPT_DIR/config.sh
 ./$SCRIPT_DIR/dependencies.sh
+./$SCRIPT_DIR/install_all_pre-commit.sh "$MAIN_DIR/.."
