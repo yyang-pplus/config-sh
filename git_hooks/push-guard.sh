@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ##
 # A git pre-push hook that prevent pushing directly to protected branch(es)
 #

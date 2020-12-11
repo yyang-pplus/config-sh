@@ -24,12 +24,14 @@ testPreHookScriptExistAndRunable() {
 }
 
 testDefaultPushToMasterWouldFail() {
-    git push --dry-run
+    # git push --dry-run
+    $PRE_PUSH_SCRIPT_FILE origin < /dev/null
     assertFalse $?
 }
 
 testPushToGerrithubShouldWork() {
-    git push --dry-run origin HEAD:refs/for/master
+    # git push --dry-run origin HEAD:refs/for/master
+    echo "HEAD" "92fd0789842487a47c7c2fcf888f074eeb69bb94" "refs/for/master" "0000000000000000000000000000000000000000" | $PRE_PUSH_SCRIPT_FILE
     assertTrue $?
 }
 
@@ -98,5 +100,4 @@ testExtraProtectedPatternPrefix() {
     assertTrue "Case 3" "[[ 'example-1.6.0' =~ $PATTERN ]]"
 }
 
-# The test requires authentication, I haven't figured out a good way of doing that on Travis.
-# source /usr/bin/shunit2
+source /usr/bin/shunit2
