@@ -253,6 +253,7 @@ set showtabline=2
 augroup abbreviations
     autocmd!
     autocmd FileType python inoreabbrev <buffer> sb! #!/usr/bin/env python3
+    autocmd FileType sh inoreabbrev <buffer> sb! #!/bin/bash
 augroup END
 
 
