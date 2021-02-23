@@ -56,6 +56,10 @@ export PAGER=less
 [[ $- == *i* ]] && stty -ixon
 
 
+# CMake
+export CTEST_OUTPUT_ON_FAILURE=1
+
+
 # Enable ccache
 if which ccache &> /dev/null; then
     export CC="ccache gcc"
