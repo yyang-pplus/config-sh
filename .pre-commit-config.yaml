@@ -1,9 +1,10 @@
 default_stages: [commit]
 repos:
   - repo: https://github.com/yyang-even/yyLinuxConfig
-    rev: 2e1f4f1d16831205e1c7b5757571fcb79f7c529a
+    rev: 61e9e05bbf3c6c6891212b065dd5d2965f11222d
     hooks:
       - id: astyle-c
+      - id: astyle-c-in
       - id: astyle-cpp
       - id: astyle-cs
       - id: shfmt
@@ -15,7 +16,7 @@ repos:
         language_version: python3
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.4.0
     hooks:
       - id: check-executables-have-shebangs
         stages: [commit]
@@ -36,6 +37,6 @@ repos:
       - id: cmake-lint
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: master
+    rev: v0.812
     hooks:
       - id: mypy
