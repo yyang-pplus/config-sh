@@ -14,6 +14,14 @@
   types: [c++]
   additional_dependencies: [astyle]
 
+- id: astyle-c-in
+  name: astyle-c-in
+  description: Run astyle for C/C++ .in files.
+  language: system
+  entry: astyle
+  files: \.(h|c|hpp|cpp)\.in$
+  additional_dependencies: [astyle]
+
 - id: astyle-cs
   name: astyle-c#
   description: Run astyle for C# files.
