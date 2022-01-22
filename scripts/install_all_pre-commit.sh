@@ -13,6 +13,8 @@ for one_project in "${ALL_PROJECTS[@]}"; do
     if [ -d "$one_project/.git" ]; then
 
         pushd "$one_project"
+        cp "$PROJECTS_DIR/config-sh/git_hooks/author-guard.sh" ".git/hooks/pre-commit"
+
         ln --symbolic --force --no-target-directory "$PROJECTS_DIR/config-sh/git_hooks/push-guard.sh" ".git/hooks/pre-push"
 
         # Keep pre-commit last
