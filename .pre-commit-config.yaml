@@ -1,6 +1,6 @@
 default_stages: [commit]
 repos:
-  - repo: https://github.com/yyang-even/yyLinuxConfig
+  - repo: https://github.com/yyang-pplus/config-sh.git
     rev: 61e9e05bbf3c6c6891212b065dd5d2965f11222d
     hooks:
       - id: astyle-c
