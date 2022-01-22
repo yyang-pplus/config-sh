@@ -10,7 +10,7 @@ if which git &> /dev/null; then
     git config --list
 
     git config --global user.name "Yang Yang"
-    git config --global user.email "yyang.even@gmail.com"
+    git config --global user.email "yyang.pplus@gmail.com"
 
     git config --global color.ui true
 

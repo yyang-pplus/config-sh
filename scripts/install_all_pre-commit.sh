@@ -13,9 +13,10 @@ for one_project in "${ALL_PROJECTS[@]}"; do
     if [ -d "$one_project/.git" ]; then
 
         pushd "$one_project"
-        pre-commit install
+        ln --symbolic --force --no-target-directory "$PROJECTS_DIR/config-sh/git_hooks/push-guard.sh" ".git/hooks/pre-push"
 
-        ln --symbolic --force --no-target-directory "$PROJECTS_DIR/yyLinuxConfig/git_hooks/push-guard.sh" ".git/hooks/pre-push"
+        # Keep pre-commit last
+        pre-commit install
         popd
     fi
 done
