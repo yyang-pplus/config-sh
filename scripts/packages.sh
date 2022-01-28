@@ -9,11 +9,11 @@ git
 gitk
 meld
 
-openssh-server
-
 terminator
 
 cscope
+
+xpad
 "
 
 REDHAT_PACKAGES="
