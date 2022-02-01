@@ -37,7 +37,7 @@ if which git &> /dev/null; then
 
     temp_dir="/tmp/$(date +%s)"
     mkdir $temp_dir
-    git clone git://git.kernel.org/pub/scm/git/git.git "$temp_dir/git"
+    git clone https://github.com/git/git "$temp_dir/git"
 
     # Copy git auto completion script
     cp $temp_dir/git/contrib/completion/git-completion.bash $HOME/.git-completion.sh
