@@ -8,15 +8,6 @@ Assert() {
     fi
 }
 
-Error() {
-    cat <<< "Error: $@" 1>&2
-}
-
-Fatal() {
-    Error "$@"
-    exit 1
-}
-
 LogAndRun() {
     echo "[$(date)]$" "$@"
     $@
@@ -32,4 +23,25 @@ QuietRun() {
 ##
 RunUntilFail() {
     while "$@"; do :; done
+}
+
+ForEachChildDir() {
+
+    ALL_ITEMS=($(ls))
+    for one_item in "${ALL_ITEMS[@]}"; do
+        if [ -d "$one_item" ]; then
+            pushd "$one_item"
+            $@
+            popd
+        fi
+    done
+}
+
+Error() {
+    cat <<< "Error: $@" 1>&2
+}
+
+Fatal() {
+    Error "$@"
+    exit 1
 }
