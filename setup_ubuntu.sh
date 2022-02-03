@@ -28,8 +28,10 @@ ssh-add $HOME/.ssh/id_rsa
 
 printf "\nAdding the SSH key to my account.\n"
 cat $HOME/.ssh/id_rsa.pub
-URL="https://review.gerrithub.io/settings/#SSHKeys"
-firefox --new-tab "$URL"
+GERRIT_URL="https://review.gerrithub.io/settings/#SSHKeys"
+firefox --new-tab "$GERRIT_URL"
+GIT_URL="https://github.com/settings/keys"
+firefox --new-tab "$GIT_URL"
 
 printf "\nUpgrading system.\n"
 sudo apt --yes update
@@ -41,13 +43,19 @@ sudo apt --yes install git
 PROJECTS_DIR="$HOME/projects"
 mkdir "$PROJECTS_DIR"
 pushd "$PROJECTS_DIR"
-ACTIVE_PROJECTS=(yyLinuxConfig yyLinuxScripts algorithms yyangtech_wordpress_com)
-for a_project in ${ACTIVE_PROJECTS[@]}; do
+ACTIVE_GERRIT_PROJECTS=(algorithms yyangtech_wordpress_com)
+for a_project in ${ACTIVE_GERRIT_PROJECTS[@]}; do
     printf "\nDownloading project $a_project\n"
     git clone --recurse-submodules -j8 "ssh://yyang-even@review.gerrithub.io:29418/yyang-even/$a_project" && scp -p -P 29418 yyang-even@review.gerrithub.io:hooks/commit-msg "$a_project/.git/hooks/"
 done
 
-pushd yyLinuxConfig
+ACTIVE_GIT_PROJECTS=(config-sh script-sh)
+for a_project in ${ACTIVE_GIT_PROJECTS[@]}; do
+    printf "\nDownloading project $a_project\n"
+    git clone --recurse-submodules -j8 "git@github.com:yyang-pplus/$a_project.git"
+done
+
+pushd config-sh
 ./main.sh | tee "$TMP_DIR/config.txt"
 popd
 
