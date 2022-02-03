@@ -145,5 +145,10 @@ else
 fi
 
 
+if [ -f ~/.bash_util.sh ]; then
+    source ~/.bash_util.sh
+fi
+
+
 # alias
 alias grep='grep --line-number --color=auto'
