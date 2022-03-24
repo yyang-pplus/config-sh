@@ -17,7 +17,7 @@ mkdir -p "$TMP_DIR"
 
 pushd $TMP_DIR
 SSH_SCRIPT_NAME="setup_ssh.sh"
-wget -O $SSH_SCRIPT_NAME https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/setup_ssh.sh
+wget -O $SSH_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$SSH_SCRIPT_NAME"
 sh $SSH_SCRIPT_NAME
 popd
 
