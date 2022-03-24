@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ##
-# This script suppose to be download and run manually, which means it shouldn't depend on
-#   other scripts in this repository.
+# This script suppose to be download and run manually, which means other scripts in this
+# repository may not be available.
 ##
 
 set -ex
