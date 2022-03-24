@@ -6,8 +6,17 @@ My Linux configuration.
 ## To Setup Ubuntu
 ```bash
 pushd /tmp
-SSH_SCRIPT_NAME="setup_ubuntu.sh"
-wget -O $SSH_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/setup_ubuntu.sh" && sh $SSH_SCRIPT_NAME
+SCRIPT_NAME="setup_ubuntu.sh"
+wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && sh $SCRIPT_NAME
+popd
+
+```
+
+## To Setup Ubuntu Inside VirtualBox
+```bash
+pushd /tmp
+SCRIPT_NAME="setup_ubuntu_vbox.sh"
+wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && sh $SCRIPT_NAME
 popd
 
 ```
