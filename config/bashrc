@@ -95,11 +95,11 @@ shopt -s dirspell
 #               https://pipenv-fork.readthedocs.io/en/latest/install.html
 # To create the virtualenv inside your project’s directory
 export PIPENV_VENV_IN_PROJECT=1
-# @reference    Advanced Usage of Pipenv
-#               https://pipenv-fork.readthedocs.io/en/latest/advanced.html
+# @reference    Pipenv: Python Development Workflow for Humans
+#               https://pypi.org/project/pipenv/
 # Shell Completion
 if which pipenv &> /dev/null; then
-    eval "$(pipenv --completion)"
+    eval "$(_PIPENV_COMPLETE=bash_source pipenv)"
 fi
 
 

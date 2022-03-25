@@ -1,7 +1,7 @@
 default_stages: [commit]
 repos:
   - repo: https://github.com/yyang-pplus/config-sh.git
-    rev: 8bc643642f35bfd645ee3ac00489ed9157009ff5
+    rev: 928dadbbd33bc227a4eadd9a2b717f21f273ad1d
     hooks:
       - id: astyle-c
       - id: astyle-c-in

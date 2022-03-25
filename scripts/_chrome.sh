@@ -5,6 +5,11 @@ source "$THIS_DIR/util.sh"
 
 set -e
 
+if which google-chrome &> /dev/null; then
+    echo "Chrome already installed."
+    exit 0
+fi
+
 ##
 # @reference    How to Install Google Chrome Web Browser on Ubuntu 18.04
 #               https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/

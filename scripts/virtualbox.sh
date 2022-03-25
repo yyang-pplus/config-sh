@@ -12,7 +12,7 @@ sudo grep "vboxsf" /etc/group
 #               https://linuxize.com/post/how-to-install-virtualbox-guest-additions-in-ubuntu/
 ##
 echo "Installing VirtualBox Guest Additions."
-Install_Packages build-essential dkms linux-headers-$(uname -r)
+sudo apt --yes install build-essential dkms linux-headers-$(uname -r)
 
 installer_path=$(find /media/ -name "VBoxLinuxAdditions.run")
 if [ $(wc -l <<< "$installer_path") -eq 1 ]; then
