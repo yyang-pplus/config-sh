@@ -11,6 +11,8 @@ meld
 
 terminator
 
+mlocate
+
 cscope
 
 xpad
