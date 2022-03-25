@@ -28,25 +28,29 @@ mkdir -p "$PROJECTS_DIR"
 pushd "$PROJECTS_DIR"
 ACTIVE_GERRIT_PROJECTS=(algorithms yyangtech_wordpress_com)
 for a_project in ${ACTIVE_GERRIT_PROJECTS[@]}; do
-    printf "\nDownloading project $a_project\n"
-    git clone --recurse-submodules -j8 "ssh://yyang-even@review.gerrithub.io:29418/yyang-even/$a_project" && scp -p -P 29418 yyang-even@review.gerrithub.io:hooks/commit-msg "$a_project/.git/hooks/"
+    if [ ! -d "$a_project" ]; then
+        printf "\nDownloading project $a_project\n"
+        git clone --recurse-submodules -j8 "ssh://yyang-even@review.gerrithub.io:29418/yyang-even/$a_project" && scp -p -P 29418 yyang-even@review.gerrithub.io:hooks/commit-msg "$a_project/.git/hooks/"
+    fi
 done
 
 ACTIVE_GIT_PROJECTS=(config-sh script-sh)
 for a_project in ${ACTIVE_GIT_PROJECTS[@]}; do
-    printf "\nDownloading project $a_project\n"
-    git clone --recurse-submodules -j8 "git@github.com:yyang-pplus/$a_project.git"
+    if [ ! -d "$a_project" ]; then
+        printf "\nDownloading project $a_project\n"
+        git clone --recurse-submodules -j8 "git@github.com:yyang-pplus/$a_project.git"
+    fi
 done
 
 TMP_DIR="$HOME/tmp"
 mkdir -p "$TMP_DIR"
 
 pushd config-sh
-./main.sh | tee "$TMP_DIR/config.txt"
+./main.sh |& tee "$TMP_DIR/config.txt"
 popd
 
 pushd algorithms
 printf "\n\n"
-./scripts/setup.sh | tee "$TMP_DIR/algorithms.txt"
+./scripts/setup.sh |& tee "$TMP_DIR/algorithms.txt"
 popd
 popd

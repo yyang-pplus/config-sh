@@ -28,3 +28,12 @@ for config_name in "${SUPPORT_CONFIGS[@]}"; do
 
     ln --symbolic --force --no-target-directory "$new_config" "$home_config"
 done
+
+OLD_BASH_RC=$BACKUP_DIR/.bashrc
+if [ -f "$OLD_BASH_RC" ]; then
+    LOCAL_BASH_RC=$HOME/.bashrc.local
+    if [ ! -f "$LOCAL_BASH_RC" ]; then
+        echo "Using existing bashrc as bashrc.local"
+        cp "$OLD_BASH_RC" "$LOCAL_BASH_RC"
+    fi
+fi
