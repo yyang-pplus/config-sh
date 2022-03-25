@@ -25,7 +25,7 @@ elif isDebian; then
 
     sudo snap install $SNAP_PACKAGES
 
-    sudo apt autoremove
+    sudo apt --yes autoremove
 else
     Fatal "Unsupported Linux distribution."
 fi
