@@ -5,19 +5,15 @@ My Linux configuration.
 
 ## To Setup Ubuntu
 ```bash
-pushd /tmp
 SCRIPT_NAME="setup_ubuntu.sh"
-wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash $SCRIPT_NAME
-popd
+wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
 
 ```
 
 ## To Setup Ubuntu Inside VirtualBox
 ```bash
-pushd /tmp
 SCRIPT_NAME="setup_ubuntu_vbox.sh"
-wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash $SCRIPT_NAME
-popd
+wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
 
 ```
 

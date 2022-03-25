@@ -12,14 +12,9 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-TMP_DIR="$HOME/tmp"
-mkdir -p "$TMP_DIR"
-
-pushd $TMP_DIR
 SSH_SCRIPT_NAME="setup_ssh.sh"
-wget -O $SSH_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$SSH_SCRIPT_NAME"
-bash $SSH_SCRIPT_NAME
-popd
+wget -O /tmp/$SSH_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$SSH_SCRIPT_NAME"
+bash /tmp/$SSH_SCRIPT_NAME
 
 printf "\nUpgrading system.\n"
 sudo apt --yes update
@@ -42,6 +37,9 @@ for a_project in ${ACTIVE_GIT_PROJECTS[@]}; do
     printf "\nDownloading project $a_project\n"
     git clone --recurse-submodules -j8 "git@github.com:yyang-pplus/$a_project.git"
 done
+
+TMP_DIR="$HOME/tmp"
+mkdir -p "$TMP_DIR"
 
 pushd config-sh
 ./main.sh | tee "$TMP_DIR/config.txt"
