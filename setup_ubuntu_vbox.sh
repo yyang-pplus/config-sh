@@ -7,10 +7,8 @@
 
 set -e
 
-pushd /tmp
 SCRIPT_NAME="setup_ubuntu.sh"
-wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash $SCRIPT_NAME
-popd
+wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
 
 $HOME/projects/config-sh/scripts/virtualbox.sh
 
