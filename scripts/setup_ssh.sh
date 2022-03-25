@@ -28,15 +28,17 @@ else
 
     cat $KEY_FILE.pub
 
+    if pgrep -x "firefox" > /dev/null; then
+        kill $(pgrep -x "firefox")
+    fi
+
     echo "Adding the new SSH key to yyang-even."
     echo "Please close the browser when done."
     GERRIT_URL="https://review.gerrithub.io/settings/#SSHKeys"
-    firefox --new-tab "$GERRIT_URL" &
-    wait $!
+    firefox --new-tab "$GERRIT_URL"
 
     echo "Adding the new SSH key to yyang-pplus."
     echo "Please close the browser when done."
     GIT_URL="https://github.com/settings/keys"
-    firefox --new-tab "$GIT_URL" &
-    wait $!
+    firefox --new-tab "$GIT_URL"
 fi
