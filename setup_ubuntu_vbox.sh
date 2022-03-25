@@ -13,3 +13,5 @@ wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/ma
 popd
 
 $HOME/projects/config-sh/scripts/virtualbox.sh
+
+mkdir -p /media/sf_VM_Shared/DO_NOT_DELETE/setup
