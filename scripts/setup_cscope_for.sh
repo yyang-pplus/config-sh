@@ -2,16 +2,11 @@
 
 source ~/.bash_util.sh
 
-PROJECT_ROOT_DIR=$(pwd)
-CPP_FILES_FILE=/tmp/cpp.cscope
+echo "Usage: $(basename $0) [<project_root_dir>]"
 
-# Use the first command argument if possible,
-# Use current working directory otherwise
-if [ $# -eq 1 ]; then
-    if [ -d "$1" ]; then
-        PROJECT_ROOT_DIR="$1"
-    fi
-fi
+# Use the first command argument if possible, Use current working directory otherwise
+PROJECT_ROOT_DIR=${1:-$(pwd)}
+CPP_FILES_FILE=/tmp/cpp.cscope
 
 echo "Building cscope database for \""$PROJECT_ROOT_DIR"\"."
 
