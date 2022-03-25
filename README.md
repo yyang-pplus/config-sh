@@ -7,7 +7,7 @@ My Linux configuration.
 ```bash
 pushd /tmp
 SCRIPT_NAME="setup_ubuntu.sh"
-wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && sh $SCRIPT_NAME
+wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash $SCRIPT_NAME
 popd
 
 ```
@@ -16,7 +16,7 @@ popd
 ```bash
 pushd /tmp
 SCRIPT_NAME="setup_ubuntu_vbox.sh"
-wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && sh $SCRIPT_NAME
+wget -O $SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash $SCRIPT_NAME
 popd
 
 ```
