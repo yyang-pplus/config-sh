@@ -12,9 +12,13 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-SSH_SCRIPT_NAME="setup_ssh.sh"
-wget -O /tmp/$SSH_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$SSH_SCRIPT_NAME"
-bash /tmp/$SSH_SCRIPT_NAME
+UTIL_SCRIPT_NAME="util.sh"
+wget -O /tmp/$UTIL_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$UTIL_SCRIPT_NAME"
+source /tmp/$UTIL_SCRIPT_NAME
+if GenerateSshKey; then
+    AddSshKeyTo "yyang-pplus" "https://github.com/settings/keys"
+    AddSshKeyTo "yyang-even" "https://review.gerrithub.io/settings/#SSHKeys"
+fi
 
 printf "\nUpgrading system.\n"
 sudo apt --yes update
