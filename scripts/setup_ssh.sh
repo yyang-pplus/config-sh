@@ -11,7 +11,12 @@ AddSshKeyTo() {
     local URL="$2"
 
     local KEY_FILE="$HOME/.ssh/id_rsa.pub"
-    cat $KEY_FILE
+    if which xclip &> /dev/null; then
+        echo "Key $KEY_FILE pasted to clipboard."
+        xclip -selection clipboard < $KEY_FILE
+    else
+        cat $KEY_FILE
+    fi
 
     if pgrep -x "firefox" > /dev/null; then
         kill $(pgrep -x "firefox")
