@@ -15,6 +15,7 @@ mlocate
 
 cscope
 
+xclip
 xpad
 "
 
