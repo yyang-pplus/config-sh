@@ -7,7 +7,7 @@
 
 set -e
 
-SCRIPT_NAME="setup_ubuntu.sh"
+SCRIPT_NAME="setup_redhat.sh"
 wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
 
 TMP_DIR="$HOME/tmp"
