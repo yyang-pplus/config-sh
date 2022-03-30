@@ -6,7 +6,6 @@ cmake
 cmake-gui
 
 git
-gitk
 meld
 
 terminator
@@ -26,6 +25,8 @@ DEBIAN_PACKAGES="
 astyle
 
 cmake-curses-gui
+
+gitk
 
 python-is-python3
 python3-pip

@@ -27,7 +27,9 @@ for one_project in "${ALL_PROJECTS[@]}"; do
         ln --symbolic --force --no-target-directory "$PROJECTS_DIR/config-sh/git_hooks/push-guard.sh" ".git/hooks/pre-push"
 
         # Keep pre-commit last
-        pre-commit install
+        if [ -f ".pre-commit-config.yaml" ]; then
+            pre-commit install
+        fi
         popd
     fi
 done
