@@ -16,7 +16,6 @@ mlocate
 cscope
 
 xclip
-xpad
 "
 
 REDHAT_PACKAGES="
@@ -35,6 +34,8 @@ shunit2
 
 vim-gtk3
 exuberant-ctags
+
+xpad
 "
 
 SNAP_PACKAGES="

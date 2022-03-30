@@ -1,5 +1,7 @@
 # Require config.sh to run first
-source ~/.bash_util.sh
+if [ -f ~/.bash_util.sh ]; then
+    source ~/.bash_util.sh
+fi
 
 AssertLinux() {
     local OPERATING_SYSTEM=$(uname)
