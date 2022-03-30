@@ -21,7 +21,7 @@ if isRedHat; then
 elif isDebian; then
     sudo apt-get update
 
-    sudo apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
+    sudo apt --yes --skip-broken install $COMMON_PACKAGES $DEBIAN_PACKAGES
 
     sudo snap install $SNAP_PACKAGES
 
