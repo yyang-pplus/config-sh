@@ -1,0 +1,28 @@
+name: config-sh-master
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  setup-and-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    - name: Add Git stable releases repo
+      run: sudo add-apt-repository ppa:git-core/ppa
+      shell: bash
+
+    - name: Setup
+      run: ./main.sh
+      shell: bash
+
+    - name: Test
+      run: ./tests/tests_runner.sh
+      shell: bash

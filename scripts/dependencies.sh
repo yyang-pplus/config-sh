@@ -15,13 +15,13 @@ if isRedHat; then
     # epel-release is required by terminator and some other packages on CentOS
     sudo yum --assumeyes install epel-release
 
-    sudo yum --assumeyes install $COMMON_PACKAGES $REDHAT_PACKAGES
+    sudo yum --assumeyes --skip-broken install $COMMON_PACKAGES $REDHAT_PACKAGES
 
     $THIS_DIR/build_vim_centos.sh "$HOME/3rdParty/vim"
 elif isDebian; then
     sudo apt-get update
 
-    sudo apt --yes --skip-broken install $COMMON_PACKAGES $DEBIAN_PACKAGES
+    sudo apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
 
     sudo snap install $SNAP_PACKAGES
 
