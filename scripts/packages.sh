@@ -2,6 +2,8 @@ COMMON_PACKAGES="
 ccache
 distcc
 
+curl
+
 cmake
 cmake-gui
 
