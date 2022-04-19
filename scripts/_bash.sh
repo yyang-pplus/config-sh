@@ -1,8 +1,10 @@
 #!/bin/bash
 
-echo "Initiating Bash history."
-cat >> $HOME/.bash_history << EOF
+set -e
 
+echo "Initiating Bash history."
+
+cat >> $HOME/.bash_history << EOF
 $HOME/projects/script-sh/git/astyle_and_build.sh
 $HOME/projects/script-sh/git/forward_and_checkout.sh master temp
 
