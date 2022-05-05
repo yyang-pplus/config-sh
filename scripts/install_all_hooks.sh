@@ -4,7 +4,8 @@ set -e
 
 echo "Usage: $(basename $0) [<projects_dir>]"
 
-PROJECTS_DIR=$(readlink --canonicalize "${1:-$HOME/projects}")
+THIS_DIR=$(dirname "$0")
+PROJECTS_DIR=$(readlink --canonicalize "${1:-$THIS_DIR/../..}")
 
 pushd $PROJECTS_DIR
 ALL_PROJECTS=($(ls))

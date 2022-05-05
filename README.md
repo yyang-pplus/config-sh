@@ -10,23 +10,9 @@ wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-
 
 ```
 
-## To Setup Ubuntu Inside VirtualBox
-```bash
-SCRIPT_NAME="setup_ubuntu_vbox.sh"
-wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
-
-```
-
 ## To Setup Redhat
 ```bash
 SCRIPT_NAME="setup_redhat.sh"
-wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
-
-```
-
-## To Setup Redhat Inside VirtualBox
-```bash
-SCRIPT_NAME="setup_redhat_vbox.sh"
 wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
 
 ```
