@@ -24,6 +24,7 @@ ctags
 "
 
 DEBIAN_PACKAGES="
+astyle
 clang-format
 
 cmake-curses-gui
