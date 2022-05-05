@@ -59,6 +59,6 @@ printf "\n\n"
 popd
 popd
 
-if [[ $(sudo dmidecode -s system-product-name) == *"VirtualBox"* ]]; then
+if isVirtualBox; then
     mkdir -p /media/sf_VM_Shared/DO_NOT_DELETE/setup
 fi

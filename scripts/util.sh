@@ -18,6 +18,10 @@ isDebian() {
     [ -f /etc/debian_version ]
 }
 
+isVirtualBox() {
+    [[ $(sudo dmidecode -s system-product-name) == *"VirtualBox"* ]]
+}
+
 AddSshKeyTo() {
     local NAME="$1"
     local URL="$2"

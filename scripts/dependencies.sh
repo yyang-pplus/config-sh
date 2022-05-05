@@ -44,7 +44,7 @@ done
 # @reference    Easy way to determine the virtualization technology of a Linux machine?
 #               https://unix.stackexchange.com/questions/89714/easy-way-to-determine-the-virtualization-technology-of-a-linux-machine
 ##
-if [[ $(sudo dmidecode -s system-product-name) == *"VirtualBox"* ]]; then
+if isVirtualBox; then
     ./virtualbox.sh || true
 fi
 popd
