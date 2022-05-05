@@ -58,3 +58,7 @@ printf "\n\n"
 ./scripts/setup.sh |& tee "$TMP_DIR/algorithms.txt"
 popd
 popd
+
+if [[ $(sudo dmidecode -s system-product-name) == *"VirtualBox"* ]]; then
+    mkdir -p /media/sf_VM_Shared/DO_NOT_DELETE/setup
+fi

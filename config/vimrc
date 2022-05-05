@@ -44,6 +44,20 @@ set formatoptions+=j
 set formatoptions+=n
 set formatoptions-=2
 
+"
+" @reference    ClangFormat
+"               https://clang.llvm.org/docs/ClangFormat.html
+function! ClangFormat()
+    if filereadable(expand("/usr/share/vim/addons/syntax/clang-format.py"))
+        let l:formatdiff = 1
+        py3f /usr/share/vim/addons/syntax/clang-format.py
+    endif
+endfunction
+augroup auto_format
+    autocmd!
+    autocmd BufWritePre *.h,*.hpp,*.c,*.cc,*.cpp call ClangFormat()
+augroup END
+
 
 " Explicit set backspace for Insert mode
 set backspace=indent,eol,start
