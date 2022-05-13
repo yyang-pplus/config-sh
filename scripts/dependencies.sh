@@ -32,6 +32,10 @@ fi
 
 pip3 install --user $PIP_PACKAGES
 
+if which gem > /dev/null; then
+    gem install --user-install $RUBY_GEMS
+fi
+
 # Run selected scripts
 pushd $THIS_DIR
 SELECTED_SCRIPTS=($(ls _*))
