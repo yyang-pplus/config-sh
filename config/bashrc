@@ -4,6 +4,7 @@ if [ -f ~/.bashrc.local ]; then
 fi
 
 
+##
 # @reference    Bash hostname completion
 #               https://sanctum.geek.nz/arabesque/bash-hostname-completion/
 # Use a private mock hosts(5) file for completion
@@ -13,6 +14,7 @@ HOSTFILE=$HOME/.hosts
 complete -A hostname -o default curl dig host netcat ping telnet
 
 
+##
 # @reference    bash 4.2 $variable expansion bug
 #               https://nelsonslog.wordpress.com/2012/01/29/bash-4-2-variable-expansion-bug/
 # To make Bash replaces directory names with the results of word expansion when performing filename completion.
@@ -48,6 +50,7 @@ export VISUAL=vim
 export PAGER=less
 
 
+##
 # @reference    Terminal annoyances
 #               https://sanctum.geek.nz/arabesque/terminal-annoyances/
 # @reference    Getting stty: standard input: Inappropriate ioctl for device when using scp through an ssh tunnel
@@ -88,60 +91,19 @@ shopt -s cdspell
 shopt -s dirspell
 
 
-# Python
+## Python
 #
 # pipenv
 # @reference    Pipenv & Virtual Environments
 #               https://pipenv-fork.readthedocs.io/en/latest/install.html
 # To create the virtualenv inside your project’s directory
 export PIPENV_VENV_IN_PROJECT=1
+##
 # @reference    Pipenv: Python Development Workflow for Humans
 #               https://pypi.org/project/pipenv/
 # Shell Completion
 if which pipenv &> /dev/null; then
     eval "$(_PIPENV_COMPLETE=bash_source pipenv)"
-fi
-
-
-# Covert the debug print of a protobuf string field to hex
-#   Example:
-#       $ to_hex ']\370\032-h\026\000'
-#       5d f8 1a 2d 68 16 00
-if type to_hex &> /dev/null; then
-    echo "ERROR: function name already taken: to_hex()" 1>&2
-else
-    to_hex() {
-        echo -ne $(echo $1 | sed -E 's/\\([0-9]{3})/\\0\1/g') | od -A n -t x1
-    }
-fi
-
-
-# Convert date to UTC
-# Example:
-#   1)  #epoch to UTC
-#       $ to_utc 1483724853
-#       Fri Jan  6 17:47:33 UTC 2017
-#   2)  #epoch milliseconds to UTC
-#       $ to_utc 1483724853236
-#       Fri Jan  6 17:47:33 UTC 2017
-#   3)  #UTC now
-#       $ to_utc
-#       Thu Jan 12 01:45:15 UTC 2017
-#   4)  #static time to UTC
-#       $ date
-#       Wed Jan 11 17:46:10 PST 2017
-#       $ to_utc "Wed Jan 11 17:46:10 PST 2017"
-#       Thu Jan 12 01:46:10 UTC 2017
-if type to_utc &> /dev/null; then
-    echo "ERROR: function name already taken: to_utc()" 1>&2
-else
-    to_utc() {
-        if [ $# -eq 1 ]; then
-            date --utc --date "$(echo $1 | sed -E 's/^([0-9]{10})[0-9]*$/@\1/g')"
-        else
-            date --utc "$@"
-        fi
-    }
 fi
 
 

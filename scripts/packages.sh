@@ -27,12 +27,17 @@ DEBIAN_PACKAGES="
 astyle
 clang-format
 
+build-essential
+
 cmake-curses-gui
 
 gitk
 
 python-is-python3
 python3-pip
+
+ruby-full
+zlib1g-dev
 
 shunit2
 
@@ -54,4 +59,10 @@ cmakelang
 pipenv
 
 pre-commit
+"
+
+RUBY_GEMS="
+bundler
+
+jekyll
 "
