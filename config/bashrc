@@ -107,6 +107,24 @@ if which pipenv &> /dev/null; then
 fi
 
 
+# pip --user
+PATH=$PATH:$HOME/.local/bin
+
+
+# .NET
+PATH=$PATH:$HOME/.dotnet
+
+
+## Ruby
+#
+# @reference    Ruby Gems FAQs
+#               https://guides.rubygems.org/faqs/
+##
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+
 if [ -f ~/.bash_util.sh ]; then
     source ~/.bash_util.sh
 fi
