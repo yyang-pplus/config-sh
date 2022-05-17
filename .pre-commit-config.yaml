@@ -1,13 +1,13 @@
 default_stages: [commit]
 repos:
   - repo: https://github.com/yyang-pplus/config-sh.git
-    rev: d4c1eee67d5941afd748118872cb19b89061b92a
+    rev: 768419ca1741aaabf49664ddb561071a74680cbe
     hooks:
       - id: astyle-c-in
       - id: shfmt
 
   - repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v14.0.1
+    rev: v14.0.3
     hooks:
       - id: clang-format
 
@@ -42,3 +42,9 @@ repos:
     rev: v0.950
     hooks:
       - id: mypy
+
+  - repo: https://github.com/klieret/jekyll-relative-url-check
+    rev: v2.0.1
+    hooks:
+      - id: jekyll-relative-url-check-html
+      - id: jekyll-relative-url-check-markdown
