@@ -53,8 +53,10 @@ shfmt
 
 PIP_PACKAGES="
 black
+mypy
 
 cmakelang
+cmakelint
 
 pipenv
 
