@@ -67,4 +67,6 @@ RUBY_GEMS="
 bundler
 
 jekyll
+
+mdl
 "

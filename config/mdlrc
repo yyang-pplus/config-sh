@@ -1,0 +1,11 @@
+##
+# Configuration file for markdownlint.
+#
+# https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md
+#
+# Order of preference for markdownlint config file (first one wins):
+#   ${PWD}/.mdlrc
+#   ${HOME}/.mdlrc
+##
+
+style "#{File.dirname(File.readlink(__FILE__))}/mdl_style.rb"

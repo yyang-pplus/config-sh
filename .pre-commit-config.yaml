@@ -48,3 +48,8 @@ repos:
     hooks:
       - id: jekyll-relative-url-check-html
       - id: jekyll-relative-url-check-markdown
+
+  - repo: https://github.com/markdownlint/markdownlint.git
+    rev: v0.11.0
+    hooks:
+      - id: markdownlint
