@@ -235,8 +235,11 @@ augroup quick_compile
     autocmd FileType cpp nnoremap <buffer> <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
 
     autocmd FileType c setlocal makeprg=make\ --directory\ build\ --no-print-directory
+    autocmd FileType c let b:dispatch = 'cmake --build build --target test'
     autocmd FileType cpp setlocal makeprg=make\ --directory\ build\ --no-print-directory
+    autocmd FileType cpp let b:dispatch = 'cmake --build build --target test'
     autocmd FileType cmake setlocal makeprg=make\ --directory\ build\ --no-print-directory
+    autocmd FileType cmake let b:dispatch = 'cmake --build build --target test'
 
     autocmd FileType python setlocal makeprg=pipenv\ run\ python3\ %
 augroup END
@@ -313,7 +316,15 @@ let g:netrw_banner = 0
 
 
 " syntastic
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++17'
+let g:syntastic_python_checkers = ['python', 'mypy']
+let g:syntastic_sh_checkers = ['sh', 'shfmt']
+
+
+" jedi
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = "1"
 
 
 " vim-test
