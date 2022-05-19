@@ -24,6 +24,9 @@ mksession! ~/tmp/session.vim
 
 -1read scripts/main_template.cpp
 
+Git commit -a --amend --no-edit
+Git push origin HEAD:refs/for/master
+
 .,$s/\\\\[/{/g
 .,$s/\\\\]/}/g
 EOF

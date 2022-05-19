@@ -34,3 +34,9 @@
 [submodule "config/vim/pack/plugins/start/vim-repeat"]
 	path = config/vim/pack/plugins/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "config/vim/pack/plugins/start/vim-markdown"]
+	path = config/vim/pack/plugins/start/vim-markdown
+	url = https://github.com/preservim/vim-markdown.git
+[submodule "config/vim/pack/plugins/start/tabular"]
+	path = config/vim/pack/plugins/start/tabular
+	url = https://github.com/godlygeek/tabular.git
