@@ -33,6 +33,9 @@ cmake-curses-gui
 
 gitk
 
+nodejs
+xdg-utils
+
 python-is-python3
 python3-pip
 
@@ -45,6 +48,10 @@ vim-gtk3
 exuberant-ctags
 
 xpad
+"
+
+NPM_PACKAGES="
+instant-markdown-d
 "
 
 SNAP_PACKAGES="

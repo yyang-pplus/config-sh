@@ -40,3 +40,6 @@
 [submodule "config/vim/pack/plugins/start/tabular"]
 	path = config/vim/pack/plugins/start/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "config/vim/pack/plugins/start/vim-instant-markdown"]
+	path = config/vim/pack/plugins/start/vim-instant-markdown
+	url = https://github.com/instant-markdown/vim-instant-markdown.git
