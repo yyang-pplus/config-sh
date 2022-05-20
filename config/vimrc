@@ -342,6 +342,11 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_new_list_item_indent = 0
 
 
+" instant-markdown
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+
+
 if has("terminal")
     highlight Terminal ctermbg=DarkGray ctermfg=blue guibg=DarkGray guifg=blue
 

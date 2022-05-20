@@ -19,6 +19,10 @@ if isRedHat; then
 
     $THIS_DIR/build_vim_centos.sh "$HOME/3rdParty/vim"
 elif isDebian; then
+    # Node.js
+    # @reference    https://github.com/nodesource/distributions/blob/master/README.md
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
     sudo apt-get update
 
     sudo apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
@@ -34,6 +38,10 @@ pip3 install --user $PIP_PACKAGES
 
 if which gem > /dev/null; then
     gem install --user-install $RUBY_GEMS
+fi
+
+if which npm > /dev/null; then
+    sudo npm -g install $NPM_PACKAGES
 fi
 
 # Run selected scripts
