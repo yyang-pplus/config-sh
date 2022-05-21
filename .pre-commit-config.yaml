@@ -1,7 +1,7 @@
 default_stages: [commit]
 repos:
   - repo: https://github.com/yyang-pplus/config-sh.git
-    rev: 768419ca1741aaabf49664ddb561071a74680cbe
+    rev: 8108fa536a1d8e7c2ecf203ec69e8c8ab946c6f9
     hooks:
       - id: astyle-c-in
       - id: shfmt
@@ -24,8 +24,10 @@ repos:
         stages: [commit]
       - id: check-json
       - id: check-merge-conflict
+      - id: check-symlinks
       - id: check-xml
-      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
       - id: trailing-whitespace
         stages: [commit]
 
@@ -53,3 +55,8 @@ repos:
     rev: v0.11.0
     hooks:
       - id: markdownlint
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.3
+    hooks:
+      - id: yamllint

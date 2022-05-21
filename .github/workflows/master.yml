@@ -1,10 +1,10 @@
 name: config-sh-master
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   setup-and-check:

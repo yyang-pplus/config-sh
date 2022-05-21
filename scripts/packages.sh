@@ -68,6 +68,8 @@ cmakelint
 pipenv
 
 pre-commit
+
+yamllint
 "
 
 RUBY_GEMS="
