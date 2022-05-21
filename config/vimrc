@@ -18,6 +18,10 @@ set nomodeline
 " Enable file type detection
 filetype plugin on
 syntax on
+augroup file_types
+    autocmd!
+    autocmd BufRead,BufNewFile bash_profile setfiletype sh
+augroup END
 
 
 " Indentation
@@ -33,6 +37,10 @@ set nosmartindent
 set nocindent
 set autoindent
 filetype plugin indent on
+augroup indentations
+    autocmd!
+    autocmd FileType markdown,yaml setlocal tabstop=2 shiftwidth=2
+augroup END
 
 
 " Auto-format
@@ -234,12 +242,8 @@ augroup quick_compile
     autocmd FileType c nnoremap <buffer> <F6> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c17 -pthread && ./'.shellescape('%:r')<CR>
     autocmd FileType cpp nnoremap <buffer> <F6> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' -g --std=c++17 -pthread && ./'.shellescape('%:r')<CR>
 
-    autocmd FileType c setlocal makeprg=make\ --directory\ build\ --no-print-directory
-    autocmd FileType c let b:dispatch = 'cmake --build build --target test'
-    autocmd FileType cpp setlocal makeprg=make\ --directory\ build\ --no-print-directory
-    autocmd FileType cpp let b:dispatch = 'cmake --build build --target test'
-    autocmd FileType cmake setlocal makeprg=make\ --directory\ build\ --no-print-directory
-    autocmd FileType cmake let b:dispatch = 'cmake --build build --target test'
+    autocmd FileType c,cpp,cmake setlocal makeprg=make\ --directory\ build\ --no-print-directory
+    autocmd FileType c,cpp,cmake let b:dispatch = 'cmake --build build --target test'
 
     autocmd FileType python setlocal makeprg=pipenv\ run\ python3\ %
 augroup END
@@ -320,6 +324,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++17'
 let g:syntastic_python_checkers = ['python', 'mypy']
 let g:syntastic_sh_checkers = ['sh', 'shfmt']
+let g:syntastic_yaml_checkers = ['yamllint']
 
 
 " jedi
