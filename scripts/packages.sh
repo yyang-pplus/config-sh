@@ -69,6 +69,9 @@ pipenv
 
 pre-commit
 
+proselint
+testresources
+
 yamllint
 "
 
