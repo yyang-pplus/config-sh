@@ -7,5 +7,6 @@
 #   ${PWD}/.mdlrc
 #   ${HOME}/.mdlrc
 ##
+ignore_front_matter true
 
 style "#{File.dirname(File.readlink(__FILE__))}/mdl_style.rb"

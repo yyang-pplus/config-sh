@@ -13,5 +13,5 @@ exclude_rule 'MD033' # Inline HTML
 # If a page is printed, it helps if the URL is viewable.
 exclude_rule 'MD034' # Bare URL used
 
-# To work with frontmatter
+# To work with post.excerpt
 exclude_rule 'MD041' # No first line h1
