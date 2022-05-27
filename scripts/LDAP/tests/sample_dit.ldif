@@ -1,19 +1,19 @@
 # Define the organization
-dn: dc=yyangtech,dc=wordpress,dc=com
+dn: dc=yyang-pplus,dc=github,dc=io
 objectClass: dcObject
 objectClass: organization
-o: yyangtech
+o: yyang-pplus
 
 # Define organization unit: People
-dn: ou=People,dc=yyangtech,dc=wordpress,dc=com
+dn: ou=People,dc=yyang-pplus,dc=github,dc=io
 objectClass: organizationalUnit
 
 # Define organization unit: Groups
-dn: ou=Groups,dc=yyangtech,dc=wordpress,dc=com
+dn: ou=Groups,dc=yyang-pplus,dc=github,dc=io
 objectClass: organizationalUnit
 
 # Define users
-dn: uid=yyang,ou=People,dc=yyangtech,dc=wordpress,dc=com
+dn: uid=yyang,ou=People,dc=yyang-pplus,dc=github,dc=io
 objectClass: inetOrgPerson
 cn: Yang Yang
 sn: Yang
@@ -21,11 +21,11 @@ sn: Yang
 userPassword: {SSHA}4+17HsV7y1Rykx6qnhZI3//2THgc4Lp8
 
 # Define engineer group
-dn: cn=engineer,ou=Groups,dc=yyangtech,dc=wordpress,dc=com
+dn: cn=engineer,ou=Groups,dc=yyang-pplus,dc=github,dc=io
 objectClass: groupOfNames
-member: uid=yyang,ou=People,dc=yyangtech,dc=wordpress,dc=com
+member: uid=yyang,ou=People,dc=yyang-pplus,dc=github,dc=io
 
 # Define administrator group
-dn: cn=administrator,ou=Groups,dc=yyangtech,dc=wordpress,dc=com
+dn: cn=administrator,ou=Groups,dc=yyang-pplus,dc=github,dc=io
 objectClass: groupOfNames
-member: uid=yyang,ou=People,dc=yyangtech,dc=wordpress,dc=com
+member: uid=yyang,ou=People,dc=yyang-pplus,dc=github,dc=io

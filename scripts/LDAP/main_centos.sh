@@ -2,6 +2,8 @@
 
 # This script only works for CentOS
 
+set -e
+
 source ~/.bash_util.sh
 
 THIS_DIR=$(dirname "$0")
