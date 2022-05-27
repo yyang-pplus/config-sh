@@ -2,6 +2,8 @@
 
 # This script is only for Ubuntu.
 
+set -e
+
 source ~/.bash_util.sh
 
 THIS_DIR=$(dirname "$0")

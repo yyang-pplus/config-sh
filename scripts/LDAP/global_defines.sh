@@ -1,4 +1,4 @@
-SUFFIX="dc=yyangtech,dc=wordpress,dc=com"
+SUFFIX="dc=yyang-pplus,dc=github,dc=io"
 ROOT_DN="cn=admin,$SUFFIX"
 
 DB_DN=$(sudo ldapsearch -H ldapi:// -Y EXTERNAL -b "cn=config" -s one "(olcSuffix=*)" dn -LLL -Q)

@@ -30,7 +30,7 @@ PROJECTS_DIR="$HOME/projects"
 mkdir -p "$PROJECTS_DIR"
 
 pushd "$PROJECTS_DIR"
-ACTIVE_GERRIT_PROJECTS=(algorithms yyangtech_wordpress_com)
+ACTIVE_GERRIT_PROJECTS=(algorithms)
 for a_project in ${ACTIVE_GERRIT_PROJECTS[@]}; do
     if [ ! -d "$a_project" ]; then
         printf "\nDownloading project $a_project\n"
