@@ -12,52 +12,40 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-UTIL_SCRIPT_NAME="util.sh"
-wget -O /tmp/$UTIL_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$UTIL_SCRIPT_NAME"
-source /tmp/$UTIL_SCRIPT_NAME
-if GenerateSshKey; then
-    AddSshKeyTo "yyang-pplus" "https://github.com/settings/keys"
-fi
-
-printf "\nUpgrading system.\n"
-sudo apt --yes update
-sudo apt --yes upgrade
-
 sudo apt --yes install git
 
-PROJECTS_DIR="$HOME/projects"
-mkdir -p "$PROJECTS_DIR"
+SETUP_SCRIPT_NAME="setup_common.sh"
+wget -O /tmp/$SETUP_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$SETUP_SCRIPT_NAME"
+bash /tmp/$SETUP_SCRIPT_NAME
+
+# Require config.sh to run first
+source "$HOME/.bash_util.sh"
+source "$PROJECTS_DIR/config-sh/scripts/util.sh"
+
+PPLUS_KEY_FILE_NAME="id_ed25519_pplus"
+EVEN_KEY_FILE_NAME="id_ed25519_even"
+
+AddSshKeyTo $PPLUS_KEY_FILE_NAME "https://github.com/settings/keys"
+AddSshKeyTo $EVEN_KEY_FILE_NAME "https://github.com/settings/keys"
 
 pushd "$PROJECTS_DIR"
 ACTIVE_EVEN_PROJECTS=(algorithms)
 for a_project in ${ACTIVE_EVEN_PROJECTS[@]}; do
     if [ ! -d "$a_project" ]; then
         printf "\nDownloading project $a_project\n"
-        git clone --recurse-submodules -j8 "git@github.com:yyang-even/$a_project.git"
+        git clone --recurse-submodules -j8 "git@github-even:yyang-even/$a_project.git"
     fi
 done
 
-ACTIVE_PPLUS_PROJECTS=(config-sh script-sh)
+ACTIVE_PPLUS_PROJECTS=(script-sh)
 for a_project in ${ACTIVE_PPLUS_PROJECTS[@]}; do
     if [ ! -d "$a_project" ]; then
         printf "\nDownloading project $a_project\n"
-        git clone --recurse-submodules -j8 "git@github.com:yyang-pplus/$a_project.git"
+        git clone --recurse-submodules -j8 "git@github-pplus:yyang-pplus/$a_project.git"
     fi
 done
 
-TMP_DIR="$HOME/tmp"
-mkdir -p "$TMP_DIR"
-
-pushd config-sh
-./main.sh |& tee "$TMP_DIR/config.txt"
-popd
-
 pushd algorithms
-printf "\n\n"
-./scripts/setup.sh |& tee "$TMP_DIR/algorithms.txt"
+./scripts/setup.sh |& tee "/tmp/algorithms.txt"
 popd
 popd
-
-if isVirtualBox; then
-    mkdir -p /media/sf_VM_Shared/DO_NOT_DELETE/setup
-fi

@@ -7,6 +7,8 @@ curl
 cmake
 cmake-gui
 
+expect
+
 git
 meld
 
