@@ -17,7 +17,6 @@ wget -O /tmp/$UTIL_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/co
 source /tmp/$UTIL_SCRIPT_NAME
 if GenerateSshKey; then
     AddSshKeyTo "yyang-pplus" "https://github.com/settings/keys"
-    AddSshKeyTo "yyang-even" "https://review.gerrithub.io/settings/#SSHKeys"
 fi
 
 printf "\nUpgrading system.\n"
@@ -30,16 +29,16 @@ PROJECTS_DIR="$HOME/projects"
 mkdir -p "$PROJECTS_DIR"
 
 pushd "$PROJECTS_DIR"
-ACTIVE_GERRIT_PROJECTS=(algorithms)
-for a_project in ${ACTIVE_GERRIT_PROJECTS[@]}; do
+ACTIVE_EVEN_PROJECTS=(algorithms)
+for a_project in ${ACTIVE_EVEN_PROJECTS[@]}; do
     if [ ! -d "$a_project" ]; then
         printf "\nDownloading project $a_project\n"
-        git clone --recurse-submodules -j8 "ssh://yyang-even@review.gerrithub.io:29418/yyang-even/$a_project" && scp -p -P 29418 yyang-even@review.gerrithub.io:hooks/commit-msg "$a_project/.git/hooks/"
+        git clone --recurse-submodules -j8 "git@github.com:yyang-even/$a_project.git"
     fi
 done
 
-ACTIVE_GIT_PROJECTS=(config-sh script-sh)
-for a_project in ${ACTIVE_GIT_PROJECTS[@]}; do
+ACTIVE_PPLUS_PROJECTS=(config-sh script-sh)
+for a_project in ${ACTIVE_PPLUS_PROJECTS[@]}; do
     if [ ! -d "$a_project" ]; then
         printf "\nDownloading project $a_project\n"
         git clone --recurse-submodules -j8 "git@github.com:yyang-pplus/$a_project.git"
