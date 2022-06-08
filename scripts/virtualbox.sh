@@ -30,6 +30,8 @@ if [ -z "$installer_path" ]; then
 else
     echo "Running installer '$installer_path'"
     sudo bash "$installer_path"
+
+    mkdir -p /media/sf_VM_Shared/DO_NOT_DELETE/setup
 fi
 
 #sudo shutdown -r now

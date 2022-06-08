@@ -1,16 +1,12 @@
 ##
 # Global Utility Functions
 ##
+PROJECTS_DIR="$HOME/projects"
 
 Assert() {
     if ! "$@"; then
         exit 1
     fi
-}
-
-LogAndRun() {
-    echo "[$(date)]$" "$@"
-    $@
 }
 
 QuietRun() {

@@ -14,22 +14,19 @@ fi
 
 sudo yum --assumeyes install git
 
-PROJECTS_DIR="$HOME/projects"
-mkdir -p "$PROJECTS_DIR"
+SETUP_SCRIPT_NAME="setup_common.sh"
+wget -O /tmp/$SETUP_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/scripts/$SETUP_SCRIPT_NAME"
+bash /tmp/$SETUP_SCRIPT_NAME
+
+# Require config.sh to run first
+source "$HOME/.bash_util.sh"
 
 pushd "$PROJECTS_DIR"
-ACTIVE_GIT_PROJECTS=(config-sh script-sh)
+ACTIVE_GIT_PROJECTS=(script-sh)
 for a_project in ${ACTIVE_GIT_PROJECTS[@]}; do
     if [ ! -d "$a_project" ]; then
         printf "\nDownloading project $a_project\n"
         git clone --recurse-submodules -j8 "https://github.com/yyang-pplus/$a_project.git"
     fi
 done
-
-TMP_DIR="$HOME/tmp"
-mkdir -p "$TMP_DIR"
-
-pushd config-sh
-./main.sh |& tee "$TMP_DIR/config.txt"
-popd
 popd
