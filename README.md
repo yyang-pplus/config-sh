@@ -5,6 +5,8 @@
 
 My Linux configuration.
 
+Hostname format: **OS.machine.domain**
+
 ## To Setup Ubuntu
 
 ```bash
