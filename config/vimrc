@@ -53,8 +53,8 @@ set formatoptions+=n
 set formatoptions-=2
 set formatoptions-=t
 set formatoptions+=q
-" 88 + 7
-set textwidth=95
+" 88 + 6
+set textwidth=94
 
 
 "
@@ -69,8 +69,8 @@ endfunction
 augroup auto_format
     autocmd!
     autocmd BufWritePre *.h,*.hpp,*.c,*.cc,*.cpp call ClangFormat()
-    " 98 + 7
-    autocmd FileType c,cpp setlocal textwidth=105
+    " 98 + 6
+    autocmd FileType c,cpp setlocal textwidth=104
 augroup END
 
 
