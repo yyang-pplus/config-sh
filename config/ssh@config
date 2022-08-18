@@ -1,8 +1,3 @@
-Host github.com
-   HostName github.com
-   User git
-   IdentityFile ~/.ssh/id_ed25519
-
 Host github-even
    HostName github.com
    User git
@@ -12,3 +7,5 @@ Host github-pplus
    HostName github.com
    User git
    IdentityFile ~/.ssh/id_ed25519_pplus
+
+IdentityFile ~/.ssh/id_ed25519
