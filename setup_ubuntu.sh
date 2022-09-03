@@ -47,6 +47,6 @@ for a_project in ${ACTIVE_PPLUS_PROJECTS[@]}; do
 done
 
 pushd algorithms
-./scripts/setup.sh |& tee "/tmp/algorithms.txt"
+./scripts/setup.sh || true
 popd
 popd
