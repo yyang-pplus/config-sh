@@ -15,7 +15,7 @@ fi
 sudo apt --yes install git
 
 SETUP_SCRIPT_NAME="setup_common.sh"
-wget -O /tmp/$SETUP_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SETUP_SCRIPT_NAME"
+wget --no-check-certificate -O /tmp/$SETUP_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SETUP_SCRIPT_NAME"
 bash /tmp/$SETUP_SCRIPT_NAME
 
 # Require config.sh to run first

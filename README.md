@@ -5,13 +5,13 @@
 
 My Linux configuration.
 
-Hostname format: **OS.machine.domain**
+Hostname format: **OS-machine-domain**
 
 ## To Setup Ubuntu
 
 ```bash
 SCRIPT_NAME="setup_ubuntu.sh"
-wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
+wget --no-check-certificate -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
 
 ```
 
@@ -19,6 +19,6 @@ wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-
 
 ```bash
 SCRIPT_NAME="setup_redhat.sh"
-wget -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
+wget --no-check-certificate -O /tmp/$SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SCRIPT_NAME" && bash /tmp/$SCRIPT_NAME
 
 ```
