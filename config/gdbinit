@@ -1,0 +1,21 @@
+# Enable config file in current working directory
+set auto-load safe-path /
+
+# No confirmation for breakpoint pending
+set breakpoint pending on
+
+# Pretty print structures
+set print pretty on
+set print union on
+
+# Print the actual derived type, when RTTI
+set print object on
+
+# Pretty print virtual function tables
+set print vtbl on
+
+# Stop tracing run if GDB has disconnected from the target
+set disconnected-tracing off
+
+# Strict type checking
+set check type on
