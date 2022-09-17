@@ -4,6 +4,9 @@ set auto-load safe-path /
 # No confirmation for breakpoint pending
 set breakpoint pending on
 
+# Print unlimited
+set print elements 0
+
 # Pretty print structures
 set print pretty on
 set print union on
