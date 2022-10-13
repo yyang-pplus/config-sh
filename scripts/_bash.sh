@@ -14,4 +14,6 @@ git commit -a --amend --no-edit
 git push origin HEAD:refs/for/master
 
 gvim -S $HOME/tmp/session.vim
+
+bundle exec jekyll serve --livereload &
 EOF
