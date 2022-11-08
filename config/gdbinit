@@ -1,5 +1,5 @@
 # Enable config file in current working directory
-set auto-load safe-path /
+# set auto-load safe-path /
 
 # No confirmation for breakpoint pending
 set breakpoint pending on
@@ -22,3 +22,22 @@ set disconnected-tracing off
 
 # Strict type checking
 set check type on
+
+set history filename ~/.gdb_history
+set history save on
+set history size 5000
+set history remove-duplicates unlimited
+set history expansion on
+
+
+# User-defined command hooks
+
+define set logging hook-on
+    set print elements 0
+    set pagination off
+    set width unlimited
+end
+
+define set logging hook-off
+    set pagination on
+end
