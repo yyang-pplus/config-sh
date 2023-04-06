@@ -1,10 +1,14 @@
-# Mappings for "up" and "down" to search the history incrementally
-# Note: Old behavior still available with Ctrl+P and Ctrl+N
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-
+# Keep this first
+set editing-mode emacs
 
 # @reference    Lazier Tab completion
 #               https://sanctum.geek.nz/arabesque/lazier-tab-completion/
 # Hit A single <Tab> to produce a list of all possible completions.
 set show-all-if-ambiguous on
+
+set skip-completed-text on
+
+# Mappings for "up" and "down" to search the history incrementally
+# Note: Old behavior still available with Ctrl+P and Ctrl+N
+"\e[A": history-search-backward
+"\e[B": history-search-forward
