@@ -29,6 +29,8 @@ elif isDebian; then
 
     sudo snap install $SNAP_PACKAGES
 
+    $THIS_DIR/docker.sh
+
     sudo apt --yes autoremove
 else
     Fatal "Unsupported Linux distribution."
