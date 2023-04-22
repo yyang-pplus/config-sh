@@ -15,16 +15,7 @@ for one_project in "${ALL_PROJECTS[@]}"; do
 
         pushd "$one_project"
 
-        if [ ! -f ".git/hooks/pre-commit" ]; then
-            cp "$PROJECTS_DIR/config-sh/git_hooks/author-guard.sh" ".git/hooks/pre-commit"
-
-            if git remote -v | grep -q 'yyang-even'; then
-                sed -i -E s/^\(EXPECTED_EMAIL=\).+/\\1\"yyang.even@gmail.com\"/ ".git/hooks/pre-commit"
-
-                git config --local user.email "yyang.even@gmail.com"
-            fi
-        fi
-
+        ln --symbolic --force --no-target-directory "$PROJECTS_DIR/config-sh/git_hooks/author-guard.sh" ".git/hooks/pre-commit"
         ln --symbolic --force --no-target-directory "$PROJECTS_DIR/config-sh/git_hooks/push-guard.sh" ".git/hooks/pre-push"
 
         # Keep pre-commit last

@@ -2,15 +2,22 @@
 
 set -e
 
-EXPECTED_EMAIL=$(git config --global user.email)
 EXPECTED_NAME=$(git config --global user.name)
 
-if [[ $EXPECTED_EMAIL != $GIT_AUTHOR_EMAIL ]]; then
-    echo "Unexpected email. Expect: '$EXPECTED_EMAIL'"
+if git remote -v | grep "yyang-pplus" > /dev/null; then
+    EXPECTED_EMAIL_SUBSTR="pplus"
+else
+    EXPECTED_EMAIL_SUBSTR="even"
+fi
+
+if [[ "$GIT_AUTHOR_EMAIL" != *"$EXPECTED_EMAIL_SUBSTR@"* ]]; then
+    echo "Unexpected user email. Expect: '$EXPECTED_EMAIL_SUBSTR'"
+    echo "Use following command to fix it:"
+    echo "    git config --local user.email 'yyang@example.com'"
     exit 1
 fi
 
 if [[ $EXPECTED_NAME != $GIT_AUTHOR_NAME ]]; then
-    echo "Unexpected name. Expect: '$EXPECTED_NAME'"
+    echo "Unexpected user name. Expect: '$EXPECTED_NAME'"
     exit 1
 fi
