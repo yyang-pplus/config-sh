@@ -23,6 +23,8 @@ xclip
 
 REDHAT_PACKAGES="
 ctags
+
+vim-X11
 "
 
 DEBIAN_PACKAGES="

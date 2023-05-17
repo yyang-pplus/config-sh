@@ -17,7 +17,6 @@ if isRedHat; then
 
     sudo yum --assumeyes --skip-broken install $COMMON_PACKAGES $REDHAT_PACKAGES
 
-    $THIS_DIR/build_vim_centos.sh "$HOME/3rdParty/vim"
 elif isDebian; then
     # Node.js
     # @reference    https://github.com/nodesource/distributions/blob/master/README.md
