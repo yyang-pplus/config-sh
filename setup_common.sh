@@ -17,6 +17,7 @@ PROJECTS_DIR="$HOME/projects"
 mkdir -p "$PROJECTS_DIR"
 
 pushd "$PROJECTS_DIR"
+rm -rf config-sh
 git clone --recurse-submodules -j8 "https://github.com/yyang-pplus/config-sh.git"
 
 TMP_DIR="$HOME/tmp"

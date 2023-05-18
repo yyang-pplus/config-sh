@@ -7,6 +7,10 @@ My Linux configuration.
 
 Hostname format: **OS-machine-domain**
 
+```bash
+sudo hostnamectl set-hostname OS-machine-domain
+```
+
 ## To Setup Ubuntu
 
 ```bash
