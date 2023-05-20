@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
@@ -10,13 +12,11 @@ sudo grep "vboxsf" /etc/group
 ##
 # @reference    How to Install VirtualBox Guest Additions on Ubuntu 18.04
 #               https://linuxize.com/post/how-to-install-virtualbox-guest-additions-in-ubuntu/
-# @reference    Install VirtualBox Guest Additions in CentOS, RHEL & Fedora
-#               https://www.tecmint.com/install-virtualbox-guest-additions-in-centos-rhel-fedora/
 ##
 echo "Installing VirtualBox Guest Additions."
 if isRedHat; then
-    sudo yum -y install epel-release
-    sudo dnf --assumeyes install tar bzip2 kernel-devel-$(uname -r) kernel-headers perl gcc make elfutils-libelf-devel
+    sudo yum --assumeyes install epel-release
+    sudo dnf --assumeyes install tar bzip2 kernel-uek-devel-$(uname -r) perl gcc make elfutils-libelf-devel
     MEDIA_PATH=/run/media/$(whoami)/
 else
     sudo apt --yes install build-essential dkms linux-headers-$(uname -r)

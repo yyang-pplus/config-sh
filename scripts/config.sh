@@ -43,3 +43,5 @@ if [ -f "$OLD_BASH_RC" ]; then
         cp "$OLD_BASH_RC" "$LOCAL_BASH_RC"
     fi
 fi
+
+chmod 600 $HOME/.ssh/config
