@@ -1,0 +1,38 @@
+[user]
+    name = Yang Yang
+[color]
+    ui = true
+[core]
+    autocrlf = input
+    editor = vim
+    ##
+    # @reference    Ignoring files
+    #               https://help.github.com/en/github/using-git/ignoring-files
+    ##
+    excludesfile = ~/.gitignore
+[diff]
+    tool = meld
+    guitool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[fetch]
+    prune = true
+[grep]
+    lineNumber = true
+[push]
+    default = current
+[merge]
+    tool = meld
+[mergetool]
+    prompt = false
+[mergetool "meld"]
+    ##
+    # @reference    Setting up and using Meld as your git difftool and mergetool
+    #               https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool
+    #
+    # Choose one of these 2 lines (not both!).
+    ##
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
