@@ -2,38 +2,12 @@
 
 # Don't run this script as sudo
 
+set -ex
+
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
 if which git &> /dev/null; then
-    echo "Previous git settings:"
-    git config --list
-
-    git config --global user.name "Yang Yang"
-    git config --global --unset user.email || true
-
-    git config --global color.ui true
-
-    git config --global core.autocrlf input
-    git config --global core.editor vim
-    ##
-    # @reference    Ignoring files
-    #               https://help.github.com/en/github/using-git/ignoring-files
-    ##
-    git config --global core.excludesfile ~/.gitignore
-
-    git config --global diff.tool meld
-    git config --global diff.guitool meld
-    git config --global difftool.prompt false
-
-    git config --global fetch.prune true
-
-    git config --global grep.lineNumber true
-
-    # Other options are not available for versions below 2.0
-    git config --global push.default current
-
-    set -ex
 
     temp_dir="/tmp/$(date +%s)"
     mkdir $temp_dir
