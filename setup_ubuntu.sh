@@ -18,6 +18,10 @@ SETUP_SCRIPT_NAME="setup_common.sh"
 wget --no-check-certificate -O /tmp/$SETUP_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SETUP_SCRIPT_NAME"
 bash /tmp/$SETUP_SCRIPT_NAME
 
+pushd "$PROJECTS_DIR/config-sh"
+git remote set-url origin git@github-pplus:yyang-pplus/config-sh.git
+popd
+
 # Require config.sh to run first
 source "$HOME/.bashrc"
 source "$HOME/.bash_util.sh"
