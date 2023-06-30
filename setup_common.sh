@@ -24,8 +24,6 @@ TMP_DIR="$HOME/tmp"
 mkdir -p "$TMP_DIR"
 
 pushd config-sh
-git remote set-url origin git@github-pplus:yyang-pplus/config-sh.git
-
 ./main.sh |& tee "$TMP_DIR/config.txt"
 popd
 popd
