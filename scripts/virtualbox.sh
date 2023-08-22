@@ -16,7 +16,7 @@ sudo grep "vboxsf" /etc/group
 echo "Installing VirtualBox Guest Additions."
 if isRedHat; then
     sudo yum --assumeyes install epel-release
-    sudo dnf --assumeyes install tar bzip2 kernel-uek-devel-$(uname -r) perl gcc make elfutils-libelf-devel
+    sudo dnf --assumeyes install tar bzip2 kernel-devel-$(uname -r) perl gcc make elfutils-libelf-devel
     MEDIA_PATH=/run/media/$(whoami)/
 else
     sudo apt --yes install build-essential dkms linux-headers-$(uname -r)
