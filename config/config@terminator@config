@@ -6,6 +6,7 @@
   [[default]]
     cursor_color = "#aaaaaa"
     scrollback_infinite = True
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[window0]]]
