@@ -50,6 +50,8 @@ for a_project in ${ACTIVE_PPLUS_PROJECTS[@]}; do
     fi
 done
 
+$PROJECTS_DIR/config-sh/scripts/install_all_hooks.sh "$PROJECTS_DIR"
+
 pushd algorithms
 ./scripts/setup.sh || true
 popd

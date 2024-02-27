@@ -17,7 +17,3 @@ SCRIPT_DIR=$MAIN_DIR/scripts
 
 $SCRIPT_DIR/config.sh
 $SCRIPT_DIR/dependencies.sh
-
-source "$HOME/.bashrc"
-
-$SCRIPT_DIR/install_all_hooks.sh "$MAIN_DIR/.."
