@@ -13,6 +13,7 @@ git
 meld
 
 terminator
+tmux
 
 mlocate
 
