@@ -130,15 +130,5 @@ if [ -f ~/.bash_util.sh ]; then
 fi
 
 
-## TMUX
-# start tmux automatically
-# @reference    5 Useful Tips for Better Tmux Terminal Sessions
-#               https://www.tecmint.com/tips-for-tmux-terminal-sessions/
-##
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
-
-
 # alias
 alias grep='grep --line-number --color=auto'
