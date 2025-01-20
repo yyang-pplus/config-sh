@@ -6,7 +6,9 @@ set -e
 # @reference    Install Docker Engine on Ubuntu
 #               https://docs.docker.com/engine/install/ubuntu/
 ##
-sudo apt-get --yes remove docker docker-engine docker.io containerd runc
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
+    sudo apt-get remove $pkg
+done
 
 if which docker &> /dev/null; then
     echo "Docker already installed."

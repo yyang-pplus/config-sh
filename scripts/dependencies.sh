@@ -35,7 +35,7 @@ else
     Fatal "Unsupported Linux distribution."
 fi
 
-pip3 install --user $PIP_PACKAGES
+pipx install $PIPX_PACKAGES
 
 if which gem > /dev/null; then
     gem install --user-install $RUBY_GEMS

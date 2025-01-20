@@ -111,10 +111,6 @@ fi
 PATH=$PATH:$HOME/.local/bin
 
 
-# .NET
-PATH=$PATH:$HOME/.dotnet
-
-
 ## Ruby
 #
 # @reference    Ruby Gems FAQs
