@@ -61,6 +61,7 @@ for one_project in "${ALL_PROJECTS[@]}"; do
         pushd "$one_project"
 
         $CONFIG_SH_ROOT_DIR/scripts/git/install_hooks.sh
+        $CONFIG_SH_ROOT_DIR/scripts/git/config_to_initial_account.sh
         popd
     fi
 done
