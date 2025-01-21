@@ -43,6 +43,10 @@ AddSshKeyTo() {
     fi
 
     echo "Adding the new SSH key $KEY_FILE_NAME to $URL."
+    echo "Please sign out current account first."
     echo "Please close the browser when done."
-    firefox --new-tab "$URL"
+
+    firefox --new-tab https://github.com/logout &> /dev/null
+
+    firefox --new-tab "$URL" &> /dev/null
 }
