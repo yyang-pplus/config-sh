@@ -54,7 +54,16 @@ for a_project in ${ACTIVE_PPLUS_PROJECTS[@]}; do
     fi
 done
 
-$CONFIG_SH_ROOT_DIR/scripts/install_all_hooks.sh "$PROJECTS_DIR"
+ALL_PROJECTS=($(ls))
+for one_project in "${ALL_PROJECTS[@]}"; do
+    if [ -d "$one_project/.git" ]; then
+
+        pushd "$one_project"
+
+        $CONFIG_SH_ROOT_DIR/scripts/git/install_hooks.sh
+        popd
+    fi
+done
 
 pushd algorithms
 ./scripts/setup.sh || true
