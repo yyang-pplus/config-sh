@@ -28,6 +28,7 @@ elif isDebian; then
 
     sudo snap install $SNAP_PACKAGES
 
+    $THIS_DIR/anki.sh
     $THIS_DIR/docker.sh
 
     sudo apt --yes autoremove
