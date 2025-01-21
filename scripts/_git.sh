@@ -8,15 +8,13 @@ THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
 if which git &> /dev/null; then
+    BASE_URL="https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion"
 
-    temp_dir="/tmp/$(date +%s)"
-    mkdir $temp_dir
-    git clone https://github.com/git/git "$temp_dir/git"
+    COMPLETION_SCRIPT_NAME="git-completion.bash"
+    wget --no-check-certificate -O /tmp/$COMPLETION_SCRIPT_NAME "$BASE_URL/$COMPLETION_SCRIPT_NAME"
+    mv /tmp/$COMPLETION_SCRIPT_NAME $HOME/.git-completion.sh
 
-    # Copy git auto completion script
-    cp $temp_dir/git/contrib/completion/git-completion.bash $HOME/.git-completion.sh
-    # Copy git prompt script
-    cp $temp_dir/git/contrib/completion/git-prompt.sh $HOME/.git-prompt.sh
-
-    rm -rf "$temp_dir"
+    PROMPT_SCRIPT_NAME="git-prompt.sh"
+    wget --no-check-certificate -O /tmp/$PROMPT_SCRIPT_NAME "$BASE_URL/$PROMPT_SCRIPT_NAME"
+    mv /tmp/$PROMPT_SCRIPT_NAME $HOME/.$PROMPT_SCRIPT_NAME
 fi
