@@ -21,9 +21,11 @@ bash /tmp/$SETUP_SCRIPT_NAME
 # Require config.sh to run first
 source "$HOME/.bashrc"
 source "$HOME/.bash_util.sh"
-source "$PROJECTS_DIR/config-sh/scripts/util.sh"
 
-pushd "$PROJECTS_DIR/config-sh"
+CONFIG_SH_ROOT_DIR="$PROJECTS_DIR/config-sh"
+source "$CONFIG_SH_ROOT_DIR/scripts/util.sh"
+
+pushd "$CONFIG_SH_ROOT_DIR"
 git remote set-url origin git@github-pplus:yyang-pplus/config-sh.git
 popd
 
@@ -32,6 +34,8 @@ EVEN_KEY_FILE_NAME="id_ed25519_even"
 
 AddSshKeyTo $PPLUS_KEY_FILE_NAME "https://github.com/settings/keys"
 AddSshKeyTo $EVEN_KEY_FILE_NAME "https://github.com/settings/keys"
+
+## The following parts require SSH key been added to github
 
 pushd "$PROJECTS_DIR"
 ACTIVE_EVEN_PROJECTS=(algorithms)
@@ -50,7 +54,7 @@ for a_project in ${ACTIVE_PPLUS_PROJECTS[@]}; do
     fi
 done
 
-$PROJECTS_DIR/config-sh/scripts/install_all_hooks.sh "$PROJECTS_DIR"
+$CONFIG_SH_ROOT_DIR/scripts/install_all_hooks.sh "$PROJECTS_DIR"
 
 pushd algorithms
 ./scripts/setup.sh || true
