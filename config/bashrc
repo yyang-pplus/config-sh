@@ -106,9 +106,12 @@ if which pipenv &> /dev/null; then
     eval "$(_PIPENV_COMPLETE=bash_source pipenv)"
 fi
 
-
-# pip --user
+# pipx
 PATH=$PATH:$HOME/.local/bin
+# $ pipx completions
+if which pipx &> /dev/null; then
+    eval "$(register-python-argcomplete pipx)"
+fi
 
 
 ## Ruby
