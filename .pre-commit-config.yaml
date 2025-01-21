@@ -1,4 +1,4 @@
-default_stages: [commit]
+default_stages: [pre-commit]
 repos:
   - repo: https://github.com/yyang-pplus/config-sh.git
     rev: d6ac2be57ab0985b8cfb7eef4f430ed434916b12
@@ -21,7 +21,7 @@ repos:
     rev: v4.4.0
     hooks:
       - id: check-executables-have-shebangs
-        stages: [commit]
+        stages: [pre-commit]
       - id: check-json
       - id: check-merge-conflict
       - id: check-symlinks
@@ -29,7 +29,7 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
-        stages: [commit]
+        stages: [pre-commit]
 
       # Python only
       - id: debug-statements
