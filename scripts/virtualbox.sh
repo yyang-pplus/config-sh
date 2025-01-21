@@ -5,10 +5,6 @@ set -ex
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
-echo "Fixing VM shared folder permission issue."
-sudo usermod -aG vboxsf $(whoami)
-sudo grep "vboxsf" /etc/group
-
 ##
 # @reference    How to Install VirtualBox Guest Additions on Ubuntu 18.04
 #               https://linuxize.com/post/how-to-install-virtualbox-guest-additions-in-ubuntu/
@@ -28,11 +24,10 @@ if [ -z "$installer_path" ]; then
     Fatal "Installer not found. Please insert Guest Additions CD."
 else
     echo "Running installer '$installer_path'"
-    sudo bash "$installer_path"
+    # The installer returns non-zero if it cannot reload the modules; needs reboot.
+    sudo bash "$installer_path" || true
 
-    if [[ -d /media/sf_VM_Shared ]]; then
-        mkdir -p /media/sf_VM_Shared/DO_NOT_DELETE/setup
-    fi
+    echo "Fixing VM shared folder permission issue."
+    sudo usermod -aG vboxsf $(whoami)
+    sudo grep "vboxsf" /etc/group
 fi
-
-#sudo shutdown -r now

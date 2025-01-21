@@ -54,6 +54,6 @@ for script in "${SELECTED_SCRIPTS[@]}"; do
 done
 
 if isVirtualBox; then
-    ./virtualbox.sh || true
+    ./virtualbox.sh
 fi
 popd
