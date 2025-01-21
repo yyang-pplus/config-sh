@@ -1,8 +1,5 @@
 #!/bin/bash
 
-##
-# @note	Avoid using bash_util.sh functions in this script.
-
 # Don't run this script as sudo, as required by git.sh
 if [ "$EUID" -eq 0 ]; then
     echo "Cannot run as root."
