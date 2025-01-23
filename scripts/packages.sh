@@ -27,6 +27,7 @@ vim-X11
 "
 
 DEBIAN_PACKAGES="
+astyle
 clang-format
 
 build-essential
@@ -34,6 +35,8 @@ build-essential
 cmake-curses-gui
 
 gitk
+
+gimp
 
 python-is-python3
 python3-pip
