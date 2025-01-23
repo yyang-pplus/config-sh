@@ -18,10 +18,6 @@ if isRedHat; then
     sudo yum --assumeyes --skip-broken install $COMMON_PACKAGES $REDHAT_PACKAGES
 
 elif isDebian; then
-    # Node.js
-    # @reference    https://github.com/nodesource/distributions/blob/master/README.md
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-
     sudo apt-get update
 
     sudo apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
@@ -40,10 +36,6 @@ pipx install $PIPX_PACKAGES
 
 if which gem > /dev/null; then
     gem install --user-install $RUBY_GEMS
-fi
-
-if which npm > /dev/null; then
-    sudo npm -g install $NPM_PACKAGES
 fi
 
 # Run selected scripts

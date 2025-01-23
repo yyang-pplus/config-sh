@@ -1,6 +1,5 @@
 COMMON_PACKAGES="
 ccache
-distcc
 
 curl
 
@@ -36,15 +35,11 @@ cmake-curses-gui
 
 gitk
 
-nodejs
-xdg-utils
-
 python-is-python3
 python3-pip
 pipx
 
 ruby-full
-zlib1g-dev
 
 shunit2
 
@@ -54,10 +49,6 @@ exuberant-ctags
 xpad
 
 plocate
-"
-
-NPM_PACKAGES="
-instant-markdown-d
 "
 
 SNAP_PACKAGES="
@@ -81,9 +72,5 @@ yamllint
 "
 
 RUBY_GEMS="
-bundler
-
-jekyll
-
 mdl
 "
