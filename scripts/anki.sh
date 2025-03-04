@@ -11,7 +11,7 @@ fi
 # @reference    Installing & Upgrading Anki on Linux
 #               https://docs.ankiweb.net/platform/linux/installing.html
 ##
-sudo apt --yes install libxcb-xinerama0 libxcb-cursor0 libnss3 zstd
+sudo apt --yes install libxcb-xinerama0 libxcb-cursor0 libnss3 zstd mpv
 
 temp_dir="/tmp/$(date +%s)"
 mkdir $temp_dir
