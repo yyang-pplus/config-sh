@@ -10,11 +10,14 @@ if which google-chrome &> /dev/null; then
     exit 0
 fi
 
+if isDocker; then
+    echo "Skip this in docker container for now."
+    exit 0
+fi
+
 ##
 # @reference    How to Install Google Chrome Web Browser on Ubuntu 18.04
 #               https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/
-# @reference    How to Install Google Chrome Web Browser on CentOS 7
-#               https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-centos-7/
 ##
 temp_dir="/tmp/$(date +%s)"
 mkdir $temp_dir
@@ -29,9 +32,9 @@ fi
 wget "https://dl.google.com/linux/direct/$PACKAGE_NAME"
 
 if isDebian; then
-    sudo apt --yes install "./$PACKAGE_NAME"
+    $SUDO_CMD apt --yes install "./$PACKAGE_NAME"
 else
-    sudo yum --assumeyes localinstall "$PACKAGE_NAME"
+    $SUDO_CMD dnf --assumeyes localinstall "$PACKAGE_NAME"
 fi
 popd
 

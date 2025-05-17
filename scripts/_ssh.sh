@@ -3,12 +3,18 @@
 set -e
 
 THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/util.sh"
 
 DEFAULT_KEY_FILE_NAME="id_ed25519"
 PPLUS_KEY_FILE_NAME="id_ed25519_pplus"
 EVEN_KEY_FILE_NAME="id_ed25519_even"
 
 DEFAULT_KEY_FILE="$HOME/.ssh/$DEFAULT_KEY_FILE_NAME"
+
+if isDocker; then
+    echo "Skip this in docker container for now."
+    exit 0
+fi
 
 if [ -f "$DEFAULT_KEY_FILE" ]; then
     echo "SSH Key file '$DEFAULT_KEY_FILE' already existed."

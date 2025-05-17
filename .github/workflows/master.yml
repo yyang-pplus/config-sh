@@ -7,7 +7,7 @@ on:  # yamllint disable-line rule:truthy
     branches: [master]
 
 jobs:
-  setup-and-check:
+  ubuntu-setup-and-check:
     runs-on: ubuntu-22.04
 
     steps:
@@ -25,4 +25,25 @@ jobs:
 
     - name: Test
       run: ./tests/tests_runner.sh
+      shell: bash
+
+  # To test this locally:
+  # $ docker run --rm -v .:/workspace -w /workspace redhat/ubi9 bash -c "./main.sh"
+  redhat-setup-and-check:
+    runs-on: ubuntu-latest
+
+    container:
+      image: redhat/ubi9
+
+    steps:
+    - name: Install Git
+      run: dnf --assumeyes install git
+      shell: bash
+
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Setup
+      run: ./main.sh
       shell: bash

@@ -1,6 +1,8 @@
 #!/bin/bash
 
 source ~/.bash_util.sh
+THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/util.sh"
 
 set -e
 
@@ -17,9 +19,9 @@ if [ ! -d "$VIM_ROOT_DIR/.git" ]; then
 fi
 
 QuietRun pushd "$VIM_ROOT_DIR"
-sudo yum install -y ncurses ncurses-devel
+$SUDO_CMD dnf install -y ncurses ncurses-devel
 
-sudo yum remove -y vim-enhanced vim-common vim-filesystem vim-X11
+$SUDO_CMD dnf remove -y vim-enhanced vim-common vim-filesystem vim-X11
 
 make distclean
 
@@ -27,5 +29,5 @@ make distclean
 
 make
 
-sudo make install
+$SUDO_CMD make install
 QuietRun popd

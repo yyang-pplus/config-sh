@@ -2,6 +2,9 @@
 
 set -e
 
+THIS_DIR=$(dirname "$0")
+source "$THIS_DIR/util.sh"
+
 if which anki &> /dev/null; then
     echo "Anki already installed."
     exit 0
@@ -11,7 +14,7 @@ fi
 # @reference    Installing & Upgrading Anki on Linux
 #               https://docs.ankiweb.net/platform/linux/installing.html
 ##
-sudo apt --yes install libxcb-xinerama0 libxcb-cursor0 libnss3 zstd mpv
+$SUDO_CMD apt --yes install libxcb-xinerama0 libxcb-cursor0 libnss3 zstd mpv
 
 temp_dir="/tmp/$(date +%s)"
 mkdir $temp_dir
@@ -26,7 +29,7 @@ wget "$INSTALLER_URL"
 
 tar xaf $PACKAGE_NAME.tar.zst
 pushd $PACKAGE_NAME
-sudo ./install.sh
+$SUDO_CMD ./install.sh
 popd
 popd
 
