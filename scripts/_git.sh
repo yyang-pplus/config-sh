@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Don't run this script as sudo
-
 set -ex
 
 THIS_DIR=$(dirname "$0")

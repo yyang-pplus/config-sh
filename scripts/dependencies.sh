@@ -12,27 +12,26 @@ source "$THIS_DIR/util.sh"
 AssertLinux
 
 if isRedHat; then
-    # epel-release is required by terminator and some other packages on CentOS
-    sudo yum --assumeyes install epel-release
-
-    sudo yum --assumeyes --skip-broken install $COMMON_PACKAGES $REDHAT_PACKAGES
+    $SUDO_CMD dnf --assumeyes --skip-broken install $COMMON_PACKAGES $REDHAT_PACKAGES
 
 elif isDebian; then
-    sudo apt-get update
+    $SUDO_CMD apt-get update
 
-    sudo apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
+    $SUDO_CMD apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
 
-    sudo snap install $SNAP_PACKAGES
+    $SUDO_CMD snap install $SNAP_PACKAGES
 
     $THIS_DIR/anki.sh
     $THIS_DIR/docker.sh
 
-    sudo apt --yes autoremove
+    $SUDO_CMD apt --yes autoremove
 else
     Fatal "Unsupported Linux distribution."
 fi
 
-pipx install $PIPX_PACKAGES
+if which pipx > /dev/null; then
+    pipx install $PIPX_PACKAGES
+fi
 
 if which gem > /dev/null; then
     gem install --user-install $RUBY_GEMS

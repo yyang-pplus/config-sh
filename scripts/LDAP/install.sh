@@ -9,7 +9,7 @@ echo "Running:" $(basename "$0")
 
 set -ex
 
-sudo yum -y install openldap-servers openldap-clients
+sudo dnf -y install openldap-servers openldap-clients
 
 # Previous versions of Red Hat Enterprise Linux, which were distributed with
 #   SysV init or Upstart, used init scripts located in the /etc/rc.d/init.d/

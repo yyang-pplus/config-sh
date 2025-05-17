@@ -12,7 +12,7 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-sudo yum --assumeyes install git
+sudo dnf --assumeyes install git
 
 SETUP_SCRIPT_NAME="setup_common.sh"
 wget --no-check-certificate -O /tmp/$SETUP_SCRIPT_NAME "https://raw.githubusercontent.com/yyang-pplus/config-sh/master/$SETUP_SCRIPT_NAME"

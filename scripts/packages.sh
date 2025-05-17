@@ -1,14 +1,16 @@
 COMMON_PACKAGES="
 ccache
+cmake
 
 curl
-
-cmake
+wget
 
 expect
 
 git
 meld
+
+hostname
 
 terminator
 tmux

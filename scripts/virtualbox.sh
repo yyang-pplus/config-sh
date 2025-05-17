@@ -11,11 +11,11 @@ source "$THIS_DIR/util.sh"
 ##
 echo "Installing VirtualBox Guest Additions."
 if isRedHat; then
-    sudo yum --assumeyes install epel-release
-    sudo dnf --assumeyes install tar bzip2 kernel-devel-$(uname -r) perl gcc make elfutils-libelf-devel
+    $SUDO_CMD dnf --assumeyes install epel-release
+    $SUDO_CMD dnf --assumeyes install tar bzip2 kernel-devel-$(uname -r) perl gcc make elfutils-libelf-devel
     MEDIA_PATH=/run/media/$(whoami)/
 else
-    sudo apt --yes install build-essential dkms linux-headers-$(uname -r)
+    $SUDO_CMD apt --yes install build-essential dkms linux-headers-$(uname -r)
     MEDIA_PATH=/media/
 fi
 
@@ -25,9 +25,9 @@ if [ -z "$installer_path" ]; then
 else
     echo "Running installer '$installer_path'"
     # The installer returns non-zero if it cannot reload the modules; needs reboot.
-    sudo bash "$installer_path" || true
+    $SUDO_CMD bash "$installer_path" || true
 
     echo "Fixing VM shared folder permission issue."
-    sudo usermod -aG vboxsf $(whoami)
-    sudo grep "vboxsf" /etc/group
+    $SUDO_CMD usermod -aG vboxsf $(whoami)
+    $SUDO_CMD grep "vboxsf" /etc/group
 fi

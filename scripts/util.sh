@@ -3,6 +3,11 @@ if [ -f ~/.bash_util.sh ]; then
     source ~/.bash_util.sh
 fi
 
+SUDO_CMD=''
+if [ "$EUID" -ne 0 ]; then
+    SUDO_CMD='sudo'
+fi
+
 AssertLinux() {
     local OPERATING_SYSTEM=$(uname)
     if [ $OPERATING_SYSTEM != "Linux" ]; then
@@ -18,12 +23,16 @@ isDebian() {
     [ -f /etc/debian_version ]
 }
 
+isDocker() {
+    [ -f /.dockerenv ]
+}
+
 ##
 # @reference    Easy way to determine the virtualization technology of a Linux machine?
 #               https://unix.stackexchange.com/questions/89714/easy-way-to-determine-the-virtualization-technology-of-a-linux-machine
 ##
 isVirtualBox() {
-    [[ $(sudo dmidecode -s system-product-name) == *"VirtualBox"* ]]
+    [[ $($SUDO_CMD dmidecode -s system-product-name) == *"VirtualBox"* ]]
 }
 
 AddSshKeyTo() {
