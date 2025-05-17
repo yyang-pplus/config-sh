@@ -7,8 +7,8 @@ on:  # yamllint disable-line rule:truthy
     branches: [master]
 
 jobs:
-  setup-and-check:
-    runs-on: ubuntu-22.04
+  ubuntu-setup-and-check:
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
