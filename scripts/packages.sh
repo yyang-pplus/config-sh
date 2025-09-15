@@ -54,6 +54,8 @@ exuberant-ctags
 xpad
 
 plocate
+
+vlc
 "
 
 SNAP_PACKAGES="
