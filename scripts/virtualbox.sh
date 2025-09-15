@@ -19,7 +19,7 @@ else
     MEDIA_PATH=/media/
 fi
 
-installer_path=$(find $MEDIA_PATH -name "VBoxLinuxAdditions.run")
+installer_path=$(find $MEDIA_PATH -name "VBoxLinuxAdditions.run" || true)
 if [ -z "$installer_path" ]; then
     Fatal "Installer not found. Please insert Guest Additions CD."
 else
