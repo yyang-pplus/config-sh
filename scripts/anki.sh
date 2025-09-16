@@ -21,8 +21,8 @@ mkdir $temp_dir
 
 pushd $temp_dir
 
-VERSION="24.11"
-PACKAGE_NAME="anki-$VERSION-linux-qt6"
+VERSION="25.09"
+PACKAGE_NAME="anki-launcher-$VERSION-linux"
 INSTALLER_URL="https://github.com/ankitects/anki/releases/download/$VERSION/$PACKAGE_NAME.tar.zst"
 
 wget "$INSTALLER_URL"
