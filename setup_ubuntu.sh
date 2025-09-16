@@ -25,6 +25,9 @@ source "$HOME/.bash_util.sh"
 CONFIG_SH_ROOT_DIR="$PROJECTS_DIR/config-sh"
 source "$CONFIG_SH_ROOT_DIR/scripts/util.sh"
 
+# This has to be here, as it doesn't work with Github Actions.
+$CONFIG_SH_ROOT_DIR/scripts/kvm.sh
+
 pushd "$CONFIG_SH_ROOT_DIR"
 git remote set-url origin git@github-pplus:yyang-pplus/config-sh.git
 popd
