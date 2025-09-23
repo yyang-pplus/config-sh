@@ -28,6 +28,9 @@ source "$CONFIG_SH_ROOT_DIR/scripts/util.sh"
 # This has to be here, as it doesn't work with Github Actions.
 $CONFIG_SH_ROOT_DIR/scripts/kvm.sh
 
+# Disable touchpad when using a mouse.
+gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled-on-external-mouse
+
 pushd "$CONFIG_SH_ROOT_DIR"
 git remote set-url origin git@github-pplus:yyang-pplus/config-sh.git
 popd
