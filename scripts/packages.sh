@@ -55,6 +55,8 @@ xpad
 
 plocate
 
+qbittorrent
+
 vlc
 "
 
