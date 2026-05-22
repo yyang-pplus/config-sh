@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 THIS_DIR=$(dirname "$0")
 CONFIG_SH_DIR=$(readlink --canonicalize "$THIS_DIR/../..")

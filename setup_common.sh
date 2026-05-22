@@ -11,7 +11,7 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-set -e
+set -euo pipefail
 
 PROJECTS_DIR="$HOME/projects"
 mkdir -p "$PROJECTS_DIR"

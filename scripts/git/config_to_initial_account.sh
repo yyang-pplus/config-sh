@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 USERNAME=$(git log --reverse -1 --format="%an")
 EMAIL=$(git log --reverse -1 --format="%ae")

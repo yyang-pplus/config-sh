@@ -5,7 +5,7 @@
 # repository may not be available.
 ##
 
-set -ex
+set -exuo pipefail
 
 if [ "$EUID" -eq 0 ]; then
     echo "Error: Cannot run as root."

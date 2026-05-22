@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exuo pipefail
 
 # Require config.sh to run first
 source ~/.bash_util.sh

@@ -3,7 +3,7 @@
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"
 
-set -e
+set -euo pipefail
 
 if which google-chrome &> /dev/null; then
     echo "Chrome already installed."
