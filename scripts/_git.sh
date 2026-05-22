@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exuo pipefail
 
 THIS_DIR=$(dirname "$0")
 source "$THIS_DIR/util.sh"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 if [ ! -f $HOME/.viminfo ]; then
     exit 0
