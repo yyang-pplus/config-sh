@@ -1,6 +1,7 @@
 #!/bin/bash
 
 oneTimeSetUp() {
+    git fetch origin master
     git checkout --quiet master
 
     PROJECT_ROOT_DIR=$(git rev-parse --show-toplevel)
