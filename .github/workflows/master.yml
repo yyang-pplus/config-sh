@@ -23,6 +23,10 @@ jobs:
       run: ./main.sh
       shell: bash
 
+    - name: Install test dependencies
+      run: ./tests/dependencies.sh
+      shell: bash
+
     - name: Test
       run: ./tests/tests_runner.sh
       shell: bash
