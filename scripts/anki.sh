@@ -16,8 +16,7 @@ fi
 ##
 $SUDO_CMD apt --yes install libxcb-xinerama0 libxcb-cursor0 libnss3 zstd mpv
 
-temp_dir="/tmp/$(date +%s)"
-mkdir $temp_dir
+temp_dir="$(mktemp -d)"
 
 pushd $temp_dir
 
