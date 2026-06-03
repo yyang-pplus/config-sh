@@ -13,7 +13,6 @@ meld
 hostname
 
 terminator
-tmux
 
 cscope
 
@@ -46,8 +45,6 @@ pipx
 
 ruby-full
 
-shunit2
-
 vim-gtk3
 exuberant-ctags
 
@@ -70,8 +67,6 @@ mypy
 
 cmakelang
 cmakelint
-
-pipenv
 
 pre-commit
 
