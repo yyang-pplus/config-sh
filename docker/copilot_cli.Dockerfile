@@ -4,7 +4,7 @@ RUN npm install -g @github/copilot
 
 WORKDIR /workspace
 
-CMD ["copilot"]
+ENTRYPOINT ["copilot"]
 
 # docker build -t copilot-cli -f docker/copilot_cli.Dockerfile .
-# docker run -it --rm -v $(pwd):/workspace -v ~/.copilot:/root/.copilot copilot-cli
+# docker run -it --rm -v $(pwd):/workspace -v ~/.copilot:/root/.copilot copilot-cli --allow-all-tools
