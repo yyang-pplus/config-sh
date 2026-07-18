@@ -35,6 +35,8 @@ build-essential
 
 cmake-curses-gui
 
+flatpak
+
 gitk
 
 gimp
@@ -59,6 +61,13 @@ vlc
 
 SNAP_PACKAGES="
 shfmt
+
+steam
+"
+
+FLATPAK_PACKAGES="
+net.lutris.Lutris
+com.heroicgameslauncher.hgl
 "
 
 PIPX_PACKAGES="
