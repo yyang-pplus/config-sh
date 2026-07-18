@@ -21,7 +21,7 @@ if [ "$NUMBER_DB" -ne 1 ]; then
 fi
 
 ./$THIS_DIR/schema.sh
-./$THIS_DIR/db_config.sh
+./$THIS_DIR/db_config.sh # Interactive
 
 # Reload defines
 source "$THIS_DIR/global_defines.sh"
