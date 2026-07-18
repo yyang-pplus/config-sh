@@ -21,6 +21,10 @@ elif isDebian; then
 
     $SUDO_CMD snap install $SNAP_PACKAGES
 
+    $SUDO_CMD flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak install flathub --user -y $FLATPAK_PACKAGES
+
     $THIS_DIR/anki.sh
     $THIS_DIR/docker.sh
 
