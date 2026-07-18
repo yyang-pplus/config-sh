@@ -7,4 +7,4 @@ WORKDIR /workspace
 ENTRYPOINT ["copilot"]
 
 # docker build -t copilot-cli -f docker/copilot_cli.Dockerfile .
-# docker run -it --rm -v $(pwd):/workspace -v ~/.copilot:/root/.copilot copilot-cli --allow-all-tools
+# docker run -it --rm --user "$(id -u):$(id -g)" -v $(pwd):/workspace -v ~/.copilot:/home/node/.copilot copilot-cli --allow-all-tools
