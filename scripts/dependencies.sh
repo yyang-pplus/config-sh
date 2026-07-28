@@ -15,6 +15,9 @@ if isRedHat; then
     $SUDO_CMD dnf --assumeyes --skip-broken install $COMMON_PACKAGES $REDHAT_PACKAGES
 
 elif isDebian; then
+    $SUDO_CMD fwupdmgr --assume-yes refresh
+    $SUDO_CMD fwupdmgr --assume-yes --no-reboot-check update
+
     $SUDO_CMD apt-get update
 
     $SUDO_CMD apt --yes install $COMMON_PACKAGES $DEBIAN_PACKAGES
