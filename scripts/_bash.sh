@@ -10,7 +10,7 @@ cat >> $HOME/.bash_history << EOF
 $PROJECTS_DIR/script-sh/git/build.sh
 $PROJECTS_DIR/script-sh/git/forward_and_checkout.sh master temp
 
-git commit -a --amend --no-edit
+git commit -a --amend --no-edit --date=now
 git push origin HEAD:refs/for/master
 
 gvim -S $HOME/tmp/session.vim
